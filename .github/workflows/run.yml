@@ -1,0 +1,39 @@
+name: Auto Create Video
+
+on:
+  schedule:
+    - cron: "30 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  create-video:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install Python packages
+        run: pip install -r requirements.txt
+
+      - name: Run bot
+        run: python bot.py
+
+      - name: Save video to repo
+        run: |
+          git config user.name "auto-video-bot"
+          git config user.email "bot@example.com"
+          git add output used.json
+          git commit -m "Auto created video" || echo "No changes"
+          git push
