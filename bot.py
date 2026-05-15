@@ -1,7 +1,6 @@
 import os
 import re
 import json
-import random
 import hashlib
 from io import BytesIO
 from datetime import datetime
@@ -20,7 +19,7 @@ from moviepy import (
 
 
 # =========================
-# BASIC SETTINGS
+# SETTINGS
 # =========================
 
 PAGE_NAME = "WORLD PULSE DAILY"
@@ -33,46 +32,21 @@ VIDEO_WIDTH = 1080
 VIDEO_HEIGHT = 1920
 VIDEO_SIZE = (VIDEO_WIDTH, VIDEO_HEIGHT)
 
-# English voice = "en"
+# English = "en"
 # Sinhala voice can try = "si"
 LANGUAGE = "en"
 
-# Best for Facebook Reels: 500-700
-# Longer videos: 1200-2000
+# Best for reels: 500-700
+# Longer video: 1200-2000
 MAX_SCRIPT_CHARS = 700
 
 SHOW_SOURCE_TEXT = False
 
-
-# Around-the-world English RSS sources
 FEEDS = [
-    # Global / World News
     "https://www.bbc.com/news/world/rss.xml",
     "https://feeds.skynews.com/feeds/rss/world.xml",
     "https://www.aljazeera.com/xml/rss/all.xml",
     "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
-    "https://feeds.npr.org/1004/rss.xml",
-    "https://www.france24.com/en/rss",
-    "https://www.dw.com/en/top-stories/s-9097?maca=en-rss-en-all-1573-rdf",
-    "https://www.theguardian.com/world/rss",
-    "https://www.cbc.ca/cmlink/rss-world",
-
-    # Asia / South Asia
-    "https://www.thehindu.com/news/international/feeder/default.rss",
-    "https://timesofindia.indiatimes.com/rssfeeds/296589292.cms",
-    "https://www.hindustantimes.com/feeds/rss/world-news/rssfeed.xml",
-    "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
-    "https://www.scmp.com/rss/91/feed",
-
-    # Middle East / Africa
-    "https://www.middleeasteye.net/rss",
-    "https://www.arabnews.com/rss.xml",
-
-    # Business / Tech / Science
-    "https://feeds.bbci.co.uk/news/business/rss.xml",
-    "https://feeds.bbci.co.uk/news/technology/rss.xml",
-    "https://www.theguardian.com/technology/rss",
-    "https://www.theguardian.com/science/rss",
 ]
 
 USER_AGENT = (
@@ -119,7 +93,7 @@ def load_used():
 
 def save_used(used):
     with open(USED_FILE, "w", encoding="utf-8") as f:
-        json.dump(used[-1000:], f, indent=2)
+        json.dump(used[-500:], f, indent=2)
 
 
 # =========================
@@ -212,6 +186,7 @@ def upgrade_image_url(url):
 
     upgraded = url
 
+    # BBC small RSS thumbnail upgrade
     replacements = [
         "/standard/240/",
         "/standard/320/",
@@ -226,8 +201,7 @@ def upgrade_image_url(url):
     ]
 
     for old in replacements:
-        size_part = old.split("/")[-2]
-        upgraded = upgraded.replace(old, old.replace(size_part, "1024"))
+        upgraded = upgraded.replace(old, old.replace(old.split("/")[-2], "1024"))
 
     return upgraded
 
@@ -385,17 +359,11 @@ def get_news():
     used = load_used()
     news_items = []
 
-    feeds_to_check = FEEDS.copy()
-    random.shuffle(feeds_to_check)
-
-    for feed_url in feeds_to_check:
+    for feed_url in FEEDS:
         try:
-            print("Checking feed:", feed_url)
-
             feed = feedparser.parse(feed_url)
-            source_name = feed.feed.get("title", "News Source")
 
-            for entry in feed.entries[:10]:
+            for entry in feed.entries:
                 title = clean_text(entry.get("title", ""))
                 summary = clean_text(entry.get("summary", ""))
                 link = entry.get("link", "")
@@ -416,8 +384,7 @@ def get_news():
                     "summary": summary,
                     "link": link,
                     "image_url": image_url,
-                    "source": source_name,
-                    "feed_url": feed_url,
+                    "source": feed.feed.get("title", "News Source"),
                 })
 
         except Exception as e:
@@ -426,16 +393,9 @@ def get_news():
     if not news_items:
         return None
 
-    random.shuffle(news_items)
+    news = news_items[0]
 
-    with_image = [item for item in news_items if item.get("image_url")]
-    without_image = [item for item in news_items if not item.get("image_url")]
-
-    if with_image:
-        news = random.choice(with_image)
-    else:
-        news = random.choice(without_image)
-
+    # Try article real image first
     article_image = get_image_from_article_page(news["link"])
 
     if article_image:
@@ -445,8 +405,6 @@ def get_news():
 
     used.append(news["id"])
     save_used(used)
-
-    print("Selected source:", news["source"])
 
     return news
 
@@ -555,7 +513,7 @@ def create_news_frame(news, image_path, progress=0.0):
         fill=(210, 220, 235)
     )
 
-    # Breaking news bar
+    # Breaking news red bar
     draw_rounded_panel(
         draw,
         (50, 205, 1030, 315),
@@ -735,86 +693,6 @@ def create_video(news, image_path, audio_path, output_path):
     video.close()
 
 
-
-
-# =========================
-# TELEGRAM NOTIFICATION SYSTEM
-# =========================
-
-def get_telegram_settings():
-    bot_token = os.getenv("8467040279:AAGIxfp1OSdl-yojYXXQi1DrAwoHgPzvUkI")
-    chat_id = os.getenv("8376417027")
-
-    if not bot_token or not chat_id:
-        print("Telegram notification skipped: TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID missing.")
-        return None, None
-
-    return bot_token, chat_id
-
-
-def make_telegram_caption(news):
-    title = shorten(news.get("title", ""), 180)
-    summary = shorten(news.get("summary", ""), 450)
-    link = news.get("link", "")
-
-    caption = "✅ New news video created\n\n"
-    caption += f"{title}\n\n"
-
-    if summary:
-        caption += f"{summary}\n\n"
-
-    if link:
-        caption += f"Source: {link}"
-
-    return caption[:1000]
-
-
-def notify_telegram_with_video(video_path, news):
-    bot_token, chat_id = get_telegram_settings()
-
-    if not bot_token or not chat_id:
-        return False
-
-    try:
-        url = f"https://api.telegram.org/bot{bot_token}/sendVideo"
-        caption = make_telegram_caption(news)
-
-        with open(video_path, "rb") as video_file:
-            files = {"video": video_file}
-            data = {
-                "chat_id": chat_id,
-                "caption": caption,
-                "supports_streaming": "true",
-            }
-
-            response = requests.post(
-                url,
-                data=data,
-                files=files,
-                timeout=300,
-            )
-
-        print("Telegram status:", response.status_code)
-        print("Telegram response:", response.text)
-
-        try:
-            result = response.json()
-        except Exception:
-            print("Telegram raw response:", response.text)
-            return False
-
-        if response.status_code == 200 and result.get("ok"):
-            print("Telegram notification sent successfully.")
-            return True
-
-        print("Telegram notification failed.")
-        return False
-
-    except Exception as e:
-        print("Telegram notification error:", e)
-        return False
-
-
 # =========================
 # MAIN
 # =========================
@@ -830,7 +708,6 @@ def main():
         return
 
     print("Selected news:", news["title"])
-    print("Selected source:", news["source"])
     print("Link:", news["link"])
     print("Image:", news["image_url"])
 
@@ -853,14 +730,6 @@ def main():
     create_video(news, raw_image_path, voice_path, video_path)
 
     print("Video created:", video_path)
-
-    print("Sending Telegram notification...")
-    telegram_ok = notify_telegram_with_video(video_path, news)
-
-    if telegram_ok:
-        print("Telegram notification completed.")
-    else:
-        print("Telegram notification failed or skipped.")
 
 
 if __name__ == "__main__":
