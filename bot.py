@@ -736,6 +736,7 @@ def create_video(news, image_path, audio_path, output_path):
 
 
 
+
 # =========================
 # TELEGRAM NOTIFICATION SYSTEM
 # =========================
@@ -756,22 +757,15 @@ def make_telegram_caption(news):
     summary = shorten(news.get("summary", ""), 450)
     link = news.get("link", "")
 
-    caption = "✅ New news video created
-
-"
-    caption += f"{title}
-
-"
+    caption = "✅ New news video created\n\n"
+    caption += f"{title}\n\n"
 
     if summary:
-        caption += f"{summary}
-
-"
+        caption += f"{summary}\n\n"
 
     if link:
         caption += f"Source: {link}"
 
-    # Telegram video captions have a character limit, so keep it safe.
     return caption[:1000]
 
 
@@ -786,10 +780,7 @@ def notify_telegram_with_video(video_path, news):
         caption = make_telegram_caption(news)
 
         with open(video_path, "rb") as video_file:
-            files = {
-                "video": video_file
-            }
-
+            files = {"video": video_file}
             data = {
                 "chat_id": chat_id,
                 "caption": caption,
