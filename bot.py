@@ -1,6 +1,7 @@
 import os
 import re
 import json
+import random
 import hashlib
 from io import BytesIO
 from datetime import datetime
@@ -42,11 +43,35 @@ MAX_SCRIPT_CHARS = 700
 
 SHOW_SOURCE_TEXT = False
 
+# Around-the-world English RSS sources
 FEEDS = [
+    # Global / World News
     "https://www.bbc.com/news/world/rss.xml",
     "https://feeds.skynews.com/feeds/rss/world.xml",
     "https://www.aljazeera.com/xml/rss/all.xml",
     "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+    "https://feeds.npr.org/1004/rss.xml",
+    "https://www.france24.com/en/rss",
+    "https://www.dw.com/en/top-stories/s-9097?maca=en-rss-en-all-1573-rdf",
+    "https://www.theguardian.com/world/rss",
+    "https://www.cbc.ca/cmlink/rss-world",
+
+    # Asia / South Asia
+    "https://www.thehindu.com/news/international/feeder/default.rss",
+    "https://timesofindia.indiatimes.com/rssfeeds/296589292.cms",
+    "https://www.hindustantimes.com/feeds/rss/world-news/rssfeed.xml",
+    "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
+    "https://www.scmp.com/rss/91/feed",
+
+    # Middle East / Africa
+    "https://www.middleeasteye.net/rss",
+    "https://www.arabnews.com/rss.xml",
+
+    # Business / Tech / Science
+    "https://feeds.bbci.co.uk/news/business/rss.xml",
+    "https://feeds.bbci.co.uk/news/technology/rss.xml",
+    "https://www.theguardian.com/technology/rss",
+    "https://www.theguardian.com/science/rss",
 ]
 
 USER_AGENT = (
@@ -93,7 +118,7 @@ def load_used():
 
 def save_used(used):
     with open(USED_FILE, "w", encoding="utf-8") as f:
-        json.dump(used[-500:], f, indent=2)
+        json.dump(used[-800:], f, indent=2)
 
 
 # =========================
@@ -186,7 +211,7 @@ def upgrade_image_url(url):
 
     upgraded = url
 
-    # BBC small RSS thumbnail upgrade
+    # BBC small RSS thumbnail upgrades
     replacements = [
         "/standard/240/",
         "/standard/320/",
@@ -201,7 +226,8 @@ def upgrade_image_url(url):
     ]
 
     for old in replacements:
-        upgraded = upgraded.replace(old, old.replace(old.split("/")[-2], "1024"))
+        size_part = old.split("/")[-2]
+        upgraded = upgraded.replace(old, old.replace(size_part, "1024"))
 
     return upgraded
 
@@ -359,11 +385,17 @@ def get_news():
     used = load_used()
     news_items = []
 
-    for feed_url in FEEDS:
-        try:
-            feed = feedparser.parse(feed_url)
+    feeds_to_check = FEEDS.copy()
+    random.shuffle(feeds_to_check)
 
-            for entry in feed.entries:
+    for feed_url in feeds_to_check:
+        try:
+            print("Checking feed:", feed_url)
+
+            feed = feedparser.parse(feed_url)
+            source_name = feed.feed.get("title", "News Source")
+
+            for entry in feed.entries[:10]:
                 title = clean_text(entry.get("title", ""))
                 summary = clean_text(entry.get("summary", ""))
                 link = entry.get("link", "")
@@ -384,7 +416,8 @@ def get_news():
                     "summary": summary,
                     "link": link,
                     "image_url": image_url,
-                    "source": feed.feed.get("title", "News Source"),
+                    "source": source_name,
+                    "feed_url": feed_url,
                 })
 
         except Exception as e:
@@ -393,7 +426,17 @@ def get_news():
     if not news_items:
         return None
 
-    news = news_items[0]
+    # Shuffle again so BBC or any one source is not always selected
+    random.shuffle(news_items)
+
+    # Prefer stories that already have image URL
+    with_image = [item for item in news_items if item.get("image_url")]
+    without_image = [item for item in news_items if not item.get("image_url")]
+
+    if with_image:
+        news = random.choice(with_image)
+    else:
+        news = random.choice(without_image)
 
     # Try article real image first
     article_image = get_image_from_article_page(news["link"])
@@ -405,6 +448,8 @@ def get_news():
 
     used.append(news["id"])
     save_used(used)
+
+    print("Selected source:", news["source"])
 
     return news
 
@@ -422,7 +467,7 @@ def make_script(news):
     else:
         script = f"{title}."
 
-    script += " Follow world pulse daily for more world news updates."
+    script += " Follow for more world news updates."
 
     return script
 
@@ -708,6 +753,7 @@ def main():
         return
 
     print("Selected news:", news["title"])
+    print("Selected source:", news["source"])
     print("Link:", news["link"])
     print("Image:", news["image_url"])
 
