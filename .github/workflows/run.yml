@@ -27,13 +27,13 @@ jobs:
       - name: Install packages
         run: pip install -r requirements.txt
 
-      - name: Run video bot
+      - name: Run bot
         run: python bot.py
 
-      - name: Save output video
+      - name: Save video
         run: |
           git config user.name "auto-video-bot"
           git config user.email "bot@example.com"
           git add output used.json
-          git commit -m "Auto created video" || echo "No changes to commit"
+          git commit -m "Auto created news video" || echo "No changes to commit"
           git push
