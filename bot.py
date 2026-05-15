@@ -43,8 +43,6 @@ MAX_SCRIPT_CHARS = 700
 
 SHOW_SOURCE_TEXT = False
 
-# Facebook Graph API version
-GRAPH_VERSION = "v22.0"
 
 # Around-the-world English RSS sources
 FEEDS = [
@@ -737,162 +735,65 @@ def create_video(news, image_path, audio_path, output_path):
     video.close()
 
 
+
 # =========================
-# FACEBOOK UPLOAD SYSTEM
+# TELEGRAM NOTIFICATION SYSTEM
 # =========================
 
-def get_facebook_settings():
-    page_id = os.getenv("1171177946073488")
-    page_token = os.getenv("EAAe1MZBQ4ewkBRSBUE83Fh8NZBzqt0FwsFlo2thZCTt2SLiMUgnDVIwBN2iVYpafLfo3OYs9ZBjo3nj4htrWubTYPmlBsKRkcLd3935lJLDsFqOo0IA4GU5CKLKzYQ6FcmeDpO0P1PiRA9vEOczAQACCUBYvNrwOnEBoh7bM9DfG4ETsfX328ZCWioBqSJtDq4IFGEloKqCBCdhz2eIuKTLcT9s7NVHK4MmsozYISNOvFSvVUIqY9bJZBjGvkZD")
+def get_telegram_settings():
+    bot_token = os.getenv("TELEGRAM_BOT_TOKEN")
+    chat_id = os.getenv("TELEGRAM_CHAT_ID")
 
-    if not page_id or not page_token:
-        print("Facebook upload skipped: FB_PAGE_ID or FB_PAGE_TOKEN missing.")
+    if not bot_token or not chat_id:
+        print("Telegram notification skipped: TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID missing.")
         return None, None
 
-    return page_id, page_token
+    return bot_token, chat_id
 
 
-def make_facebook_caption(news):
+def make_telegram_caption(news):
     title = shorten(news.get("title", ""), 180)
-    summary = shorten(news.get("summary", ""), 350)
+    summary = shorten(news.get("summary", ""), 450)
     link = news.get("link", "")
 
-    caption = f"{title}\n\n"
+    caption = "✅ New news video created
+
+"
+    caption += f"{title}
+
+"
 
     if summary:
-        caption += f"{summary}\n\n"
+        caption += f"{summary}
 
-    caption += "Follow World Pulse Daily for more world news updates."
+"
 
     if link:
-        caption += f"\n\nRead more: {link}"
+        caption += f"Source: {link}"
 
-    return caption
+    # Telegram video captions have a character limit, so keep it safe.
+    return caption[:1000]
 
 
-def post_facebook_reel(video_path, caption):
-    page_id, page_token = get_facebook_settings()
+def notify_telegram_with_video(video_path, news):
+    bot_token, chat_id = get_telegram_settings()
 
-    if not page_id or not page_token:
+    if not bot_token or not chat_id:
         return False
 
     try:
-        print("Starting Facebook Reel upload...")
-
-        # Step 1: Start Reel upload session
-        start_url = f"https://graph.facebook.com/{GRAPH_VERSION}/{page_id}/video_reels"
-
-        start_params = {
-            "upload_phase": "start",
-            "access_token": page_token,
-        }
-
-        start_response = requests.post(
-            start_url,
-            data=start_params,
-            timeout=60,
-        )
-
-        try:
-            start_data = start_response.json()
-        except Exception:
-            print("Reel start raw response:", start_response.text)
-            return False
-
-        print("Reel start response:", start_data)
-
-        if start_response.status_code not in [200, 201]:
-            print("Could not start Reel upload.")
-            return False
-
-        if "video_id" not in start_data or "upload_url" not in start_data:
-            print("Missing video_id or upload_url in Reel start response.")
-            return False
-
-        video_id = start_data["video_id"]
-        upload_url = start_data["upload_url"]
-
-        file_size = os.path.getsize(video_path)
-
-        # Step 2: Upload video binary
-        with open(video_path, "rb") as video_file:
-            upload_headers = {
-                "Authorization": f"OAuth {page_token}",
-                "offset": "0",
-                "file_size": str(file_size),
-                "Content-Type": "application/octet-stream",
-            }
-
-            upload_response = requests.post(
-                upload_url,
-                headers=upload_headers,
-                data=video_file,
-                timeout=300,
-            )
-
-        print("Reel upload status:", upload_response.status_code)
-        print("Reel upload response:", upload_response.text)
-
-        if upload_response.status_code not in [200, 201]:
-            print("Reel video upload failed.")
-            return False
-
-        # Step 3: Publish Reel
-        finish_url = f"https://graph.facebook.com/{GRAPH_VERSION}/{page_id}/video_reels"
-
-        finish_params = {
-            "upload_phase": "finish",
-            "video_id": video_id,
-            "description": caption,
-            "video_state": "PUBLISHED",
-            "access_token": page_token,
-        }
-
-        finish_response = requests.post(
-            finish_url,
-            data=finish_params,
-            timeout=120,
-        )
-
-        try:
-            finish_data = finish_response.json()
-        except Exception:
-            print("Reel finish raw response:", finish_response.text)
-            return False
-
-        print("Reel finish response:", finish_data)
-
-        if finish_response.status_code in [200, 201] and not finish_data.get("error"):
-            print("Facebook Reel published successfully.")
-            return True
-
-        print("Facebook Reel publish failed.")
-        return False
-
-    except Exception as e:
-        print("Facebook Reel error:", e)
-        return False
-
-
-def post_facebook_video_post(video_path, caption):
-    page_id, page_token = get_facebook_settings()
-
-    if not page_id or not page_token:
-        return False
-
-    try:
-        print("Trying normal Facebook video post...")
-
-        url = f"https://graph.facebook.com/{GRAPH_VERSION}/{page_id}/videos"
-
-        data = {
-            "description": caption,
-            "access_token": page_token,
-        }
+        url = f"https://api.telegram.org/bot{bot_token}/sendVideo"
+        caption = make_telegram_caption(news)
 
         with open(video_path, "rb") as video_file:
             files = {
-                "source": video_file
+                "video": video_file
+            }
+
+            data = {
+                "chat_id": chat_id,
+                "caption": caption,
+                "supports_streaming": "true",
             }
 
             response = requests.post(
@@ -902,40 +803,25 @@ def post_facebook_video_post(video_path, caption):
                 timeout=300,
             )
 
+        print("Telegram status:", response.status_code)
+        print("Telegram response:", response.text)
+
         try:
             result = response.json()
         except Exception:
-            print("Video post raw response:", response.text)
+            print("Telegram raw response:", response.text)
             return False
 
-        print("Video post response:", result)
-
-        if response.status_code in [200, 201] and not result.get("error"):
-            print("Facebook video post published successfully.")
+        if response.status_code == 200 and result.get("ok"):
+            print("Telegram notification sent successfully.")
             return True
 
-        print("Facebook video post failed.")
+        print("Telegram notification failed.")
         return False
 
     except Exception as e:
-        print("Facebook video post error:", e)
+        print("Telegram notification error:", e)
         return False
-
-
-def upload_to_facebook(video_path, news):
-    caption = make_facebook_caption(news)
-
-    # Try Reel first
-    reel_ok = post_facebook_reel(video_path, caption)
-
-    if reel_ok:
-        return True
-
-    # Fallback: normal video post
-    print("Reel failed. Trying normal video post...")
-    post_ok = post_facebook_video_post(video_path, caption)
-
-    return post_ok
 
 
 # =========================
@@ -977,13 +863,13 @@ def main():
 
     print("Video created:", video_path)
 
-    print("Uploading to Facebook...")
-    facebook_ok = upload_to_facebook(video_path, news)
+    print("Sending Telegram notification...")
+    telegram_ok = notify_telegram_with_video(video_path, news)
 
-    if facebook_ok:
-        print("Facebook upload completed.")
+    if telegram_ok:
+        print("Telegram notification completed.")
     else:
-        print("Facebook upload failed or skipped.")
+        print("Telegram notification failed or skipped.")
 
 
 if __name__ == "__main__":
