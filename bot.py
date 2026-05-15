@@ -3,24 +3,33 @@ import re
 import json
 import hashlib
 import textwrap
-import requests
+import random
+from datetime import datetime
+
 import feedparser
 from bs4 import BeautifulSoup
 from PIL import Image, ImageDraw, ImageFont
 from gtts import gTTS
-from moviepy import ImageClip, AudioFileClip
+from moviepy import (
+    ImageClip,
+    AudioFileClip,
+    TextClip,
+    CompositeVideoClip,
+)
 
 OUTPUT_DIR = "output"
 USED_FILE = "used.json"
 
-FEEDS = [
-    "https://www.bbc.com/news/world/rss.xml",
-    "https://feeds.reuters.com/reuters/worldNews",
-    "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
-]
+PAGE_NAME = "WORLD PULSE DAILY"
+LANGUAGE = "en"  # Sinhala voice: try "si", English: "en"
 
 VIDEO_SIZE = (1080, 1920)
-LANGUAGE = "en"  # change to "si" for Sinhala voice if supported
+
+FEEDS = [
+    "https://www.bbc.com/news/world/rss.xml",
+    "https://feeds.skynews.com/feeds/rss/world.xml",
+    "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+]
 
 
 def clean_text(text):
@@ -38,11 +47,12 @@ def load_used():
 
 def save_used(used):
     with open(USED_FILE, "w", encoding="utf-8") as f:
-        json.dump(used[-100:], f, indent=2)
+        json.dump(used[-300:], f, indent=2)
 
 
 def get_news():
     used = load_used()
+    all_items = []
 
     for feed_url in FEEDS:
         feed = feedparser.parse(feed_url)
@@ -52,57 +62,99 @@ def get_news():
             summary = clean_text(item.get("summary", ""))
             link = item.get("link", "")
 
-            if not title:
+            if not title or not link:
                 continue
 
             news_id = hashlib.md5(link.encode()).hexdigest()
 
             if news_id not in used:
-                used.append(news_id)
-                save_used(used)
-
-                return {
+                all_items.append({
+                    "id": news_id,
                     "title": title,
-                    "summary": summary[:350],
+                    "summary": summary,
                     "link": link
-                }
+                })
 
-    return None
+    if not all_items:
+        return None
+
+    news = random.choice(all_items)
+
+    used.append(news["id"])
+    save_used(used)
+
+    return news
 
 
 def make_script(news):
+    title = news["title"]
+    summary = news["summary"]
+
+    if not summary:
+        summary = title
+
     return (
-        f"Today update. {news['title']}. "
-        f"{news['summary']} "
-        f"This information was collected from public news RSS sources."
+        f"{title}. "
+        f"{summary}. "
+        f"Stay tuned for more updates."
     )
 
 
-def create_background(title, summary, path):
-    img = Image.new("RGB", VIDEO_SIZE, (15, 25, 45))
+def get_font(size, bold=False):
+    possible_fonts = [
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+        "DejaVuSans-Bold.ttf" if bold else "DejaVuSans.ttf",
+    ]
+
+    for font in possible_fonts:
+        try:
+            return ImageFont.truetype(font, size)
+        except:
+            pass
+
+    return ImageFont.load_default()
+
+
+def create_background(news, path):
+    img = Image.new("RGB", VIDEO_SIZE, (10, 18, 35))
     draw = ImageDraw.Draw(img)
 
-    try:
-        title_font = ImageFont.truetype("DejaVuSans-Bold.ttf", 58)
-        body_font = ImageFont.truetype("DejaVuSans.ttf", 38)
-        small_font = ImageFont.truetype("DejaVuSans.ttf", 30)
-    except:
-        title_font = body_font = small_font = None
+    title_font = get_font(58, bold=True)
+    small_font = get_font(32, bold=False)
 
-    draw.rectangle([0, 0, 1080, 260], fill=(30, 60, 120))
-    draw.text((60, 80), "WORLD PULSE DAILY", fill="white", font=title_font)
+    colors = [
+        ((15, 32, 70), (30, 90, 160)),
+        ((30, 20, 65), (95, 40, 150)),
+        ((15, 50, 55), (20, 120, 130)),
+        ((55, 20, 35), (150, 35, 70)),
+    ]
 
-    y = 360
-    for line in textwrap.wrap(title, width=24):
-        draw.text((60, y), line, fill="white", font=title_font)
-        y += 75
+    top_color, bottom_color = random.choice(colors)
 
-    y += 40
-    for line in textwrap.wrap(summary, width=34):
-        draw.text((60, y), line, fill=(230, 230, 230), font=body_font)
-        y += 55
+    for y in range(VIDEO_SIZE[1]):
+        ratio = y / VIDEO_SIZE[1]
+        r = int(top_color[0] * (1 - ratio) + bottom_color[0] * ratio)
+        g = int(top_color[1] * (1 - ratio) + bottom_color[1] * ratio)
+        b = int(top_color[2] * (1 - ratio) + bottom_color[2] * ratio)
+        draw.line([(0, y), (VIDEO_SIZE[0], y)], fill=(r, g, b))
 
-    draw.text((60, 1760), "Auto generated from public RSS news", fill=(200, 200, 200), font=small_font)
+    draw.rectangle([0, 0, 1080, 230], fill=(0, 0, 0, 90))
+    draw.text((60, 75), PAGE_NAME, fill="white", font=title_font)
+
+    draw.rounded_rectangle(
+        [60, 290, 1020, 460],
+        radius=35,
+        fill=(255, 255, 255)
+    )
+
+    draw.text((95, 340), "BREAKING NEWS UPDATE", fill=(20, 30, 60), font=title_font)
+
+    draw.text(
+        (60, 1810),
+        datetime.now().strftime("%Y-%m-%d"),
+        fill=(230, 230, 230),
+        font=small_font
+    )
 
     img.save(path)
 
@@ -112,16 +164,71 @@ def create_voice(script, path):
     tts.save(path)
 
 
-def create_video(image_path, audio_path, output_path):
+def create_video(image_path, audio_path, output_path, news):
     audio = AudioFileClip(audio_path)
-    clip = ImageClip(image_path).with_duration(audio.duration)
-    clip = clip.with_audio(audio)
-    clip.write_videofile(
-        output_path,
-        fps=24,
-        codec="libx264",
-        audio_codec="aac"
+    duration = audio.duration
+
+    bg = ImageClip(image_path).with_duration(duration)
+
+    title = news["title"]
+    summary = news["summary"] or ""
+
+    video_text = f"{title}\n\n{summary}"
+    video_text = video_text[:700]
+
+    title_clip = (
+        TextClip(
+            text=title,
+            font_size=62,
+            color="white",
+            size=(960, None),
+            method="caption",
+        )
+        .with_duration(duration)
+        .with_position(("center", 560))
     )
+
+    moving_clip = (
+        TextClip(
+            text=video_text,
+            font_size=46,
+            color="white",
+            size=(900, None),
+            method="caption",
+        )
+        .with_duration(duration)
+        .with_position(lambda t: ("center", int(1500 - t * 55)))
+    )
+
+    source_clip = (
+        TextClip(
+            text="Source: Public news feed",
+            font_size=30,
+            color="white",
+            size=(900, None),
+            method="caption",
+        )
+        .with_duration(duration)
+        .with_position(("center", 1740))
+    )
+
+    final = CompositeVideoClip(
+        [bg, title_clip, moving_clip, source_clip],
+        size=VIDEO_SIZE
+    )
+
+    final = final.with_audio(audio)
+
+    final.write_videofile(
+        output_path,
+        fps=30,
+        codec="libx264",
+        audio_codec="aac",
+        preset="medium"
+    )
+
+    audio.close()
+    final.close()
 
 
 def main():
@@ -139,12 +246,13 @@ def main():
     audio_path = os.path.join(OUTPUT_DIR, "voice.mp3")
     video_path = os.path.join(OUTPUT_DIR, "auto_video.mp4")
 
-    create_background(news["title"], news["summary"], image_path)
+    create_background(news, image_path)
     create_voice(script, audio_path)
-    create_video(image_path, audio_path, video_path)
+    create_video(image_path, audio_path, video_path, news)
 
-    print("Video created:", video_path)
-    print("News source:", news["link"])
+    print("DONE:", video_path)
+    print("NEWS:", news["title"])
+    print("LINK:", news["link"])
 
 
 if __name__ == "__main__":
