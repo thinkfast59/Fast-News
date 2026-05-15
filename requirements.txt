@@ -1,6 +1,6 @@
 feedparser
-requests
 beautifulsoup4
 pillow
 moviepy
 gTTS
+requests
