@@ -4,3 +4,4 @@ pillow
 moviepy
 gTTS
 requests
+numpy
