@@ -741,8 +741,8 @@ def create_video(news, image_path, audio_path, output_path):
 # =========================
 
 def get_telegram_settings():
-    bot_token = os.getenv("TELEGRAM_BOT_TOKEN")
-    chat_id = os.getenv("TELEGRAM_CHAT_ID")
+    bot_token = os.getenv("8467040279:AAGIxfp1OSdl-yojYXXQi1DrAwoHgPzvUkI")
+    chat_id = os.getenv("8376417027")
 
     if not bot_token or not chat_id:
         print("Telegram notification skipped: TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID missing.")
