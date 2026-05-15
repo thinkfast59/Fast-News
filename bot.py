@@ -422,7 +422,7 @@ def make_script(news):
     else:
         script = f"{title}."
 
-    script += " Follow for more world news updates."
+    script += " Follow world pulse daily for more world news updates."
 
     return script
 
