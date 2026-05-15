@@ -1,7 +1,6 @@
 import os
 import re
 import json
-import random
 import hashlib
 from io import BytesIO
 from datetime import datetime
@@ -10,7 +9,7 @@ import numpy as np
 import requests
 import feedparser
 from bs4 import BeautifulSoup
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
 from gtts import gTTS
 
 from moviepy import (
@@ -33,7 +32,13 @@ VIDEO_WIDTH = 1080
 VIDEO_HEIGHT = 1920
 VIDEO_SIZE = (VIDEO_WIDTH, VIDEO_HEIGHT)
 
-LANGUAGE = "en"  # English = en, Sinhala = si
+# English = "en"
+# Sinhala voice can try = "si"
+LANGUAGE = "en"
+
+# Best for reels: 500-700
+# Longer video: 1200-2000
+MAX_SCRIPT_CHARS = 700
 
 SHOW_SOURCE_TEXT = False
 
@@ -52,7 +57,7 @@ USER_AGENT = (
 
 
 # =========================
-# CLEAN TEXT
+# TEXT CLEANING
 # =========================
 
 def clean_text(text):
@@ -67,7 +72,8 @@ def shorten(text, max_chars):
     if len(text) <= max_chars:
         return text
 
-    return text[:max_chars].rsplit(" ", 1)[0] + "..."
+    cut = text[:max_chars].rsplit(" ", 1)[0]
+    return cut + "..."
 
 
 # =========================
@@ -136,7 +142,6 @@ def wrap_text(draw, text, font, max_width):
         else:
             if current:
                 lines.append(current)
-
             current = word
 
     if current:
@@ -172,31 +177,60 @@ def draw_multiline(draw, lines, x, y, font, line_height, fill):
 
 
 # =========================
-# REAL NEWS IMAGE FINDER
+# REAL NEWS IMAGE SYSTEM
 # =========================
+
+def upgrade_image_url(url):
+    if not url:
+        return None
+
+    upgraded = url
+
+    # BBC small RSS thumbnail upgrade
+    replacements = [
+        "/standard/240/",
+        "/standard/320/",
+        "/standard/480/",
+        "/standard/624/",
+        "/standard/800/",
+        "/ace/standard/240/",
+        "/ace/standard/320/",
+        "/ace/standard/480/",
+        "/ace/standard/624/",
+        "/ace/standard/800/",
+    ]
+
+    for old in replacements:
+        upgraded = upgraded.replace(old, old.replace(old.split("/")[-2], "1024"))
+
+    return upgraded
+
 
 def get_image_from_feed_entry(entry):
     media_content = entry.get("media_content", [])
+
     if media_content:
         for media in media_content:
             url = media.get("url")
             if url:
-                return url
+                return upgrade_image_url(url)
 
     media_thumbnail = entry.get("media_thumbnail", [])
+
     if media_thumbnail:
         for media in media_thumbnail:
             url = media.get("url")
             if url:
-                return url
+                return upgrade_image_url(url)
 
     links = entry.get("links", [])
+
     for link in links:
         href = link.get("href", "")
         media_type = link.get("type", "")
 
         if href and "image" in media_type:
-            return href
+            return upgrade_image_url(href)
 
     return None
 
@@ -224,7 +258,7 @@ def get_image_from_article_page(article_url):
             tag = soup.find(tag_name, attrs=attrs)
 
             if tag and tag.get("content"):
-                return tag.get("content")
+                return upgrade_image_url(tag.get("content"))
 
     except Exception as e:
         print("Article image fetch error:", e)
@@ -236,30 +270,45 @@ def download_image(url, output_path):
     if not url:
         return False
 
-    try:
-        response = requests.get(
-            url,
-            headers={"User-Agent": USER_AGENT},
-            timeout=20,
-        )
+    urls_to_try = []
 
-        if response.status_code != 200:
-            print("Image status code:", response.status_code)
-            return False
+    upgraded_url = upgrade_image_url(url)
 
-        img = Image.open(BytesIO(response.content)).convert("RGB")
+    if upgraded_url:
+        urls_to_try.append(upgraded_url)
 
-        # Accept small RSS thumbnails also.
-        if img.width < 120 or img.height < 120:
-            print("Image too small:", img.width, img.height)
-            return False
+    if url not in urls_to_try:
+        urls_to_try.append(url)
 
-        img.save(output_path)
-        return True
+    for try_url in urls_to_try:
+        try:
+            print("Trying image:", try_url)
 
-    except Exception as e:
-        print("Image download failed:", e)
-        return False
+            response = requests.get(
+                try_url,
+                headers={"User-Agent": USER_AGENT},
+                timeout=20,
+            )
+
+            if response.status_code != 200:
+                print("Image status code:", response.status_code)
+                continue
+
+            img = Image.open(BytesIO(response.content)).convert("RGB")
+
+            if img.width < 120 or img.height < 120:
+                print("Image too small:", img.width, img.height)
+                continue
+
+            print("Image downloaded:", img.width, img.height)
+
+            img.save(output_path, quality=95)
+            return True
+
+        except Exception as e:
+            print("Image download failed:", e)
+
+    return False
 
 
 def cover_resize(img, size):
@@ -299,7 +348,7 @@ def create_fallback_news_image(path):
     draw.text((80, 870), "NEWS", font=font_big, fill=(255, 60, 60))
     draw.text((80, 1010), "UPDATE", font=font_small, fill="white")
 
-    img.save(path)
+    img.save(path, quality=95)
 
 
 # =========================
@@ -344,11 +393,15 @@ def get_news():
     if not news_items:
         return None
 
-    # Latest fresh news from feeds.
     news = news_items[0]
 
-    if not news["image_url"]:
-        news["image_url"] = get_image_from_article_page(news["link"])
+    # Try article real image first
+    article_image = get_image_from_article_page(news["link"])
+
+    if article_image:
+        news["image_url"] = article_image
+    elif news["image_url"]:
+        news["image_url"] = upgrade_image_url(news["image_url"])
 
     used.append(news["id"])
     save_used(used)
@@ -357,12 +410,12 @@ def get_news():
 
 
 # =========================
-# VOICE
+# VOICE SCRIPT
 # =========================
 
 def make_script(news):
     title = shorten(news["title"], 180)
-    summary = shorten(news["summary"], 420)
+    summary = shorten(news["summary"], MAX_SCRIPT_CHARS)
 
     if summary:
         script = f"{title}. {summary}."
@@ -380,7 +433,7 @@ def create_voice(script, path):
 
 
 # =========================
-# NEWS VIDEO DESIGN
+# VIDEO DESIGN
 # =========================
 
 def add_dark_gradient(img):
@@ -396,7 +449,11 @@ def add_dark_gradient(img):
             alpha = 35
 
         alpha = max(0, min(230, alpha))
-        draw.line([(0, y), (VIDEO_WIDTH, y)], fill=(0, 0, 0, alpha))
+
+        draw.line(
+            [(0, y), (VIDEO_WIDTH, y)],
+            fill=(0, 0, 0, alpha)
+        )
 
     return Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")
 
@@ -412,79 +469,141 @@ def draw_rounded_panel(draw, xy, radius, fill, outline=None, width=1):
 
 
 def create_news_frame(news, image_path, progress=0.0):
-    base = Image.open(image_path).convert("RGB")
+    original = Image.open(image_path).convert("RGB")
 
-    # Slow zoom animation.
-    zoom = 1.0 + progress * 0.04
+    # Slow professional zoom animation
+    zoom = 1.0 + progress * 0.035
 
-    crop_w = int(base.width / zoom)
-    crop_h = int(base.height / zoom)
+    crop_w = int(original.width / zoom)
+    crop_h = int(original.height / zoom)
 
-    left = max(0, (base.width - crop_w) // 2)
-    top = max(0, (base.height - crop_h) // 2)
+    left = max(0, (original.width - crop_w) // 2)
+    top = max(0, (original.height - crop_h) // 2)
 
-    base = base.crop((left, top, left + crop_w, top + crop_h))
-    base = cover_resize(base, VIDEO_SIZE)
-    base = add_dark_gradient(base)
+    original = original.crop((left, top, left + crop_w, top + crop_h))
 
-    img = base.convert("RGBA")
+    # Blurred full background
+    bg = cover_resize(original, VIDEO_SIZE)
+    bg = bg.filter(ImageFilter.GaussianBlur(radius=18))
+    bg = add_dark_gradient(bg)
+
+    img = bg.convert("RGBA")
     draw = ImageDraw.Draw(img)
 
-    # Top masthead.
-    draw.rectangle((0, 0, VIDEO_WIDTH, 180), fill=(3, 8, 20, 238))
+    # Top masthead
+    draw.rectangle(
+        (0, 0, VIDEO_WIDTH, 175),
+        fill=(3, 8, 20, 245)
+    )
 
     mast_font = get_font(58, True)
-    draw.text((50, 46), PAGE_NAME, font=mast_font, fill="white")
+    draw.text(
+        (50, 45),
+        PAGE_NAME,
+        font=mast_font,
+        fill="white"
+    )
 
     date_font = get_font(26, False)
     date_text = datetime.now().strftime("%Y-%m-%d")
-    draw.text((820, 78), date_text, font=date_font, fill=(210, 220, 235))
+    draw.text(
+        (820, 78),
+        date_text,
+        font=date_font,
+        fill=(210, 220, 235)
+    )
 
-    # Breaking news red label.
+    # Breaking news red bar
     draw_rounded_panel(
         draw,
-        (50, 215, 1030, 325),
+        (50, 205, 1030, 315),
         28,
-        fill=(190, 18, 32, 238),
+        fill=(190, 18, 32, 245),
     )
 
     breaking_font = get_font(45, True)
-    draw.text((92, 244), "BREAKING NEWS UPDATE", font=breaking_font, fill="white")
+    draw.text(
+        (92, 234),
+        "BREAKING NEWS UPDATE",
+        font=breaking_font,
+        fill="white"
+    )
 
-    # Small red live dot.
-    draw.ellipse((930, 252, 960, 282), fill=(255, 255, 255))
-    draw.text((970, 245), "LIVE", font=get_font(34, True), fill="white")
+    draw.ellipse(
+        (915, 243, 945, 273),
+        fill="white"
+    )
 
-    # Bottom text panel.
-    panel_top = 1115
+    draw.text(
+        (958, 235),
+        "LIVE",
+        font=get_font(34, True),
+        fill="white"
+    )
+
+    # Sharp main photo card
+    photo_x1 = 50
+    photo_y1 = 360
+    photo_x2 = 1030
+    photo_y2 = 1085
+
+    photo_w = photo_x2 - photo_x1
+    photo_h = photo_y2 - photo_y1
+
+    photo = cover_resize(original, (photo_w, photo_h))
+    photo = photo.filter(ImageFilter.SHARPEN)
+
+    mask = Image.new("L", (photo_w, photo_h), 0)
+    mask_draw = ImageDraw.Draw(mask)
+
+    mask_draw.rounded_rectangle(
+        (0, 0, photo_w, photo_h),
+        radius=38,
+        fill=255,
+    )
+
+    img.paste(
+        photo.convert("RGBA"),
+        (photo_x1, photo_y1),
+        mask
+    )
+
+    draw.rounded_rectangle(
+        (photo_x1, photo_y1, photo_x2, photo_y2),
+        radius=38,
+        outline=(255, 255, 255, 85),
+        width=3,
+    )
+
+    # Bottom text panel
+    panel_top = 1125
     panel_bottom = 1870
 
     draw_rounded_panel(
         draw,
         (40, panel_top, 1040, panel_bottom),
         38,
-        fill=(5, 12, 28, 224),
-        outline=(255, 255, 255, 55),
+        fill=(5, 12, 28, 232),
+        outline=(255, 255, 255, 60),
         width=2,
     )
 
-    # Red accent.
     draw.rounded_rectangle(
-        (75, panel_top + 45, 225, panel_top + 60),
+        (75, panel_top + 45, 235, panel_top + 60),
         radius=8,
         fill=(235, 30, 45),
     )
 
-    title = shorten(news["title"], 150)
-    summary = shorten(news["summary"], 380)
+    title = shorten(news["title"], 145)
+    summary = shorten(news["summary"], 360)
 
-    # Headline auto-fit.
+    # Headline auto-fit
     title_font, title_lines, title_lh = fit_text_to_box(
         draw=draw,
         text=title,
         max_width=900,
         max_height=285,
-        start_size=60,
+        start_size=58,
         min_size=36,
         bold=True,
     )
@@ -501,17 +620,17 @@ def create_news_frame(news, image_path, progress=0.0):
         fill="white",
     )
 
-    # Summary auto-fit.
-    summary_y = y + 42
+    # Summary auto-fit
+    summary_y = y + 38
 
     if summary:
         summary_font, summary_lines, summary_lh = fit_text_to_box(
             draw=draw,
             text=summary,
             max_width=900,
-            max_height=300,
-            start_size=38,
-            min_size=28,
+            max_height=310,
+            start_size=37,
+            min_size=27,
             bold=False,
         )
 
@@ -556,7 +675,6 @@ def create_video(news, image_path, audio_path, output_path):
             progress=progress,
         )
 
-        # Important: MoviePy needs NumPy array.
         return np.array(frame)
 
     video = VideoClip(make_frame, duration=duration)
