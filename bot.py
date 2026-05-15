@@ -1,36 +1,62 @@
 import os
 import re
 import json
+import time
+import math
+import random
 import hashlib
 import textwrap
-import random
+from io import BytesIO
 from datetime import datetime
 
+import requests
 import feedparser
 from bs4 import BeautifulSoup
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
 from gtts import gTTS
+
 from moviepy import (
     ImageClip,
     AudioFileClip,
-    TextClip,
     CompositeVideoClip,
+    VideoClip,
 )
 
-OUTPUT_DIR = "output"
-USED_FILE = "used.json"
+# =========================
+# BASIC SETTINGS
+# =========================
 
 PAGE_NAME = "WORLD PULSE DAILY"
-LANGUAGE = "en"  # Sinhala voice: try "si", English: "en"
 
-VIDEO_SIZE = (1080, 1920)
+OUTPUT_DIR = "output"
+ASSET_DIR = "assets"
+USED_FILE = "used.json"
+
+VIDEO_WIDTH = 1080
+VIDEO_HEIGHT = 1920
+VIDEO_SIZE = (VIDEO_WIDTH, VIDEO_HEIGHT)
+
+LANGUAGE = "en"  # English = en, Sinhala = si
+
+SHOW_SOURCE_TEXT = False  # keep False if you don't want source text on video
 
 FEEDS = [
     "https://www.bbc.com/news/world/rss.xml",
-    "https://feeds.skynews.com/feeds/rss/world.xml",
     "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+    "https://feeds.skynews.com/feeds/rss/world.xml",
+    "https://www.aljazeera.com/xml/rss/all.xml",
 ]
 
+USER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/120.0 Safari/537.36"
+)
+
+
+# =========================
+# TEXT CLEANING
+# =========================
 
 def clean_text(text):
     text = BeautifulSoup(text or "", "html.parser").get_text(" ")
@@ -38,47 +64,283 @@ def clean_text(text):
     return text
 
 
+def shorten(text, max_chars):
+    text = clean_text(text)
+    if len(text) <= max_chars:
+        return text
+    return text[:max_chars].rsplit(" ", 1)[0] + "..."
+
+
+# =========================
+# USED NEWS MEMORY
+# =========================
+
 def load_used():
     if os.path.exists(USED_FILE):
-        with open(USED_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
+        try:
+            with open(USED_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except:
+            return []
     return []
 
 
 def save_used(used):
     with open(USED_FILE, "w", encoding="utf-8") as f:
-        json.dump(used[-300:], f, indent=2)
+        json.dump(used[-500:], f, indent=2)
 
+
+# =========================
+# FONT SYSTEM
+# =========================
+
+def get_font(size, bold=False):
+    font_paths = []
+
+    if bold:
+        font_paths += [
+            "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+            "/usr/share/fonts/truetype/liberation2/LiberationSans-Bold.ttf",
+            "DejaVuSans-Bold.ttf",
+        ]
+    else:
+        font_paths += [
+            "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+            "/usr/share/fonts/truetype/liberation2/LiberationSans-Regular.ttf",
+            "DejaVuSans.ttf",
+        ]
+
+    for path in font_paths:
+        try:
+            return ImageFont.truetype(path, size)
+        except:
+            pass
+
+    return ImageFont.load_default()
+
+
+def text_size(draw, text, font):
+    box = draw.textbbox((0, 0), text, font=font)
+    return box[2] - box[0], box[3] - box[1]
+
+
+def wrap_text(draw, text, font, max_width):
+    words = text.split()
+    lines = []
+    current = ""
+
+    for word in words:
+        test = current + " " + word if current else word
+        w, _ = text_size(draw, test, font)
+
+        if w <= max_width:
+            current = test
+        else:
+            if current:
+                lines.append(current)
+            current = word
+
+    if current:
+        lines.append(current)
+
+    return lines
+
+
+def fit_text_to_box(draw, text, max_width, max_height, start_size, min_size, bold=False):
+    for size in range(start_size, min_size - 1, -2):
+        font = get_font(size, bold)
+        lines = wrap_text(draw, text, font, max_width)
+        line_height = int(size * 1.22)
+        total_height = len(lines) * line_height
+
+        if total_height <= max_height:
+            return font, lines, line_height
+
+    font = get_font(min_size, bold)
+    lines = wrap_text(draw, text, font, max_width)
+    line_height = int(min_size * 1.22)
+    return font, lines, line_height
+
+
+def draw_multiline(draw, lines, x, y, font, line_height, fill):
+    for line in lines:
+        draw.text((x, y), line, font=font, fill=fill)
+        y += line_height
+    return y
+
+
+# =========================
+# IMAGE DOWNLOAD / REAL NEWS IMAGE
+# =========================
+
+def get_image_from_feed_entry(entry):
+    # RSS media:content
+    media_content = entry.get("media_content", [])
+    if media_content:
+        for media in media_content:
+            url = media.get("url")
+            if url:
+                return url
+
+    # RSS media:thumbnail
+    media_thumbnail = entry.get("media_thumbnail", [])
+    if media_thumbnail:
+        for media in media_thumbnail:
+            url = media.get("url")
+            if url:
+                return url
+
+    # Enclosures
+    links = entry.get("links", [])
+    for link in links:
+        href = link.get("href", "")
+        type_ = link.get("type", "")
+        if "image" in type_ and href:
+            return href
+
+    return None
+
+
+def get_image_from_article_page(article_url):
+    try:
+        r = requests.get(
+            article_url,
+            headers={"User-Agent": USER_AGENT},
+            timeout=15,
+        )
+        if r.status_code != 200:
+            return None
+
+        soup = BeautifulSoup(r.text, "html.parser")
+
+        selectors = [
+            ("meta", {"property": "og:image"}),
+            ("meta", {"name": "twitter:image"}),
+            ("meta", {"property": "twitter:image"}),
+        ]
+
+        for tag_name, attrs in selectors:
+            tag = soup.find(tag_name, attrs=attrs)
+            if tag and tag.get("content"):
+                return tag.get("content")
+
+    except Exception as e:
+        print("Article image fetch error:", e)
+
+    return None
+
+
+def download_image(url, output_path):
+    if not url:
+        return False
+
+    try:
+        r = requests.get(
+            url,
+            headers={"User-Agent": USER_AGENT},
+            timeout=20,
+        )
+
+        if r.status_code != 200:
+            return False
+
+        img = Image.open(BytesIO(r.content)).convert("RGB")
+
+        if img.width < 300 or img.height < 200:
+            return False
+
+        img.save(output_path)
+        return True
+
+    except Exception as e:
+        print("Image download failed:", e)
+        return False
+
+
+def cover_resize(img, size):
+    target_w, target_h = size
+    img_w, img_h = img.size
+
+    scale = max(target_w / img_w, target_h / img_h)
+    new_w = int(img_w * scale)
+    new_h = int(img_h * scale)
+
+    img = img.resize((new_w, new_h), Image.LANCZOS)
+
+    left = (new_w - target_w) // 2
+    top = (new_h - target_h) // 2
+
+    return img.crop((left, top, left + target_w, top + target_h))
+
+
+def create_fallback_news_image(path):
+    img = Image.new("RGB", (VIDEO_WIDTH, VIDEO_HEIGHT), (8, 16, 35))
+    draw = ImageDraw.Draw(img)
+
+    for y in range(VIDEO_HEIGHT):
+        ratio = y / VIDEO_HEIGHT
+        r = int(8 * (1 - ratio) + 12 * ratio)
+        g = int(16 * (1 - ratio) + 55 * ratio)
+        b = int(35 * (1 - ratio) + 95 * ratio)
+        draw.line([(0, y), (VIDEO_WIDTH, y)], fill=(r, g, b))
+
+    font_big = get_font(86, True)
+    font_small = get_font(42, False)
+
+    draw.text((80, 760), "WORLD", font=font_big, fill="white")
+    draw.text((80, 860), "NEWS", font=font_big, fill=(255, 60, 60))
+    draw.text((80, 990), "UPDATE", font=font_small, fill="white")
+
+    img.save(path)
+
+
+# =========================
+# NEWS COLLECTION
+# =========================
 
 def get_news():
     used = load_used()
-    all_items = []
+    news_items = []
 
     for feed_url in FEEDS:
-        feed = feedparser.parse(feed_url)
+        try:
+            feed = feedparser.parse(feed_url)
 
-        for item in feed.entries:
-            title = clean_text(item.get("title", ""))
-            summary = clean_text(item.get("summary", ""))
-            link = item.get("link", "")
+            for entry in feed.entries:
+                title = clean_text(entry.get("title", ""))
+                summary = clean_text(entry.get("summary", ""))
+                link = entry.get("link", "")
 
-            if not title or not link:
-                continue
+                if not title or not link:
+                    continue
 
-            news_id = hashlib.md5(link.encode()).hexdigest()
+                news_id = hashlib.md5(link.encode("utf-8")).hexdigest()
 
-            if news_id not in used:
-                all_items.append({
+                if news_id in used:
+                    continue
+
+                image_url = get_image_from_feed_entry(entry)
+
+                news_items.append({
                     "id": news_id,
                     "title": title,
                     "summary": summary,
-                    "link": link
+                    "link": link,
+                    "image_url": image_url,
+                    "source": feed.feed.get("title", "News Source"),
                 })
 
-    if not all_items:
+        except Exception as e:
+            print("Feed error:", feed_url, e)
+
+    if not news_items:
         return None
 
-    news = random.choice(all_items)
+    # pick first fresh item, not random, so latest news is more likely
+    news = news_items[0]
+
+    if not news["image_url"]:
+        news["image_url"] = get_image_from_article_page(news["link"])
 
     used.append(news["id"])
     save_used(used)
@@ -86,77 +348,22 @@ def get_news():
     return news
 
 
+# =========================
+# SCRIPT / VOICE
+# =========================
+
 def make_script(news):
-    title = news["title"]
-    summary = news["summary"]
+    title = shorten(news["title"], 180)
+    summary = shorten(news["summary"], 420)
 
-    if not summary:
-        summary = title
+    if summary:
+        script = f"{title}. {summary}."
+    else:
+        script = f"{title}."
 
-    return (
-        f"{title}. "
-        f"{summary}. "
-        f"Stay tuned for more updates."
-    )
+    script += " Follow for more world news updates."
 
-
-def get_font(size, bold=False):
-    possible_fonts = [
-        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
-        "DejaVuSans-Bold.ttf" if bold else "DejaVuSans.ttf",
-    ]
-
-    for font in possible_fonts:
-        try:
-            return ImageFont.truetype(font, size)
-        except:
-            pass
-
-    return ImageFont.load_default()
-
-
-def create_background(news, path):
-    img = Image.new("RGB", VIDEO_SIZE, (10, 18, 35))
-    draw = ImageDraw.Draw(img)
-
-    title_font = get_font(58, bold=True)
-    small_font = get_font(32, bold=False)
-
-    colors = [
-        ((15, 32, 70), (30, 90, 160)),
-        ((30, 20, 65), (95, 40, 150)),
-        ((15, 50, 55), (20, 120, 130)),
-        ((55, 20, 35), (150, 35, 70)),
-    ]
-
-    top_color, bottom_color = random.choice(colors)
-
-    for y in range(VIDEO_SIZE[1]):
-        ratio = y / VIDEO_SIZE[1]
-        r = int(top_color[0] * (1 - ratio) + bottom_color[0] * ratio)
-        g = int(top_color[1] * (1 - ratio) + bottom_color[1] * ratio)
-        b = int(top_color[2] * (1 - ratio) + bottom_color[2] * ratio)
-        draw.line([(0, y), (VIDEO_SIZE[0], y)], fill=(r, g, b))
-
-    draw.rectangle([0, 0, 1080, 230], fill=(0, 0, 0, 90))
-    draw.text((60, 75), PAGE_NAME, fill="white", font=title_font)
-
-    draw.rounded_rectangle(
-        [60, 290, 1020, 460],
-        radius=35,
-        fill=(255, 255, 255)
-    )
-
-    draw.text((95, 340), "BREAKING NEWS UPDATE", fill=(20, 30, 60), font=title_font)
-
-    draw.text(
-        (60, 1810),
-        datetime.now().strftime("%Y-%m-%d"),
-        fill=(230, 230, 230),
-        font=small_font
-    )
-
-    img.save(path)
+    return script
 
 
 def create_voice(script, path):
@@ -164,95 +371,207 @@ def create_voice(script, path):
     tts.save(path)
 
 
-def create_video(image_path, audio_path, output_path, news):
+# =========================
+# PROFESSIONAL NEWS FRAME
+# =========================
+
+def add_dark_gradient(img):
+    overlay = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    draw = ImageDraw.Draw(overlay)
+
+    for y in range(VIDEO_HEIGHT):
+        if y < 620:
+            alpha = int(80 + 80 * (1 - y / 620))
+        elif y > 1180:
+            alpha = int(60 + 150 * ((y - 1180) / 740))
+        else:
+            alpha = 35
+
+        alpha = max(0, min(210, alpha))
+        draw.line([(0, y), (VIDEO_WIDTH, y)], fill=(0, 0, 0, alpha))
+
+    return Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")
+
+
+def draw_rounded_panel(draw, xy, radius, fill, outline=None, width=1):
+    draw.rounded_rectangle(xy, radius=radius, fill=fill, outline=outline, width=width)
+
+
+def create_news_frame(news, image_path, output_path, progress=0.0):
+    base = Image.open(image_path).convert("RGB")
+
+    # slight animated crop/zoom support
+    zoom = 1.0 + progress * 0.035
+    crop_w = int(base.width / zoom)
+    crop_h = int(base.height / zoom)
+    left = max(0, (base.width - crop_w) // 2)
+    top = max(0, (base.height - crop_h) // 2)
+    base = base.crop((left, top, left + crop_w, top + crop_h))
+
+    base = cover_resize(base, VIDEO_SIZE)
+    base = add_dark_gradient(base)
+
+    img = base.convert("RGBA")
+    draw = ImageDraw.Draw(img)
+
+    # top masthead
+    draw.rectangle((0, 0, VIDEO_WIDTH, 180), fill=(3, 8, 20, 235))
+
+    mast_font = get_font(56, True)
+    draw.text((50, 48), PAGE_NAME, font=mast_font, fill="white")
+
+    # red LIVE-style bar
+    draw_rounded_panel(
+        draw,
+        (50, 210, 1030, 310),
+        26,
+        fill=(190, 18, 32, 235)
+    )
+
+    breaking_font = get_font(44, True)
+    draw.text((92, 237), "BREAKING NEWS UPDATE", font=breaking_font, fill="white")
+
+    # bottom text panel
+    panel_top = 1135
+    draw_rounded_panel(
+        draw,
+        (40, panel_top, 1040, 1865),
+        36,
+        fill=(5, 12, 28, 218),
+        outline=(255, 255, 255, 55),
+        width=2
+    )
+
+    # red accent line
+    draw.rounded_rectangle((75, panel_top + 45, 210, panel_top + 58), radius=7, fill=(230, 30, 45))
+
+    title = shorten(news["title"], 150)
+    summary = shorten(news["summary"], 360)
+
+    title_box_w = 900
+    title_box_h = 260
+    title_font, title_lines, title_lh = fit_text_to_box(
+        draw,
+        title,
+        title_box_w,
+        title_box_h,
+        start_size=58,
+        min_size=38,
+        bold=True
+    )
+
+    y = panel_top + 85
+    y = draw_multiline(
+        draw,
+        title_lines,
+        75,
+        y,
+        title_font,
+        title_lh,
+        fill="white"
+    )
+
+    # summary
+    summary_y = y + 38
+    summary_box_h = 260
+
+    if summary:
+        summary_font, summary_lines, summary_lh = fit_text_to_box(
+            draw,
+            summary,
+            900,
+            summary_box_h,
+            start_size=37,
+            min_size=28,
+            bold=False
+        )
+
+        draw_multiline(
+            draw,
+            summary_lines[:7],
+            75,
+            summary_y,
+            summary_font,
+            summary_lh,
+            fill=(230, 235, 245)
+        )
+
+    # optional source, off by default
+    if SHOW_SOURCE_TEXT:
+        source_font = get_font(25, False)
+        source = shorten(news.get("source", ""), 60)
+        draw.text((75, 1810), f"Source: {source}", font=source_font, fill=(200, 205, 215))
+
+    img.convert("RGB").save(output_path)
+
+
+# =========================
+# VIDEO CREATION
+# =========================
+
+def create_video(news, image_path, audio_path, output_path):
     audio = AudioFileClip(audio_path)
     duration = audio.duration
 
-    bg = ImageClip(image_path).with_duration(duration)
+    def make_frame(t):
+        progress = min(1.0, t / max(duration, 1))
 
-    title = news["title"]
-    summary = news["summary"] or ""
+        temp_path = os.path.join(ASSET_DIR, "temp_frame.jpg")
+        create_news_frame(news, image_path, temp_path, progress)
 
-    video_text = f"{title}\n\n{summary}"
-    video_text = video_text[:700]
+        frame = Image.open(temp_path).convert("RGB")
+        return frame
 
-    title_clip = (
-        TextClip(
-            text=title,
-            font_size=62,
-            color="white",
-            size=(960, None),
-            method="caption",
-        )
-        .with_duration(duration)
-        .with_position(("center", 560))
-    )
+    video = VideoClip(make_frame, duration=duration)
+    video = video.with_audio(audio)
 
-    moving_clip = (
-        TextClip(
-            text=video_text,
-            font_size=46,
-            color="white",
-            size=(900, None),
-            method="caption",
-        )
-        .with_duration(duration)
-        .with_position(lambda t: ("center", int(1500 - t * 55)))
-    )
-
-    source_clip = (
-        TextClip(
-            text="Source: Public news feed",
-            font_size=30,
-            color="white",
-            size=(900, None),
-            method="caption",
-        )
-        .with_duration(duration)
-        .with_position(("center", 1740))
-    )
-
-    final = CompositeVideoClip(
-        [bg, title_clip, moving_clip, source_clip],
-        size=VIDEO_SIZE
-    )
-
-    final = final.with_audio(audio)
-
-    final.write_videofile(
+    video.write_videofile(
         output_path,
-        fps=30,
+        fps=24,
         codec="libx264",
         audio_codec="aac",
-        preset="medium"
+        preset="medium",
+        threads=2
     )
 
     audio.close()
-    final.close()
+    video.close()
 
+
+# =========================
+# MAIN
+# =========================
 
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
+    os.makedirs(ASSET_DIR, exist_ok=True)
 
     news = get_news()
 
     if not news:
-        print("No new news found.")
+        print("No fresh news found.")
         return
 
-    script = make_script(news)
+    print("Selected news:", news["title"])
+    print("Link:", news["link"])
+    print("Image:", news["image_url"])
 
-    image_path = os.path.join(OUTPUT_DIR, "background.jpg")
-    audio_path = os.path.join(OUTPUT_DIR, "voice.mp3")
+    raw_image_path = os.path.join(ASSET_DIR, "news_image.jpg")
+    voice_path = os.path.join(ASSET_DIR, "voice.mp3")
     video_path = os.path.join(OUTPUT_DIR, "auto_video.mp4")
 
-    create_background(news, image_path)
-    create_voice(script, audio_path)
-    create_video(image_path, audio_path, video_path, news)
+    image_ok = download_image(news["image_url"], raw_image_path)
 
-    print("DONE:", video_path)
-    print("NEWS:", news["title"])
-    print("LINK:", news["link"])
+    if not image_ok:
+        print("No real image found. Using fallback background.")
+        create_fallback_news_image(raw_image_path)
+
+    script = make_script(news)
+    create_voice(script, voice_path)
+
+    create_video(news, raw_image_path, voice_path, video_path)
+
+    print("Video created:", video_path)
 
 
 if __name__ == "__main__":
