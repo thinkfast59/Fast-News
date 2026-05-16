@@ -2,6 +2,7 @@ import os
 import re
 import json
 import time
+import random
 import hashlib
 from io import BytesIO
 from datetime import datetime, timezone
@@ -19,6 +20,12 @@ try:
 except Exception:
     from moviepy.editor import VideoClip, AudioFileClip
 
+# =========================================================
+# WORLD PULSE DAILY - RANDOM US NEWS VIDEO BOT
+# Runs once by default. Use GitHub Actions cron for offline scheduling.
+# For VPS/local always-on mode: set RUN_FOREVER=1.
+# =========================================================
+
 # =========================
 # SETTINGS
 # =========================
@@ -32,11 +39,22 @@ LATEST_FILE = os.path.join(OUTPUT_DIR, "latest_news.json")
 VIDEO_WIDTH = 1080
 VIDEO_HEIGHT = 1920
 VIDEO_SIZE = (VIDEO_WIDTH, VIDEO_HEIGHT)
+
 LANGUAGE = os.getenv("LANGUAGE", "en")
-MAX_SCRIPT_CHARS = int(os.getenv("MAX_SCRIPT_CHARS", "900"))
+MAX_SCRIPT_CHARS = int(os.getenv("MAX_SCRIPT_CHARS", "950"))
 MIN_IMAGE_SIZE = int(os.getenv("MIN_IMAGE_SIZE", "240"))
 
-# 1 = hide/blur likely logo corners inside the news image. This helps avoid showing other brand logos/watermarks.
+# Scheduler options
+RUN_FOREVER = os.getenv("RUN_FOREVER", "0") == "1"
+SCHEDULE_EVERY_MINUTES = int(os.getenv("SCHEDULE_EVERY_MINUTES", "180"))
+
+# News selection options
+# 0.75 means about 75% of selections prefer US feeds, 25% can be world/tech/business.
+US_NEWS_RATIO = float(os.getenv("US_NEWS_RATIO", "0.75"))
+MAX_ENTRIES_PER_FEED = int(os.getenv("MAX_ENTRIES_PER_FEED", "15"))
+MAX_NEWS_AGE_HOURS = int(os.getenv("MAX_NEWS_AGE_HOURS", "72"))
+
+# 1 = hide/blur likely logo corners inside the news image.
 HIDE_IMAGE_CORNER_LOGOS = os.getenv("HIDE_IMAGE_CORNER_LOGOS", "1") == "1"
 SHOW_SOURCE_TEXT = os.getenv("SHOW_SOURCE_TEXT", "0") == "1"
 POST_TO_FACEBOOK = os.getenv("POST_TO_FACEBOOK", "1") == "1"
@@ -48,11 +66,36 @@ FB_GRAPH_VERSION = os.getenv("FB_GRAPH_VERSION", "v25.0")
 USER_AGENT = os.getenv(
     "USER_AGENT",
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-    "(KHTML, like Gecko) Chrome/120.0 Safari/537.36 WorldPulseDailyBot/1.0",
+    "(KHTML, like Gecko) Chrome/120.0 Safari/537.36 WorldPulseDailyBot/2.0",
 )
 
-FEEDS = [
-    
+# Mostly US news feeds
+US_FEEDS = [
+    "https://feeds.npr.org/1003/rss.xml",  # NPR News
+    "https://feeds.npr.org/1001/rss.xml",  # NPR Top Stories
+    "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+    "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
+    "https://feeds.washingtonpost.com/rss/national",
+    "https://feeds.washingtonpost.com/rss/politics",
+    "https://www.cbsnews.com/latest/rss/us",
+    "https://www.cbsnews.com/latest/rss/politics",
+    "https://www.cbsnews.com/latest/rss/world",
+    "https://abcnews.go.com/abcnews/usheadlines",
+    "https://abcnews.go.com/abcnews/politicsheadlines",
+    "https://abcnews.go.com/abcnews/topstories",
+    "https://feeds.nbcnews.com/nbcnews/public/news",
+    "https://feeds.nbcnews.com/nbcnews/public/politics",
+    "https://feeds.nbcnews.com/nbcnews/public/us-news",
+    "https://www.latimes.com/world-nation/rss2.0.xml",
+    "https://www.latimes.com/california/rss2.0.xml",
+    "https://www.usatoday.com/rss/news/",
+    "https://www.usatoday.com/rss/news/nation/",
+    "https://www.usnews.com/rss/news",
+    "https://www.usnews.com/rss/news/national-news",
+]
+
+# Backup mixed/world feeds
+WORLD_FEEDS = [
     "https://feeds.skynews.com/feeds/rss/world.xml",
     "https://www.aljazeera.com/xml/rss/all.xml",
     "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
@@ -61,19 +104,14 @@ FEEDS = [
     "https://www.dw.com/en/top-stories/s-9097?maca=en-rss-en-all-1573-rdf",
     "https://www.theguardian.com/world/rss",
     "https://www.cbc.ca/cmlink/rss-world",
-    "https://www.thehindu.com/news/international/feeder/default.rss",
-    "https://timesofindia.indiatimes.com/rssfeeds/296589292.cms",
-    "https://www.hindustantimes.com/feeds/rss/world-news/rssfeed.xml",
-    "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
     "https://www.bbc.com/news/world/rss.xml",
-    "https://www.scmp.com/rss/91/feed",
-    "https://www.middleeasteye.net/rss",
-    "https://www.arabnews.com/rss.xml",
     "https://feeds.bbci.co.uk/news/business/rss.xml",
     "https://feeds.bbci.co.uk/news/technology/rss.xml",
     "https://www.theguardian.com/technology/rss",
     "https://www.theguardian.com/science/rss",
 ]
+
+FEEDS = US_FEEDS + WORLD_FEEDS
 
 # =========================
 # TEXT CLEANING
@@ -81,7 +119,6 @@ FEEDS = [
 def clean_text(text: str) -> str:
     text = BeautifulSoup(text or "", "html.parser").get_text(" ")
     text = re.sub(r"\s+", " ", text).strip()
-    # Remove common RSS junk.
     text = re.sub(r"\bRead more\b.*$", "", text, flags=re.I).strip()
     return text
 
@@ -116,7 +153,7 @@ def load_used() -> list:
 def save_used(used: list) -> None:
     os.makedirs(STATE_DIR, exist_ok=True)
     with open(USED_FILE, "w", encoding="utf-8") as f:
-        json.dump(used[-1500:], f, indent=2, ensure_ascii=False)
+        json.dump(used[-2500:], f, indent=2, ensure_ascii=False)
 
 # =========================
 # FONT SYSTEM
@@ -196,11 +233,20 @@ def get_image_from_feed_entry(entry):
             url = media.get("url")
             if url:
                 return upgrade_image_url(url)
+
     for link in entry.get("links", []) or []:
         href = link.get("href", "")
         media_type = link.get("type", "")
         if href and "image" in media_type:
             return upgrade_image_url(href)
+
+    enclosure = entry.get("enclosures", [])
+    for item in enclosure:
+        href = item.get("href", "")
+        media_type = item.get("type", "")
+        if href and "image" in media_type:
+            return upgrade_image_url(href)
+
     return None
 
 
@@ -267,7 +313,6 @@ def blur_corner_logos(img):
         return img
     img = img.convert("RGB")
     w, h = img.size
-    # Blur four corner areas where source logos/watermarks usually appear.
     boxes = [
         (0, 0, int(w * 0.24), int(h * 0.15)),
         (int(w * 0.76), 0, w, int(h * 0.15)),
@@ -288,8 +333,8 @@ def create_fallback_news_image(path):
         fill = (int(8 + 4 * ratio), int(16 + 39 * ratio), int(35 + 60 * ratio))
         draw.line([(0, y), (VIDEO_WIDTH, y)], fill=fill)
     draw.text((80, 760), "WORLD", font=get_font(90, True), fill="white")
-    draw.text((80, 870), "NEWS", font=get_font(90, True), fill=(255, 60, 60))
-    draw.text((80, 1010), "UPDATE", font=get_font(44), fill="white")
+    draw.text((80, 870), "PULSE", font=get_font(90, True), fill=(255, 60, 60))
+    draw.text((80, 1010), "DAILY UPDATE", font=get_font(44), fill="white")
     img.save(path, quality=95)
 
 # =========================
@@ -305,23 +350,45 @@ def parse_entry_time(entry):
     return datetime.now(timezone.utc)
 
 
-def get_news():
+def is_recent(published_at_iso: str) -> bool:
+    try:
+        published_at = datetime.fromisoformat(published_at_iso.replace("Z", "+00:00"))
+        age_seconds = (datetime.now(timezone.utc) - published_at).total_seconds()
+        return age_seconds <= MAX_NEWS_AGE_HOURS * 3600
+    except Exception:
+        return True
+
+
+def collect_candidates(feed_urls, feed_group):
     used = set(load_used())
     candidates = []
-    for feed_url in FEEDS:
+    shuffled_feeds = list(feed_urls)
+    random.shuffle(shuffled_feeds)
+
+    for feed_url in shuffled_feeds:
         try:
             print("Checking feed:", feed_url)
             feed = feedparser.parse(feed_url)
             source_name = clean_text(feed.feed.get("title", "News Source"))
-            for entry in feed.entries[:12]:
+            entries = list(feed.entries[:MAX_ENTRIES_PER_FEED])
+            random.shuffle(entries)
+
+            for entry in entries:
                 title = clean_text(entry.get("title", ""))
                 summary = clean_text(entry.get("summary", "") or entry.get("description", ""))
                 link = entry.get("link", "")
+
                 if not title or not link:
                     continue
+
                 news_id = hashlib.sha256(link.encode("utf-8")).hexdigest()
                 if news_id in used:
                     continue
+
+                published_at = parse_entry_time(entry).isoformat()
+                if not is_recent(published_at):
+                    continue
+
                 candidates.append({
                     "id": news_id,
                     "title": title,
@@ -329,18 +396,46 @@ def get_news():
                     "link": link,
                     "image_url": get_image_from_feed_entry(entry),
                     "source": source_name,
+                    "feed_group": feed_group,
                     "feed_url": feed_url,
-                    "published_at": parse_entry_time(entry).isoformat(),
+                    "published_at": published_at,
                 })
         except Exception as e:
             print("Feed error:", feed_url, e)
 
+    return candidates
+
+
+def choose_random_news(candidates):
     if not candidates:
         return None
 
-    # Newest first, prefer items that have a usable image.
-    candidates.sort(key=lambda x: (bool(x.get("image_url")), x.get("published_at", "")), reverse=True)
-    news = candidates[0]
+    # Prefer candidates with images, but still random.
+    image_candidates = [c for c in candidates if c.get("image_url")]
+    pool = image_candidates if image_candidates and random.random() < 0.80 else candidates
+
+    # Latest 50 only to avoid old random stories.
+    pool.sort(key=lambda x: x.get("published_at", ""), reverse=True)
+    pool = pool[:50]
+    random.shuffle(pool)
+    return pool[0]
+
+
+def get_news():
+    prefer_us = random.random() < US_NEWS_RATIO
+    first_feeds = US_FEEDS if prefer_us else FEEDS
+    first_group = "US" if prefer_us else "MIXED"
+
+    candidates = collect_candidates(first_feeds, first_group)
+
+    # If US feeds are empty or already used, fallback to all feeds.
+    if not candidates and first_feeds != FEEDS:
+        print("No fresh US news found. Trying all feeds.")
+        candidates = collect_candidates(FEEDS, "MIXED")
+
+    news = choose_random_news(candidates)
+    if not news:
+        return None
 
     article_image = get_image_from_article_page(news["link"])
     if article_image:
@@ -349,6 +444,7 @@ def get_news():
         news["image_url"] = upgrade_image_url(news["image_url"])
 
     print("Selected source:", news["source"])
+    print("Selected group:", news.get("feed_group"))
     return news
 
 # =========================
@@ -357,12 +453,27 @@ def get_news():
 def make_script(news):
     title = shorten(news["title"], 180)
     summary = shorten(news.get("summary", ""), MAX_SCRIPT_CHARS)
+
+    openings = [
+        "Here is a quick news update.",
+        "This is the latest update.",
+        "Here is what is happening now.",
+        "Here is today’s important update.",
+        "This story is developing now.",
+    ]
+    closing = [
+        "Follow World Pulse Daily for more updates.",
+        "Stay with World Pulse Daily for more news.",
+        "For more updates, follow World Pulse Daily.",
+        "World Pulse Daily will keep you updated.",
+    ]
+
     if summary:
-        script = f"{title}. Here is what we know. {summary}."
+        script = f"{random.choice(openings)} {title}. {summary}. {random.choice(closing)}"
     else:
-        script = f"{title}. Here is the latest update."
-    script += " Follow World Pulse Daily for more updates."
-    return script
+        script = f"{random.choice(openings)} {title}. More details are still developing. {random.choice(closing)}"
+
+    return clean_text(script)
 
 
 def create_voice(script, path):
@@ -407,8 +518,9 @@ def create_news_frame(news, image_path, progress=0.0):
     draw.text((50, 45), PAGE_NAME, font=get_font(58, True), fill="white")
     draw.text((815, 78), datetime.now().strftime("%Y-%m-%d"), font=get_font(26), fill=(210, 220, 235))
 
+    labels = ["NEWS UPDATE", "US NEWS UPDATE", "LATEST UPDATE", "BREAKING UPDATE"]
     draw_rounded_panel(draw, (50, 205, 1030, 315), 28, fill=(190, 18, 32, 245))
-    draw.text((92, 234), "BREAKING NEWS UPDATE", font=get_font(45, True), fill="white")
+    draw.text((92, 234), random.choice(labels), font=get_font(45, True), fill="white")
     draw.ellipse((915, 243, 945, 273), fill="white")
     draw.text((958, 235), "LIVE", font=get_font(34, True), fill="white")
 
@@ -444,14 +556,29 @@ def create_news_frame(news, image_path, progress=0.0):
 # =========================
 def create_video(news, image_path, audio_path, output_path):
     audio = AudioFileClip(audio_path)
-    duration = min(max(audio.duration, 8), 90)
+    duration = min(max(float(audio.duration), 8), 90)
 
     def make_frame(t):
         progress = min(1.0, t / max(duration, 1))
         return np.array(create_news_frame(news, image_path, progress=progress))
 
-    video = VideoClip(make_frame, duration=duration).with_audio(audio)
-    video.write_videofile(output_path, fps=24, codec="libx264", audio_codec="aac", preset="medium", threads=2)
+    video = VideoClip(make_frame, duration=duration)
+
+    # MoviePy v2 uses with_audio; MoviePy v1 uses set_audio.
+    if hasattr(video, "with_audio"):
+        video = video.with_audio(audio)
+    else:
+        video = video.set_audio(audio)
+
+    video.write_videofile(
+        output_path,
+        fps=24,
+        codec="libx264",
+        audio_codec="aac",
+        preset="medium",
+        threads=2,
+    )
+
     audio.close()
     video.close()
 
@@ -460,8 +587,8 @@ def facebook_caption(news):
     title = shorten(news["title"], 220)
     caption = (
         f"{title}\n\n"
-        "Watch the latest world update from World Pulse Daily.\n\n"
-        "#WorldPulseDaily #WorldNews #BreakingNews #NewsUpdate"
+        "Watch the latest update from World Pulse Daily.\n\n"
+        "#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate"
     )
     return caption
 
@@ -479,19 +606,22 @@ def post_video_to_facebook(video_path, caption):
         files = {"source": f}
         data = {"description": caption, "access_token": FB_PAGE_ACCESS_TOKEN}
         r = requests.post(url, data=data, files=files, timeout=600)
+
     try:
         payload = r.json()
     except Exception:
         payload = {"raw": r.text}
+
     if not r.ok:
         raise RuntimeError(f"Facebook post failed: {payload}")
+
     print("Facebook post success:", payload)
     return payload
 
 # =========================
 # MAIN
 # =========================
-def main():
+def run_once():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     os.makedirs(ASSET_DIR, exist_ok=True)
     os.makedirs(STATE_DIR, exist_ok=True)
@@ -499,7 +629,7 @@ def main():
     news = get_news()
     if not news:
         print("No fresh news found. Nothing to create or post.")
-        return
+        return False
 
     print("Selected news:", news["title"])
     print("Link:", news["link"])
@@ -530,10 +660,39 @@ def main():
     save_used(used)
 
     with open(LATEST_FILE, "w", encoding="utf-8") as f:
-        json.dump({"news": news, "video": video_path, "caption": caption, "facebook": fb_result}, f, indent=2, ensure_ascii=False)
+        json.dump(
+            {
+                "news": news,
+                "video": video_path,
+                "caption": caption,
+                "facebook": fb_result,
+                "created_at": datetime.now(timezone.utc).isoformat(),
+            },
+            f,
+            indent=2,
+            ensure_ascii=False,
+        )
 
     print("Video created:", video_path)
     print("Done.")
+    return True
+
+
+def main():
+    if not RUN_FOREVER:
+        run_once()
+        return
+
+    print(f"RUN_FOREVER=1 enabled. Running every {SCHEDULE_EVERY_MINUTES} minutes.")
+    while True:
+        try:
+            run_once()
+        except Exception as e:
+            print("Run failed:", repr(e))
+
+        sleep_seconds = max(5, SCHEDULE_EVERY_MINUTES * 60)
+        print(f"Sleeping {sleep_seconds} seconds...")
+        time.sleep(sleep_seconds)
 
 
 if __name__ == "__main__":
