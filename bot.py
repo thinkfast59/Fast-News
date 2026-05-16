@@ -52,7 +52,7 @@ USER_AGENT = os.getenv(
 )
 
 FEEDS = [
-    "https://www.bbc.com/news/world/rss.xml",
+    
     "https://feeds.skynews.com/feeds/rss/world.xml",
     "https://www.aljazeera.com/xml/rss/all.xml",
     "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
@@ -65,6 +65,7 @@ FEEDS = [
     "https://timesofindia.indiatimes.com/rssfeeds/296589292.cms",
     "https://www.hindustantimes.com/feeds/rss/world-news/rssfeed.xml",
     "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
+    "https://www.bbc.com/news/world/rss.xml",
     "https://www.scmp.com/rss/91/feed",
     "https://www.middleeasteye.net/rss",
     "https://www.arabnews.com/rss.xml",
