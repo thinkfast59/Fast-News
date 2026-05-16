@@ -3,5 +3,7 @@ feedparser
 beautifulsoup4
 pillow
 gTTS
-moviepy
 numpy
+moviepy
+imageio
+imageio-ffmpeg
