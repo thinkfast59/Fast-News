@@ -1,15 +1,16 @@
 {
   "news": {
-    "id": "3226a0db453b84f4b3e5f8f14c73c69d5ca7467c3918996b4e25b1ddb97ef7df",
-    "title": "Abortion Pill Lawsuit Leaves Trump in a Political Bind Ahead of the Midterms",
-    "summary": "Louisiana wants the Food and Drug Administration to curtail access to the medication. Doing so could cost Republicans at the polls.",
-    "link": "https://www.nytimes.com/2026/05/18/us/politics/abortion-pill-trump-politics.html",
-    "image_url": "https://static01.nyt.com/images/2026/05/18/multimedia/18dc-abortionpill-politics-jvfc/18dc-abortionpill-politics-jvfc-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-    "published_at": "2026-05-18T17:42:58+00:00"
+    "id": "dc409c14f1550f574eda894ff052d0a933ca3ac8147bb50855d83f2a94f88eb4",
+    "title": "Musk loses OpenAI court battle after jury finds he waited too long to sue",
+    "summary": "Jurors spent weeks hearing about Musk's claim that Altman had \"stolen a charity.\"",
+    "link": "https://www.bbc.com/news/articles/cewpyv79pw1o?at_medium=RSS&at_campaign=rss",
+    "image_url": "https://ichef.bbci.co.uk/news/1024/branded_news/c706/live/03fe60e0-52ef-11f1-89a3-d1f559421220.jpg",
+    "source": "BBC News",
+    "feed_url": "https://feeds.bbci.co.uk/news/business/rss.xml",
+    "published_at": "2026-05-18T20:59:57+00:00"
   },
-  "video": "output/20260518_182332_Abortion_Pill_Lawsuit_Leaves_Trump_in_a_Political_Bind_Ahead_of_the_Midterms.mp4",
-  "caption": "Abortion Pill Lawsuit Leaves Trump in a Political Bind Ahead of the Midterms\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
-  "facebook": null
+  "video": "output/20260518_220052_Musk_loses_OpenAI_court_battle_after_jury_finds_he_waited_too_long_to_sue.mp4",
+  "caption": "Musk loses OpenAI court battle after jury finds he waited too long to sue\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "facebook": null,
+  "telegram": null
 }
