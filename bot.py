@@ -91,7 +91,7 @@ US_FEEDS = [
 ]
 
 WORLD_FEEDS = [
-    "https://feeds.bbci.co.uk/news/world/rss.xml",
+    
     "https://feeds.skynews.com/feeds/rss/world.xml",
     "https://www.aljazeera.com/xml/rss/all.xml",
     "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
@@ -105,6 +105,7 @@ WORLD_FEEDS = [
     "https://feeds.bbci.co.uk/news/technology/rss.xml",
     "https://www.theguardian.com/technology/rss",
     "https://www.theguardian.com/science/rss",
+    "https://feeds.bbci.co.uk/news/world/rss.xml",
 ]
 
 
