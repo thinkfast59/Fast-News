@@ -49,14 +49,18 @@ RUN_EVERY_MINUTES = int(os.getenv("RUN_EVERY_MINUTES", "240"))
 HIDE_IMAGE_CORNER_LOGOS = os.getenv("HIDE_IMAGE_CORNER_LOGOS", "1") == "1"
 SHOW_SOURCE_TEXT = os.getenv("SHOW_SOURCE_TEXT", "0") == "1"
 
-POST_TO_FACEBOOK = os.getenv("POST_TO_FACEBOOK", "1") == "1"
+POST_TO_FACEBOOK = os.getenv("POST_TO_FACEBOOK", "0") == "1"
 FB_PAGE_ID = os.getenv("FB_PAGE_ID", "").strip()
 FB_PAGE_ACCESS_TOKEN = os.getenv("FB_PAGE_ACCESS_TOKEN", "").strip()
 FB_GRAPH_VERSION = os.getenv("FB_GRAPH_VERSION", "v25.0")
 
+POST_TO_TELEGRAM = os.getenv("POST_TO_TELEGRAM", "1") == "1"
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
+TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "").strip()
+
 USER_AGENT = os.getenv(
     "USER_AGENT",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) WorldPulseDailyBot/4.0",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) WorldPulseDailyBot/5.0",
 )
 
 
@@ -100,7 +104,7 @@ WORLD_FEEDS = [
 
 
 # =========================
-# TEXT HELPERS
+# HELPERS
 # =========================
 def clean_text(text: str) -> str:
     text = BeautifulSoup(text or "", "html.parser").get_text(" ")
@@ -122,9 +126,6 @@ def safe_filename(text: str) -> str:
     return text[:80] or "news"
 
 
-# =========================
-# MEMORY
-# =========================
 def load_used() -> list:
     if os.path.exists(USED_FILE):
         try:
@@ -143,9 +144,6 @@ def save_used(used: list) -> None:
         json.dump(used[-2000:], f, indent=2, ensure_ascii=False)
 
 
-# =========================
-# FONT SYSTEM
-# =========================
 def get_font(size: int, bold: bool = False):
     paths = [
         "/usr/share/fonts/truetype/noto/NotoSansSinhala-Bold.ttf" if bold else "/usr/share/fonts/truetype/noto/NotoSansSinhala-Regular.ttf",
@@ -191,9 +189,6 @@ def wrap_text(draw, text, font, max_width):
     return lines
 
 
-# =========================
-# IMAGE HELPERS
-# =========================
 def cover_resize(img, size):
     target_w, target_h = size
     img_w, img_h = img.size
@@ -272,7 +267,7 @@ def create_fallback_news_image(path):
 
 
 # =========================
-# NEWS IMAGE DOWNLOAD
+# IMAGE DOWNLOAD
 # =========================
 def upgrade_image_url(url):
     if not url:
@@ -379,7 +374,7 @@ def download_image(url, output_path):
 
 
 # =========================
-# NEWS COLLECTION
+# NEWS
 # =========================
 def parse_entry_time(entry):
     raw = entry.get("published") or entry.get("updated") or ""
@@ -449,8 +444,6 @@ def get_news():
             print("Feed error:", feed_url, e)
 
     if not candidates:
-        print("No unused news in selected group. Trying all feeds.")
-
         all_feeds = US_FEEDS + WORLD_FEEDS
         random.shuffle(all_feeds)
 
@@ -513,7 +506,7 @@ def get_news():
 
 
 # =========================
-# VOICE SCRIPT
+# VOICE
 # =========================
 def make_script(news):
     title = shorten(news["title"], 180)
@@ -560,7 +553,7 @@ def create_voice(script, path):
 
 
 # =========================
-# ANIMATION HELPERS
+# ANIMATION
 # =========================
 def smoothstep(x):
     x = max(0, min(1, x))
@@ -611,17 +604,10 @@ def get_spoken_words(script, t, duration, max_words=28):
     return words[start:end], current_index - start
 
 
-# =========================
-# VIDEO DESIGN
-# =========================
 def draw_animated_header(draw, t):
     pulse = (np.sin(t * 4.5) + 1) / 2
 
     draw.rectangle((0, 0, VIDEO_WIDTH, 175), fill=(2, 7, 18, 248))
-
-    for i in range(0, VIDEO_WIDTH, 80):
-        shade = int(18 + 10 * np.sin(t * 1.5 + i * 0.02))
-        draw.line((i, 0, i + 120, 175), fill=(shade, shade // 2, shade // 2, 45), width=3)
 
     x_shift = int(8 * np.sin(t * 1.8))
 
@@ -745,7 +731,6 @@ def draw_photo_panel(img, original, t):
         width=3,
     )
 
-    # Red news scan line, not a white box
     scan_y = int(photo_box[1] + 30 + ((t * 75) % (photo_h - 60)))
     draw.rounded_rectangle(
         (photo_box[0] + 25, scan_y, photo_box[2] - 25, scan_y + 4),
@@ -919,7 +904,7 @@ def create_news_frame(news, image_path, script, t, duration):
 
 
 # =========================
-# VIDEO CREATE
+# VIDEO
 # =========================
 def create_video(news, image_path, audio_path, output_path, script):
     audio = AudioFileClip(audio_path)
@@ -949,9 +934,9 @@ def create_video(news, image_path, audio_path, output_path, script):
 
 
 # =========================
-# FACEBOOK
+# CAPTIONS + POSTING
 # =========================
-def facebook_caption(news):
+def make_caption(news):
     title = shorten(news["title"], 220)
 
     hashtags = [
@@ -972,11 +957,11 @@ def facebook_caption(news):
 
 def post_video_to_facebook(video_path, caption):
     if not POST_TO_FACEBOOK:
-        print("Facebook posting disabled by POST_TO_FACEBOOK=0")
+        print("Facebook posting disabled.")
         return None
 
     if not FB_PAGE_ID or not FB_PAGE_ACCESS_TOKEN:
-        print("Facebook posting skipped: missing FB_PAGE_ID or FB_PAGE_ACCESS_TOKEN.")
+        print("Facebook skipped: missing FB_PAGE_ID or FB_PAGE_ACCESS_TOKEN.")
         return None
 
     url = f"https://graph.facebook.com/{FB_GRAPH_VERSION}/{FB_PAGE_ID}/videos"
@@ -999,6 +984,39 @@ def post_video_to_facebook(video_path, caption):
         raise RuntimeError(f"Facebook post failed: {payload}")
 
     print("Facebook post success:", payload)
+    return payload
+
+
+def post_video_to_telegram(video_path, caption):
+    if not POST_TO_TELEGRAM:
+        print("Telegram posting disabled.")
+        return None
+
+    if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
+        print("Telegram skipped: missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID.")
+        return None
+
+    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendVideo"
+
+    with open(video_path, "rb") as f:
+        files = {"video": f}
+        data = {
+            "chat_id": TELEGRAM_CHAT_ID,
+            "caption": caption[:1024],
+            "supports_streaming": "true",
+        }
+
+        r = requests.post(url, data=data, files=files, timeout=600)
+
+    try:
+        payload = r.json()
+    except Exception:
+        payload = {"raw": r.text}
+
+    if not r.ok or not payload.get("ok", False):
+        raise RuntimeError(f"Telegram post failed: {payload}")
+
+    print("Telegram post success.")
     return payload
 
 
@@ -1039,11 +1057,23 @@ def run_once():
     print("Creating voice...")
     create_voice(script, voice_path)
 
-    print("Creating animated real news video...")
+    print("Creating animated news video...")
     create_video(news, raw_image_path, voice_path, video_path, script)
 
-    caption = facebook_caption(news)
-    fb_result = post_video_to_facebook(video_path, caption)
+    caption = make_caption(news)
+
+    fb_result = None
+    tg_result = None
+
+    try:
+        fb_result = post_video_to_facebook(video_path, caption)
+    except Exception as e:
+        print("Facebook error:", e)
+
+    try:
+        tg_result = post_video_to_telegram(video_path, caption)
+    except Exception as e:
+        print("Telegram error:", e)
 
     used = load_used()
     used.append(news["id"])
@@ -1056,6 +1086,7 @@ def run_once():
                 "video": video_path,
                 "caption": caption,
                 "facebook": fb_result,
+                "telegram": tg_result,
             },
             f,
             indent=2,
