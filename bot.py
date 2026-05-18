@@ -21,9 +21,6 @@ except Exception:
     from moviepy.editor import VideoClip, AudioFileClip
 
 
-# =========================
-# SETTINGS
-# =========================
 PAGE_NAME = os.getenv("PAGE_NAME", "WORLD PULSE DAILY")
 
 OUTPUT_DIR = os.getenv("OUTPUT_DIR", "output")
@@ -41,21 +38,14 @@ LANGUAGE = os.getenv("LANGUAGE", "en")
 MAX_SCRIPT_CHARS = int(os.getenv("MAX_SCRIPT_CHARS", "900"))
 MIN_IMAGE_SIZE = int(os.getenv("MIN_IMAGE_SIZE", "240"))
 
-# Mostly US news. 0.85 = 85% chance US news, 15% world news.
-US_NEWS_RATIO = float(os.getenv("US_NEWS_RATIO", "0.85"))
+US_NEWS_RATIO = float(os.getenv("US_NEWS_RATIO", "0.65"))
 
-# If RUN_FOREVER=1, bot keeps running in a loop.
-# For GitHub Actions keep this as 0.
 RUN_FOREVER = os.getenv("RUN_FOREVER", "0") == "1"
 RUN_EVERY_MINUTES = int(os.getenv("RUN_EVERY_MINUTES", "240"))
 
-# Hide likely news logos/watermarks from image corners.
 HIDE_IMAGE_CORNER_LOGOS = os.getenv("HIDE_IMAGE_CORNER_LOGOS", "1") == "1"
-
-# Show original source name on video. Default off.
 SHOW_SOURCE_TEXT = os.getenv("SHOW_SOURCE_TEXT", "0") == "1"
 
-# Facebook posting.
 POST_TO_FACEBOOK = os.getenv("POST_TO_FACEBOOK", "1") == "1"
 FB_PAGE_ID = os.getenv("FB_PAGE_ID", "").strip()
 FB_PAGE_ACCESS_TOKEN = os.getenv("FB_PAGE_ACCESS_TOKEN", "").strip()
@@ -63,15 +53,10 @@ FB_GRAPH_VERSION = os.getenv("FB_GRAPH_VERSION", "v25.0")
 
 USER_AGENT = os.getenv(
     "USER_AGENT",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-    "AppleWebKit/537.36 (KHTML, like Gecko) "
-    "Chrome/120.0 Safari/537.36 WorldPulseDailyBot/2.0",
+    "Mozilla/5.0 Windows NT 10.0 Win64 x64 WorldPulseDailyBot/3.0",
 )
 
 
-# =========================
-# RSS FEEDS
-# =========================
 US_FEEDS = [
     "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
     "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
@@ -91,7 +76,6 @@ US_FEEDS = [
 ]
 
 WORLD_FEEDS = [
-    
     "https://feeds.skynews.com/feeds/rss/world.xml",
     "https://www.aljazeera.com/xml/rss/all.xml",
     "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
@@ -101,17 +85,14 @@ WORLD_FEEDS = [
     "https://www.theguardian.com/world/rss",
     "https://www.cbc.ca/cmlink/rss-world",
     "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
+    "https://feeds.bbci.co.uk/news/world/rss.xml",
     "https://feeds.bbci.co.uk/news/business/rss.xml",
     "https://feeds.bbci.co.uk/news/technology/rss.xml",
     "https://www.theguardian.com/technology/rss",
     "https://www.theguardian.com/science/rss",
-    "https://feeds.bbci.co.uk/news/world/rss.xml",
 ]
 
 
-# =========================
-# TEXT CLEANING
-# =========================
 def clean_text(text: str) -> str:
     text = BeautifulSoup(text or "", "html.parser").get_text(" ")
     text = re.sub(r"\s+", " ", text).strip()
@@ -132,9 +113,6 @@ def safe_filename(text: str) -> str:
     return text[:80] or "news"
 
 
-# =========================
-# USED NEWS MEMORY
-# =========================
 def load_used() -> list:
     if os.path.exists(USED_FILE):
         try:
@@ -142,8 +120,8 @@ def load_used() -> list:
                 data = json.load(f)
             if isinstance(data, list):
                 return data
-        except Exception as e:
-            print("Used-file read error:", e)
+        except Exception:
+            pass
     return []
 
 
@@ -153,20 +131,20 @@ def save_used(used: list) -> None:
         json.dump(used[-2000:], f, indent=2, ensure_ascii=False)
 
 
-# =========================
-# FONT SYSTEM
-# =========================
 def get_font(size: int, bold: bool = False):
     paths = [
         "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+        "/usr/share/fonts/truetype/noto/NotoSansSinhala-Bold.ttf" if bold else "/usr/share/fonts/truetype/noto/NotoSansSinhala-Regular.ttf",
         "/usr/share/fonts/truetype/liberation2/LiberationSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/liberation2/LiberationSans-Regular.ttf",
         "DejaVuSans-Bold.ttf" if bold else "DejaVuSans.ttf",
     ]
+
     for path in paths:
         try:
             return ImageFont.truetype(path, size)
         except Exception:
             pass
+
     return ImageFont.load_default()
 
 
@@ -177,43 +155,103 @@ def text_size(draw, text, font):
 
 def wrap_text(draw, text, font, max_width):
     words = text.split()
-    lines, current = [], ""
+    lines = []
+    current = ""
+
     for word in words:
         test = f"{current} {word}".strip()
         width, _ = text_size(draw, test, font)
+
         if width <= max_width:
             current = test
         else:
             if current:
                 lines.append(current)
             current = word
+
     if current:
         lines.append(current)
+
     return lines
 
 
-def fit_text_to_box(draw, text, max_width, max_height, start_size, min_size, bold=False):
-    for size in range(start_size, min_size - 1, -2):
-        font = get_font(size, bold)
-        lines = wrap_text(draw, text, font, max_width)
-        line_height = int(size * 1.22)
-        if len(lines) * line_height <= max_height:
-            return font, lines, line_height
+def cover_resize(img, size):
+    target_w, target_h = size
+    img_w, img_h = img.size
 
-    font = get_font(min_size, bold)
-    return font, wrap_text(draw, text, font, max_width), int(min_size * 1.22)
+    scale = max(target_w / img_w, target_h / img_h)
+    new_w = int(img_w * scale)
+    new_h = int(img_h * scale)
 
+    img = img.resize((new_w, new_h), Image.LANCZOS)
 
-def draw_multiline(draw, lines, x, y, font, line_height, fill):
-    for line in lines:
-        draw.text((x, y), line, font=font, fill=fill)
-        y += line_height
-    return y
+    left = (new_w - target_w) // 2
+    top = (new_h - target_h) // 2
+
+    return img.crop((left, top, left + target_w, top + target_h))
 
 
-# =========================
-# IMAGE SYSTEM
-# =========================
+def add_dark_gradient(img):
+    overlay = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    draw = ImageDraw.Draw(overlay)
+
+    for y in range(VIDEO_HEIGHT):
+        if y < 650:
+            alpha = int(150 - y * 0.11)
+        elif y > 1050:
+            alpha = int(60 + 170 * ((y - 1050) / 870))
+        else:
+            alpha = 38
+
+        draw.line(
+            [(0, y), (VIDEO_WIDTH, y)],
+            fill=(0, 0, 0, max(0, min(235, alpha))),
+        )
+
+    return Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")
+
+
+def blur_corner_logos(img):
+    if not HIDE_IMAGE_CORNER_LOGOS:
+        return img
+
+    img = img.convert("RGB")
+    w, h = img.size
+
+    boxes = [
+        (0, 0, int(w * 0.25), int(h * 0.15)),
+        (int(w * 0.75), 0, w, int(h * 0.15)),
+        (0, int(h * 0.85), int(w * 0.25), h),
+        (int(w * 0.75), int(h * 0.85), w, h),
+    ]
+
+    for box in boxes:
+        crop = img.crop(box).filter(ImageFilter.GaussianBlur(radius=20))
+        img.paste(crop, box)
+
+    return img
+
+
+def create_fallback_news_image(path):
+    img = Image.new("RGB", VIDEO_SIZE, (5, 12, 30))
+    draw = ImageDraw.Draw(img)
+
+    for y in range(VIDEO_HEIGHT):
+        ratio = y / VIDEO_HEIGHT
+        fill = (
+            int(6 + 25 * ratio),
+            int(14 + 30 * ratio),
+            int(40 + 80 * ratio),
+        )
+        draw.line([(0, y), (VIDEO_WIDTH, y)], fill=fill)
+
+    draw.text((80, 720), "WORLD", font=get_font(95, True), fill="white")
+    draw.text((80, 835), "NEWS", font=get_font(100, True), fill=(255, 45, 45))
+    draw.text((80, 980), "UPDATE", font=get_font(52, True), fill=(230, 235, 245))
+
+    img.save(path, quality=95)
+
+
 def upgrade_image_url(url):
     if not url:
         return None
@@ -248,6 +286,7 @@ def get_image_from_feed_entry(entry):
     for link in entry.get("links", []) or []:
         href = link.get("href", "")
         media_type = link.get("type", "")
+
         if href and "image" in media_type:
             return upgrade_image_url(href)
 
@@ -257,6 +296,7 @@ def get_image_from_feed_entry(entry):
 def get_image_from_article_page(article_url):
     try:
         r = requests.get(article_url, headers={"User-Agent": USER_AGENT}, timeout=15)
+
         if r.status_code != 200:
             return None
 
@@ -293,6 +333,7 @@ def download_image(url, output_path):
     for try_url in urls_to_try:
         try:
             print("Trying image:", try_url)
+
             r = requests.get(try_url, headers={"User-Agent": USER_AGENT}, timeout=20)
 
             if r.status_code != 200:
@@ -315,65 +356,6 @@ def download_image(url, output_path):
     return False
 
 
-def cover_resize(img, size):
-    target_w, target_h = size
-    img_w, img_h = img.size
-
-    scale = max(target_w / img_w, target_h / img_h)
-    new_w, new_h = int(img_w * scale), int(img_h * scale)
-
-    img = img.resize((new_w, new_h), Image.LANCZOS)
-
-    left = (new_w - target_w) // 2
-    top = (new_h - target_h) // 2
-
-    return img.crop((left, top, left + target_w, top + target_h))
-
-
-def blur_corner_logos(img):
-    if not HIDE_IMAGE_CORNER_LOGOS:
-        return img
-
-    img = img.convert("RGB")
-    w, h = img.size
-
-    boxes = [
-        (0, 0, int(w * 0.24), int(h * 0.15)),
-        (int(w * 0.76), 0, w, int(h * 0.15)),
-        (0, int(h * 0.85), int(w * 0.24), h),
-        (int(w * 0.76), int(h * 0.85), w, h),
-    ]
-
-    for box in boxes:
-        crop = img.crop(box).filter(ImageFilter.GaussianBlur(radius=18))
-        img.paste(crop, box)
-
-    return img
-
-
-def create_fallback_news_image(path):
-    img = Image.new("RGB", VIDEO_SIZE, (8, 16, 35))
-    draw = ImageDraw.Draw(img)
-
-    for y in range(VIDEO_HEIGHT):
-        ratio = y / VIDEO_HEIGHT
-        fill = (
-            int(8 + 4 * ratio),
-            int(16 + 39 * ratio),
-            int(35 + 60 * ratio),
-        )
-        draw.line([(0, y), (VIDEO_WIDTH, y)], fill=fill)
-
-    draw.text((80, 760), "WORLD", font=get_font(90, True), fill="white")
-    draw.text((80, 870), "NEWS", font=get_font(90, True), fill=(255, 60, 60))
-    draw.text((80, 1010), "UPDATE", font=get_font(44), fill="white")
-
-    img.save(path, quality=95)
-
-
-# =========================
-# NEWS COLLECTION
-# =========================
 def parse_entry_time(entry):
     raw = entry.get("published") or entry.get("updated") or ""
 
@@ -390,6 +372,7 @@ def pick_feed_group():
     if random.random() < US_NEWS_RATIO:
         print("Feed mode: US news")
         return US_FEEDS
+
     print("Feed mode: World news")
     return WORLD_FEEDS
 
@@ -407,10 +390,9 @@ def get_news():
         try:
             print("Checking feed:", feed_url)
             feed = feedparser.parse(feed_url)
-
             source_name = clean_text(feed.feed.get("title", "News Source"))
 
-            entries = list(feed.entries[:20])
+            entries = list(feed.entries[:25])
             random.shuffle(entries)
 
             for entry in entries:
@@ -426,19 +408,16 @@ def get_news():
                 if news_id in used:
                     continue
 
-                published_at = parse_entry_time(entry).isoformat()
-                image_url = get_image_from_feed_entry(entry)
-
                 candidates.append(
                     {
                         "id": news_id,
                         "title": title,
                         "summary": summary,
                         "link": link,
-                        "image_url": image_url,
+                        "image_url": get_image_from_feed_entry(entry),
                         "source": source_name,
                         "feed_url": feed_url,
-                        "published_at": published_at,
+                        "published_at": parse_entry_time(entry).isoformat(),
                     }
                 )
 
@@ -447,6 +426,7 @@ def get_news():
 
     if not candidates:
         print("No unused news in selected group. Trying all feeds.")
+
         all_feeds = US_FEEDS + WORLD_FEEDS
         random.shuffle(all_feeds)
 
@@ -455,7 +435,7 @@ def get_news():
                 feed = feedparser.parse(feed_url)
                 source_name = clean_text(feed.feed.get("title", "News Source"))
 
-                for entry in feed.entries[:20]:
+                for entry in feed.entries[:25]:
                     title = clean_text(entry.get("title", ""))
                     summary = clean_text(entry.get("summary", "") or entry.get("description", ""))
                     link = entry.get("link", "")
@@ -487,13 +467,12 @@ def get_news():
     if not candidates:
         return None
 
-    # Prefer recent news with image, but still random.
     candidates.sort(
         key=lambda x: (bool(x.get("image_url")), x.get("published_at", "")),
         reverse=True,
     )
 
-    top_pool = candidates[:15] if len(candidates) > 15 else candidates
+    top_pool = candidates[:20] if len(candidates) > 20 else candidates
     news = random.choice(top_pool)
 
     article_image = get_image_from_article_page(news["link"])
@@ -509,9 +488,6 @@ def get_news():
     return news
 
 
-# =========================
-# VOICE SCRIPT
-# =========================
 def make_script(news):
     title = shorten(news["title"], 180)
     summary = shorten(news.get("summary", ""), MAX_SCRIPT_CHARS)
@@ -556,37 +532,240 @@ def create_voice(script, path):
     tts.save(path)
 
 
-# =========================
-# VIDEO DESIGN
-# =========================
-def add_dark_gradient(img):
-    overlay = Image.new("RGBA", img.size, (0, 0, 0, 0))
-    draw = ImageDraw.Draw(overlay)
+def ease_out_back(x):
+    c1 = 1.70158
+    c3 = c1 + 1
+    return 1 + c3 * pow(x - 1, 3) + c1 * pow(x - 1, 2)
 
-    for y in range(VIDEO_HEIGHT):
-        if y < 620:
-            alpha = int(95 + 85 * (1 - y / 620))
-        elif y > 1080:
-            alpha = int(70 + 160 * ((y - 1080) / 840))
-        else:
-            alpha = 35
 
-        draw.line(
-            [(0, y), (VIDEO_WIDTH, y)],
-            fill=(0, 0, 0, max(0, min(230, alpha))),
-        )
-
-    return Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")
+def smoothstep(x):
+    x = max(0, min(1, x))
+    return x * x * (3 - 2 * x)
 
 
 def draw_rounded_panel(draw, xy, radius, fill, outline=None, width=1):
     draw.rounded_rectangle(xy, radius=radius, fill=fill, outline=outline, width=width)
 
 
-def create_news_frame(news, image_path, progress=0.0):
+def split_words(script):
+    return [w.strip() for w in script.split() if w.strip()]
+
+
+def get_spoken_words(script, t, duration, max_words=28):
+    words = split_words(script)
+
+    if not words:
+        return [], -1
+
+    progress = min(1.0, max(0.0, t / max(duration, 1)))
+    current_index = min(len(words) - 1, int(progress * len(words)))
+
+    start = max(0, current_index - 8)
+    end = min(len(words), start + max_words)
+
+    if end - start < max_words:
+        start = max(0, end - max_words)
+
+    return words[start:end], current_index - start
+
+
+def draw_glow_text(draw, pos, text, font, fill, glow_fill, glow_radius=2):
+    x, y = pos
+
+    for dx in range(-glow_radius, glow_radius + 1):
+        for dy in range(-glow_radius, glow_radius + 1):
+            if dx != 0 or dy != 0:
+                draw.text((x + dx, y + dy), text, font=font, fill=glow_fill)
+
+    draw.text((x, y), text, font=font, fill=fill)
+
+
+def draw_animated_header(draw, t):
+    pulse = (np.sin(t * 4.0) + 1) / 2
+
+    draw.rectangle((0, 0, VIDEO_WIDTH, 175), fill=(3, 8, 20, 245))
+
+    x_shift = int(12 * np.sin(t * 1.8))
+
+    draw.text((50 + x_shift, 42), PAGE_NAME, font=get_font(58, True), fill="white")
+
+    draw.rounded_rectangle(
+        (770, 48, 1030, 120),
+        radius=24,
+        fill=(190, 18, 32, 230),
+    )
+
+    dot_alpha = int(150 + 105 * pulse)
+    draw.ellipse((795, 72, 825, 102), fill=(255, 255, 255, dot_alpha))
+
+    draw.text((845, 67), "LIVE", font=get_font(35, True), fill="white")
+
+    draw.text(
+        (770, 128),
+        datetime.now().strftime("%Y-%m-%d"),
+        font=get_font(25),
+        fill=(215, 220, 235),
+    )
+
+
+def draw_breaking_bar(draw, t):
+    slide = min(1, t / 0.8)
+    x1 = int(-1050 + 1090 * ease_out_back(slide))
+
+    draw_rounded_panel(
+        draw,
+        (x1, 205, x1 + 980, 315),
+        28,
+        fill=(190, 18, 32, 245),
+    )
+
+    shimmer_x = int((t * 240) % 1100)
+
+    draw.rectangle(
+        (x1 + shimmer_x - 140, 205, x1 + shimmer_x - 60, 315),
+        fill=(255, 255, 255, 45),
+    )
+
+    draw.text((x1 + 42, 234), "BREAKING NEWS UPDATE", font=get_font(45, True), fill="white")
+    draw.text((x1 + 825, 236), "ON AIR", font=get_font(31, True), fill=(255, 240, 80))
+
+
+def draw_photo_panel(img, original, t, duration):
+    draw = ImageDraw.Draw(img)
+
+    photo_box = (50, 360, 1030, 1085)
+    photo_w = photo_box[2] - photo_box[0]
+    photo_h = photo_box[3] - photo_box[1]
+
+    slide = smoothstep(min(1, t / 1.2))
+    photo_y_offset = int((1 - slide) * 80)
+
+    photo = cover_resize(original, (photo_w, photo_h)).filter(ImageFilter.SHARPEN)
+    photo = blur_corner_logos(photo)
+
+    mask = Image.new("L", (photo_w, photo_h), 0)
+    ImageDraw.Draw(mask).rounded_rectangle((0, 0, photo_w, photo_h), radius=38, fill=255)
+
+    img.paste(photo.convert("RGBA"), (photo_box[0], photo_box[1] + photo_y_offset), mask)
+
+    draw.rounded_rectangle(
+        (photo_box[0], photo_box[1] + photo_y_offset, photo_box[2], photo_box[3] + photo_y_offset),
+        radius=38,
+        outline=(255, 255, 255, 95),
+        width=3,
+    )
+
+    scan_y = int(photo_box[1] + 20 + ((t * 85) % photo_h))
+    draw.rectangle(
+        (photo_box[0] + 20, scan_y, photo_box[2] - 20, scan_y + 5),
+        fill=(255, 255, 255, 85),
+    )
+
+
+def draw_rolling_words(draw, spoken_words, active_word_index, panel_top, t):
+    x_start = 75
+    y = panel_top + 108
+    max_width = 900
+
+    normal_font = get_font(44, True)
+    active_font = get_font(60, True)
+
+    lines = []
+    current = []
+
+    for i, word in enumerate(spoken_words):
+        test = " ".join([w for _, w in current] + [word])
+        w, _ = text_size(draw, test, normal_font)
+
+        if w <= max_width:
+            current.append((i, word))
+        else:
+            if current:
+                lines.append(current)
+            current = [(i, word)]
+
+    if current:
+        lines.append(current)
+
+    for line_num, line in enumerate(lines[:6]):
+        x = x_start
+
+        for i, word in line:
+            is_active = i == active_word_index
+
+            word_font = active_font if is_active else normal_font
+            fill = (255, 240, 65) if is_active else (235, 240, 250)
+
+            bounce = int(12 * abs(np.sin(t * 10))) if is_active else 0
+            word_y = y - bounce if is_active else y
+
+            if is_active:
+                bbox = draw.textbbox((x - 12, word_y - 8), word, font=word_font)
+                draw.rounded_rectangle(
+                    (bbox[0], bbox[1], bbox[2] + 16, bbox[3] + 12),
+                    radius=18,
+                    fill=(220, 35, 45, 235),
+                )
+
+                draw.rounded_rectangle(
+                    (bbox[0] - 4, bbox[1] - 4, bbox[2] + 20, bbox[3] + 16),
+                    radius=22,
+                    outline=(255, 255, 255, 110),
+                    width=3,
+                )
+
+            draw_glow_text(
+                draw,
+                (x, word_y),
+                word,
+                word_font,
+                fill,
+                (0, 0, 0, 120),
+                glow_radius=2,
+            )
+
+            ww, _ = text_size(draw, word + " ", word_font)
+            x += ww + 8
+
+        y += 82
+
+
+def draw_title_card(draw, news, panel_top, t):
+    appear = smoothstep(min(1, t / 1.0))
+    y_offset = int((1 - appear) * 90)
+
+    title = shorten(news["title"], 105)
+    title_font = get_font(45, True)
+    lines = wrap_text(draw, title, title_font, 900)
+
+    draw.text(
+        (75, panel_top + 35 + y_offset),
+        "NOW SPEAKING",
+        font=get_font(27, True),
+        fill=(255, 75, 75),
+    )
+
+    y = panel_top + 72 + y_offset
+
+    for line in lines[:3]:
+        draw_glow_text(
+            draw,
+            (75, y),
+            line,
+            title_font,
+            "white",
+            (0, 0, 0, 160),
+            glow_radius=2,
+        )
+        y += 56
+
+
+def create_news_frame(news, image_path, script, t, duration):
     original = Image.open(image_path).convert("RGB")
 
-    zoom = 1.0 + progress * 0.035
+    progress = min(1.0, t / max(duration, 1))
+    zoom = 1.0 + progress * 0.045 + 0.01 * np.sin(t * 0.8)
+
     crop_w = int(original.width / zoom)
     crop_h = int(original.height / zoom)
 
@@ -595,114 +774,48 @@ def create_news_frame(news, image_path, progress=0.0):
 
     original = original.crop((left, top, left + crop_w, top + crop_h))
 
-    bg = cover_resize(original, VIDEO_SIZE).filter(ImageFilter.GaussianBlur(radius=18))
+    bg = cover_resize(original, VIDEO_SIZE).filter(ImageFilter.GaussianBlur(radius=22))
     bg = add_dark_gradient(bg)
 
     img = bg.convert("RGBA")
     draw = ImageDraw.Draw(img)
 
-    # Header
-    draw.rectangle((0, 0, VIDEO_WIDTH, 175), fill=(3, 8, 20, 245))
-    draw.text((50, 45), PAGE_NAME, font=get_font(58, True), fill="white")
-    draw.text(
-        (815, 78),
-        datetime.now().strftime("%Y-%m-%d"),
-        font=get_font(26),
-        fill=(210, 220, 235),
-    )
+    draw_animated_header(draw, t)
+    draw_breaking_bar(draw, t)
+    draw_photo_panel(img, original, t, duration)
 
-    # Breaking bar
-    draw_rounded_panel(
-        draw,
-        (50, 205, 1030, 315),
-        28,
-        fill=(190, 18, 32, 245),
-    )
-    draw.text((92, 234), "BREAKING NEWS UPDATE", font=get_font(45, True), fill="white")
-    draw.ellipse((915, 243, 945, 273), fill="white")
-    draw.text((958, 235), "LIVE", font=get_font(34, True), fill="white")
-
-    # Photo
-    photo_box = (50, 360, 1030, 1085)
-    photo_w = photo_box[2] - photo_box[0]
-    photo_h = photo_box[3] - photo_box[1]
-
-    photo = cover_resize(original, (photo_w, photo_h)).filter(ImageFilter.SHARPEN)
-    photo = blur_corner_logos(photo)
-
-    mask = Image.new("L", (photo_w, photo_h), 0)
-    ImageDraw.Draw(mask).rounded_rectangle((0, 0, photo_w, photo_h), radius=38, fill=255)
-
-    img.paste(photo.convert("RGBA"), (photo_box[0], photo_box[1]), mask)
-    draw.rounded_rectangle(photo_box, radius=38, outline=(255, 255, 255, 85), width=3)
-
-    # Text panel
     panel_top = 1125
     panel_bottom = 1870
 
+    panel_slide = smoothstep(min(1, t / 1.2))
+    panel_y = int(panel_top + (1 - panel_slide) * 160)
+
     draw_rounded_panel(
         draw,
-        (40, panel_top, 1040, panel_bottom),
+        (40, panel_y, 1040, panel_bottom),
         38,
-        fill=(5, 12, 28, 232),
-        outline=(255, 255, 255, 60),
+        fill=(5, 12, 28, 235),
+        outline=(255, 255, 255, 70),
         width=2,
     )
 
+    pulse = int(120 + 80 * ((np.sin(t * 5) + 1) / 2))
+
     draw.rounded_rectangle(
-        (75, panel_top + 45, 235, panel_top + 60),
+        (75, panel_y + 42, 250, panel_y + 58),
         radius=8,
-        fill=(235, 30, 45),
+        fill=(235, 30, 45, pulse),
     )
 
-    title = shorten(news["title"], 145)
-    summary = shorten(news.get("summary", ""), 360)
+    spoken_words, active_word_index = get_spoken_words(script, t, duration, max_words=28)
 
-    title_font, title_lines, title_lh = fit_text_to_box(
-        draw,
-        title,
-        900,
-        285,
-        58,
-        36,
-        True,
-    )
-
-    y = draw_multiline(
-        draw,
-        title_lines,
-        75,
-        panel_top + 90,
-        title_font,
-        title_lh,
-        "white",
-    )
-
-    if summary:
-        summary_font, summary_lines, summary_lh = fit_text_to_box(
-            draw,
-            summary,
-            900,
-            310,
-            37,
-            27,
-            False,
-        )
-
-        draw_multiline(
-            draw,
-            summary_lines[:7],
-            75,
-            y + 38,
-            summary_font,
-            summary_lh,
-            (230, 235, 245),
-        )
+    draw_title_card(draw, news, panel_y, t)
+    draw_rolling_words(draw, spoken_words, active_word_index, panel_y + 225, t)
 
     if SHOW_SOURCE_TEXT:
         draw.text(
-            (75, 1810),
-            f"Source: {shorten(news.get('source', ''), 60)}",
+            (75, 1815),
+            f"Source: {shorten(news.get('source', ''), 65)}",
             font=get_font(25),
             fill=(200, 205, 215),
         )
@@ -710,16 +823,12 @@ def create_news_frame(news, image_path, progress=0.0):
     return img.convert("RGB")
 
 
-# =========================
-# VIDEO + FACEBOOK
-# =========================
-def create_video(news, image_path, audio_path, output_path):
+def create_video(news, image_path, audio_path, output_path, script):
     audio = AudioFileClip(audio_path)
     duration = min(max(audio.duration, 8), 90)
 
     def make_frame(t):
-        progress = min(1.0, t / max(duration, 1))
-        return np.array(create_news_frame(news, image_path, progress=progress))
+        return np.array(create_news_frame(news, image_path, script, t, duration))
 
     video = VideoClip(make_frame, duration=duration)
 
@@ -753,13 +862,11 @@ def facebook_caption(news):
         "#LatestNews",
     ]
 
-    caption = (
+    return (
         f"{title}\n\n"
         "Watch the latest update from World Pulse Daily.\n\n"
         + " ".join(hashtags)
     )
-
-    return caption
 
 
 def post_video_to_facebook(video_path, caption):
@@ -794,9 +901,6 @@ def post_video_to_facebook(video_path, caption):
     return payload
 
 
-# =========================
-# MAIN SINGLE RUN
-# =========================
 def run_once():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     os.makedirs(ASSET_DIR, exist_ok=True)
@@ -831,8 +935,8 @@ def run_once():
     print("Creating voice...")
     create_voice(script, voice_path)
 
-    print("Creating video...")
-    create_video(news, raw_image_path, voice_path, video_path)
+    print("Creating animated video...")
+    create_video(news, raw_image_path, voice_path, video_path, script)
 
     caption = facebook_caption(news)
     fb_result = post_video_to_facebook(video_path, caption)
@@ -861,6 +965,7 @@ def run_once():
 def main():
     if RUN_FOREVER:
         print(f"RUN_FOREVER=1 enabled. Running every {RUN_EVERY_MINUTES} minutes.")
+
         while True:
             try:
                 run_once()
