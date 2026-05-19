@@ -951,32 +951,59 @@ def make_caption(news):
 
 
 def post_video_to_telegram(video_path, caption):
+    """
+    Upload the created video to Telegram.
+    This version prints safe debug messages so GitHub Actions logs show the exact issue.
+    """
+
     if not POST_TO_TELEGRAM:
-        print("Telegram posting disabled.")
+        print("Telegram posting disabled. Set POST_TO_TELEGRAM=1 in GitHub Secrets.")
         return None
 
-    if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
-        print("Telegram skipped: missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID.")
+    if not TELEGRAM_BOT_TOKEN:
+        print("Telegram skipped: TELEGRAM_BOT_TOKEN is missing or empty.")
         return None
+
+    if not TELEGRAM_CHAT_ID:
+        print("Telegram skipped: TELEGRAM_CHAT_ID is missing or empty.")
+        return None
+
+    if not os.path.exists(video_path):
+        print("Telegram skipped: video file not found:", video_path)
+        return None
+
+    file_size_mb = os.path.getsize(video_path) / (1024 * 1024)
+    print(f"Telegram upload starting. Video size: {file_size_mb:.2f} MB")
+
+    # Telegram bot API sendVideo limit is normally 50 MB for bot uploads.
+    # If your video is bigger, reduce duration/fps/quality.
+    if file_size_mb > 49:
+        print("WARNING: Video may be too large for Telegram Bot API sendVideo.")
 
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendVideo"
 
-    with open(video_path, "rb") as f:
-        files = {"video": f}
-        data = {
-            "chat_id": TELEGRAM_CHAT_ID,
-            "caption": caption[:1024],
-            "supports_streaming": "true",
-        }
+    data = {
+        "chat_id": TELEGRAM_CHAT_ID,
+        "caption": caption[:1024],
+        "supports_streaming": "true",
+    }
 
-        r = requests.post(url, data=data, files=files, timeout=600)
+    with open(video_path, "rb") as f:
+        files = {"video": (os.path.basename(video_path), f, "video/mp4")}
+        try:
+            response = requests.post(url, data=data, files=files, timeout=600)
+        except requests.exceptions.RequestException as e:
+            raise RuntimeError(f"Telegram request failed: {e}") from e
+
+    print("Telegram HTTP status:", response.status_code)
+    print("Telegram raw response:", response.text[:1500])
 
     try:
-        payload = r.json()
+        payload = response.json()
     except Exception:
-        payload = {"raw": r.text}
+        raise RuntimeError(f"Telegram returned non-JSON response: {response.text[:1500]}")
 
-    if not r.ok or not payload.get("ok", False):
+    if not response.ok or not payload.get("ok", False):
         raise RuntimeError(f"Telegram post failed: {payload}")
 
     print("Telegram post success.")
