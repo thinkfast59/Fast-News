@@ -5,8 +5,8 @@ import requests
 OUTPUT_DIR = os.getenv("OUTPUT_DIR", "output")
 LATEST_FILE = os.path.join(OUTPUT_DIR, "latest_news.json")
 
-TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
-TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "").strip()
+TELEGRAM_BOT_TOKEN = os.getenv("8608459484:AAHvkzg6ZhYuClxlWHnG7syQa6e5n-3qoRk", "").strip()
+TELEGRAM_CHAT_ID = os.getenv("8376417027", "").strip()
 
 
 def send_video(video_path, caption):
