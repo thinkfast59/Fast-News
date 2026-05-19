@@ -49,11 +49,6 @@ RUN_EVERY_MINUTES = int(os.getenv("RUN_EVERY_MINUTES", "240"))
 HIDE_IMAGE_CORNER_LOGOS = os.getenv("HIDE_IMAGE_CORNER_LOGOS", "1") == "1"
 SHOW_SOURCE_TEXT = os.getenv("SHOW_SOURCE_TEXT", "0") == "1"
 
-POST_TO_FACEBOOK = os.getenv("POST_TO_FACEBOOK", "0") == "1"
-FB_PAGE_ID = os.getenv("FB_PAGE_ID", "").strip()
-FB_PAGE_ACCESS_TOKEN = os.getenv("FB_PAGE_ACCESS_TOKEN", "").strip()
-FB_GRAPH_VERSION = os.getenv("FB_GRAPH_VERSION", "v25.0")
-
 POST_TO_TELEGRAM = os.getenv("POST_TO_TELEGRAM", "1") == "1"
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "").strip()
@@ -934,7 +929,7 @@ def create_video(news, image_path, audio_path, output_path, script):
 
 
 # =========================
-# CAPTIONS + POSTING
+# CAPTION + TELEGRAM POSTING
 # =========================
 def make_caption(news):
     title = shorten(news["title"], 220)
@@ -953,38 +948,6 @@ def make_caption(news):
         "Watch the latest update from World Pulse Daily.\n\n"
         + " ".join(hashtags)
     )
-
-
-def post_video_to_facebook(video_path, caption):
-    if not POST_TO_FACEBOOK:
-        print("Facebook posting disabled.")
-        return None
-
-    if not FB_PAGE_ID or not FB_PAGE_ACCESS_TOKEN:
-        print("Facebook skipped: missing FB_PAGE_ID or FB_PAGE_ACCESS_TOKEN.")
-        return None
-
-    url = f"https://graph.facebook.com/{FB_GRAPH_VERSION}/{FB_PAGE_ID}/videos"
-
-    with open(video_path, "rb") as f:
-        files = {"source": f}
-        data = {
-            "description": caption,
-            "access_token": FB_PAGE_ACCESS_TOKEN,
-        }
-
-        r = requests.post(url, data=data, files=files, timeout=600)
-
-    try:
-        payload = r.json()
-    except Exception:
-        payload = {"raw": r.text}
-
-    if not r.ok:
-        raise RuntimeError(f"Facebook post failed: {payload}")
-
-    print("Facebook post success:", payload)
-    return payload
 
 
 def post_video_to_telegram(video_path, caption):
@@ -1062,13 +1025,7 @@ def run_once():
 
     caption = make_caption(news)
 
-    fb_result = None
     tg_result = None
-
-    try:
-        fb_result = post_video_to_facebook(video_path, caption)
-    except Exception as e:
-        print("Facebook error:", e)
 
     try:
         tg_result = post_video_to_telegram(video_path, caption)
@@ -1085,7 +1042,6 @@ def run_once():
                 "news": news,
                 "video": video_path,
                 "caption": caption,
-                "facebook": fb_result,
                 "telegram": tg_result,
             },
             f,
