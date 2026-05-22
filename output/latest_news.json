@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "2f11d01978987c9b8d259bdd08b7d0054eebc6c00b0e9e5c4741e746fdddaea4",
-    "title": "The Trump administration expands its use of AI in the hunt for healthcare fraud",
-    "summary": "The Department of Health and Human Services is boosting its use of artificial intelligence to monitor audits from federal grant recipients",
-    "link": "https://abcnews.com/US/wireStory/trump-administration-expands-ai-hunt-healthcare-fraud-133198614",
-    "image_url": "https://i.abcnewsfe.com/a/5bd274e8-2dbc-48ac-ab4b-521707ba145a/wirestory_48b1b1eaf29988808aa1a7f566433d30_16x9.jpg?w=1600",
-    "source": "ABC News: US",
-    "feed_url": "https://abcnews.go.com/abcnews/usheadlines",
-    "published_at": "2026-05-22T06:42:53+00:00"
+    "id": "e4e260b0ccd9b19d08ce2e290176ae14bf496c94f0efb3d3c2a404aeb95bbc9e",
+    "title": "American Doctor With Ebola Says He Is ‘Optimistic’ for Recovery",
+    "summary": "Dr. Peter Stafford, a medical missionary in the Democratic Republic of Congo, tested positive for Ebola on Sunday. He is receiving treatment in Germany.",
+    "link": "https://www.nytimes.com/2026/05/22/us/ebola-american-doctor-peter-stafford.html",
+    "image_url": "https://static01.nyt.com/images/2026/05/27/us/27nat-ebola-doctors/27nat-ebola-doctors-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. News",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+    "published_at": "2026-05-22T18:39:40+00:00"
   },
-  "video": "output/20260522_120922_The_Trump_administration_expands_its_use_of_AI_in_the_hunt_for_healthcare_fraud.mp4",
-  "caption": "The Trump administration expands its use of AI in the hunt for healthcare fraud\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260522_192259_American_Doctor_With_Ebola_Says_He_Is_Optimistic_for_Recovery.mp4",
+  "caption": "American Doctor With Ebola Says He Is ‘Optimistic’ for Recovery\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
