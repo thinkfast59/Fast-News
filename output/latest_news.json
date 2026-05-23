@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "e4e260b0ccd9b19d08ce2e290176ae14bf496c94f0efb3d3c2a404aeb95bbc9e",
-    "title": "American Doctor With Ebola Says He Is ‘Optimistic’ for Recovery",
-    "summary": "Dr. Peter Stafford, a medical missionary in the Democratic Republic of Congo, tested positive for Ebola on Sunday. He is receiving treatment in Germany.",
-    "link": "https://www.nytimes.com/2026/05/22/us/ebola-american-doctor-peter-stafford.html",
-    "image_url": "https://static01.nyt.com/images/2026/05/27/us/27nat-ebola-doctors/27nat-ebola-doctors-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-    "published_at": "2026-05-22T18:39:40+00:00"
+    "id": "81cd8147b417504938fd600adb6d17f007b4fb38d5a7e6c7a9a2f691e403aed3",
+    "title": "1 dead, dozens injured in explosion at Staten Island shipyard: officials",
+    "summary": "A fire and explosion at a shipyard on New York City’s Staten Island has killed one person and injured dozens more.",
+    "link": "https://thehill.com/homenews/state-watch/5892307-1-dead-dozens-injured-in-explosion-at-staten-island-shipyard-officials/",
+    "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/05/AP26142810015930.jpg?w=755",
+    "source": "The Hill News",
+    "feed_url": "https://thehill.com/feed/",
+    "published_at": "2026-05-23T11:47:02+00:00"
   },
-  "video": "output/20260522_192259_American_Doctor_With_Ebola_Says_He_Is_Optimistic_for_Recovery.mp4",
-  "caption": "American Doctor With Ebola Says He Is ‘Optimistic’ for Recovery\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260523_145402_1_dead_dozens_injured_in_explosion_at_Staten_Island_shipyard_officials.mp4",
+  "caption": "1 dead, dozens injured in explosion at Staten Island shipyard: officials\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
