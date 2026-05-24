@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "9c4a68c1ec72cc18ec89a1ede4a283ac9652dae088b794283eb1bbe6f4673280",
-    "title": "Blind Waymo Users Revel in the Joy of Riding Alone",
-    "summary": "Waymo has been an object of frustration to some in California. For visually impaired people, it can also bring a rare feeling of independence.",
-    "link": "https://www.nytimes.com/2026/05/24/us/waymo-robot-taxis-blind.html",
-    "image_url": "https://static01.nyt.com/images/2026/05/24/multimedia/24nat-waymo-blind-promo-cmkp/24nat-waymo-blind-promo-cmkp-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-    "published_at": "2026-05-24T09:00:49+00:00"
+    "id": "5dbd215ae58e5947343040deb2a53f962fcd926ad55a4e220b8536df47fa645f",
+    "title": "Blast targeting train kills at least 20 in Pakistan",
+    "summary": "Officials say the train had been transporting military personnel home for Eid when it was attacked by armed separatists.",
+    "link": "https://www.bbc.com/news/articles/cm2pkd58xldo?at_medium=RSS&at_campaign=rss",
+    "image_url": "https://ichef.bbci.co.uk/news/1024/branded_news/fc37/live/290cfef0-574a-11f1-934b-4138723911fd.jpg",
+    "source": "BBC News",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "published_at": "2026-05-24T12:26:09+00:00"
   },
-  "video": "output/20260524_093417_Blind_Waymo_Users_Revel_in_the_Joy_of_Riding_Alone.mp4",
-  "caption": "Blind Waymo Users Revel in the Joy of Riding Alone\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260524_145508_Blast_targeting_train_kills_at_least_20_in_Pakistan.mp4",
+  "caption": "Blast targeting train kills at least 20 in Pakistan\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
