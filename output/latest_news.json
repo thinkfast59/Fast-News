@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "78f774328795925f849b8caee79d4cffe9aad9117aac2c2a386378a9867098b7",
-    "title": "How to Stay Safe Around Jellyfish This Beach Season",
-    "summary": "Jellyfish myths and misconceptions abound. Here’s how to stay safe this beach season around these gelatinous wonders.",
-    "link": "https://www.nytimes.com/2026/05/23/us/jellyfish-facts-beach-sting-safety.html",
-    "image_url": "https://static01.nyt.com/images/2026/05/05/multimedia/00xp-jellyfish-gpzj/00xp-jellyfish-gpzj-mediumSquareAt3X.jpg",
-    "source": "NYT > World News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
-    "published_at": "2026-05-23T19:49:27+00:00"
+    "id": "9c4a68c1ec72cc18ec89a1ede4a283ac9652dae088b794283eb1bbe6f4673280",
+    "title": "Blind Waymo Users Revel in the Joy of Riding Alone",
+    "summary": "Waymo has been an object of frustration to some in California. For visually impaired people, it can also bring a rare feeling of independence.",
+    "link": "https://www.nytimes.com/2026/05/24/us/waymo-robot-taxis-blind.html",
+    "image_url": "https://static01.nyt.com/images/2026/05/24/multimedia/24nat-waymo-blind-promo-cmkp/24nat-waymo-blind-promo-cmkp-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. News",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+    "published_at": "2026-05-24T09:00:49+00:00"
   },
-  "video": "output/20260523_204721_How_to_Stay_Safe_Around_Jellyfish_This_Beach_Season.mp4",
-  "caption": "How to Stay Safe Around Jellyfish This Beach Season\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260524_093417_Blind_Waymo_Users_Revel_in_the_Joy_of_Riding_Alone.mp4",
+  "caption": "Blind Waymo Users Revel in the Joy of Riding Alone\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
