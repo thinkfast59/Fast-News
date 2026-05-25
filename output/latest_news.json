@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "9a910862e4c54477bb374b6a0bed78e7c6d39b93f1a2db6fed7b187c2f883060",
-    "title": "Manny Nosowsky, Waggish Crossword Constructor for The New York Times, Dies at 94",
-    "summary": "For nearly two decades, the prolific puzzle maker, a retired urologist, charmed solvers with his penchant for witty, waggish puns.",
-    "link": "https://www.nytimes.com/2026/05/24/us/manny-nosowsky-dead.html",
-    "image_url": "https://static01.nyt.com/images/2026/05/22/obituaries/22Nosowsky_1/22Nosowsky_1-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-    "published_at": "2026-05-24T20:23:21+00:00"
+    "id": "a5f8de5b7f586ed22b5bb53ac10ed1f663d8c53252881dc0b786f3a05fe0e3e4",
+    "title": "Oil prices dip amid optimism over potential US-Iran deal",
+    "summary": "Oil prices decreased early Monday amid negotiations between the Trump administration and Iran on reopening the Strait of Hormuz and ending the Middle East conflict. West Texas Intermediate crude futures, the benchmark for North American markets, dipped by more than 6.1 percent to $90.68 as of early Monday. Brent crude futures, the global benchmark, dropped…",
+    "link": "https://thehill.com/policy/energy-environment/5893863-iran-war-potential-peace-deal-oil-gas-price-drop/",
+    "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/05/AP26141712370553-e1779711171511.jpg?w=900",
+    "source": "The Hill News",
+    "feed_url": "https://thehill.com/feed/",
+    "published_at": "2026-05-25T12:22:15+00:00"
   },
-  "video": "output/20260524_211943_Manny_Nosowsky_Waggish_Crossword_Constructor_for_The_New_York_Times_Dies_at_94.mp4",
-  "caption": "Manny Nosowsky, Waggish Crossword Constructor for The New York Times, Dies at 94\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260525_135657_Oil_prices_dip_amid_optimism_over_potential_US-Iran_deal.mp4",
+  "caption": "Oil prices dip amid optimism over potential US-Iran deal\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
