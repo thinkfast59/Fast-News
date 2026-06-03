@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "cfea2e38ab6089ba55708035c8c0a467656651a453707eff951bcd180ef869c2",
-    "title": "Pacific Palisades Voters Remain Frustrated by Fire Aftermath",
-    "summary": "Residents of the Pacific Palisades neighborhood of Los Angeles headed to the polls on Tuesday. Many are waiting for their homes to be rebuilt.",
-    "link": "https://www.nytimes.com/2026/06/02/us/politics/pacific-palisades-los-angeles-election.html",
-    "image_url": "https://static01.nyt.com/images/2026/06/02/multimedia/02calif-midterms-palisades-tgvw/02calif-midterms-palisades-tgvw-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-    "published_at": "2026-06-03T03:40:05+00:00"
+    "id": "8741f6c9b52b70d47579da98a97317eafc84ddf5bb620c4877fe1e56dc7bef1e",
+    "title": "Meta enters enterprise AI race with new business agent",
+    "summary": "",
+    "link": "https://www.channelnewsasia.com/business/meta-enters-enterprise-ai-race-new-business-agent-6159951",
+    "image_url": "https://dam.mediacorp.sg/image/upload/s--VdUHZzoR--/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2026-06-03T134243Z_2_LYNXMPEM5212L_RTROPTP_3_TECH-AI-META-LAYOFFS.JPG?itok=3s9_APsa",
+    "source": "Latest News",
+    "feed_url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
+    "published_at": "2026-06-03T13:42:43+00:00"
   },
-  "video": "output/20260603_065828_Pacific_Palisades_Voters_Remain_Frustrated_by_Fire_Aftermath.mp4",
-  "caption": "Pacific Palisades Voters Remain Frustrated by Fire Aftermath\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260603_143435_Meta_enters_enterprise_AI_race_with_new_business_agent.mp4",
+  "caption": "Meta enters enterprise AI race with new business agent\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
