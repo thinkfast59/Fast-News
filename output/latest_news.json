@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "8741f6c9b52b70d47579da98a97317eafc84ddf5bb620c4877fe1e56dc7bef1e",
-    "title": "Meta enters enterprise AI race with new business agent",
-    "summary": "",
-    "link": "https://www.channelnewsasia.com/business/meta-enters-enterprise-ai-race-new-business-agent-6159951",
-    "image_url": "https://dam.mediacorp.sg/image/upload/s--VdUHZzoR--/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2026-06-03T134243Z_2_LYNXMPEM5212L_RTROPTP_3_TECH-AI-META-LAYOFFS.JPG?itok=3s9_APsa",
-    "source": "Latest News",
-    "feed_url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
-    "published_at": "2026-06-03T13:42:43+00:00"
+    "id": "e7c5fe3956d7adad1cbea0ff9e61df439d785534cb8b10ee6004a3c3fe113991",
+    "title": "Live updates: Senate poised for vote-a-rama on reconciliation; Trump to boost coal",
+    "summary": "The Senate is expected to launch into a voting blitz on Thursday as it moves toward passing a budget reconciliation package that would fund immigration enforcement agencies. A party-line vote kicked off hours of debate, followed by a series of unlimited back-to-back amendment votes before final passage later this week. The chamber on Wednesday revealed…",
+    "link": "https://thehill.com/homenews/administration/5908695-live-updates-donald-trump-supreme-court-senate-reconciliation/",
+    "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/06/thunejohn_060226gn11_w.jpg?w=900",
+    "source": "The Hill News",
+    "feed_url": "https://thehill.com/feed/",
+    "published_at": "2026-06-04T12:30:00+00:00"
   },
-  "video": "output/20260603_143435_Meta_enters_enterprise_AI_race_with_new_business_agent.mp4",
-  "caption": "Meta enters enterprise AI race with new business agent\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260604_125003_Live_updates_Senate_poised_for_vote-a-rama_on_reconciliation_Trump_to_boost_coal.mp4",
+  "caption": "Live updates: Senate poised for vote-a-rama on reconciliation; Trump to boost coal\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
