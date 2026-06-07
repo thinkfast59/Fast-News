@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "ed803a4bce89d6d67b481d939bd0aefddcd51cfe4b1a8e7e0cbeca745deec995",
-    "title": "Trump Defends Compensation Fund and Iran War in ‘Meet the Press’ Interview",
-    "summary": "In a lengthy interview with NBC’s “Meet the Press,” the president again vowed that gas prices would go down when the war in Iran ends.",
-    "link": "https://www.nytimes.com/2026/06/07/us/politics/trump-new-wars-compensation-fund.html",
-    "image_url": "https://static01.nyt.com/images/2026/06/07/multimedia/07trump-news-mtp-interview-vhlz/07trump-news-mtp-interview-vhlz-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. > Politics",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
-    "published_at": "2026-06-07T15:13:43+00:00"
+    "id": "daa7a7f3ab005eb581d4504a57f6a5f10acd834ef1699b411f23b01dbe7c8547",
+    "title": "Alexander Zverev wins French Open for first Grand Slam title",
+    "summary": "In his fourth major final, Zverev beat Flavio Cobolli 6-1, 4-6, 6-4, 6-7 (5), 6-1 for the French Open title on Sunday.",
+    "link": "https://www.pbs.org/newshour/world/alexander-zverev-wins-french-open-for-first-grand-slam-title",
+    "image_url": "https://d3i6fh83elv35t.cloudfront.net/static/2026/06/2026-06-07T180750Z_2142667558_UP1EM671ED02U_RTRMADP_3_TENNIS-FRENCHOPEN-1024x684.jpg",
+    "source": "PBS NewsHour - The Latest",
+    "feed_url": "https://www.pbs.org/newshour/feeds/rss/headlines",
+    "published_at": "2026-06-07T18:13:54+00:00"
   },
-  "video": "output/20260607_152915_Trump_Defends_Compensation_Fund_and_Iran_War_in_Meet_the_Press_Interview.mp4",
-  "caption": "Trump Defends Compensation Fund and Iran War in ‘Meet the Press’ Interview\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260607_192714_Alexander_Zverev_wins_French_Open_for_first_Grand_Slam_title.mp4",
+  "caption": "Alexander Zverev wins French Open for first Grand Slam title\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
