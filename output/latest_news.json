@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "976fb802fe8fedb01e313654d3699012b397c512abbf62abc7d7bd78bf5bec06",
-    "title": "ING bets on subscription model to lift fees amid growing digital-banking competition",
-    "summary": "",
-    "link": "https://www.channelnewsasia.com/business/ing-bets-subscription-model-lift-fees-amid-growing-digital-banking-competition-6174151",
-    "image_url": "https://dam.mediacorp.sg/image/upload/s--dCOVdK53--/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2026-06-10T114146Z_1_LYNXMPEM590UL_RTROPTP_3_ING-RESULTS.JPG?itok=XwLeJzfB",
-    "source": "Latest News",
-    "feed_url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
-    "published_at": "2026-06-10T11:41:46+00:00"
+    "id": "c364d8947443e1647dd2f6115a3bb065c3de5446b6b662c4fd118a79aef255b0",
+    "title": "Pro-Palestinian Activists at U. of Michigan Indicted on Federal Conspiracy Charges",
+    "summary": "Federal prosecutors said the actions of eight demonstrators crossed the line into threats and vandalism.",
+    "link": "https://www.nytimes.com/2026/06/10/us/university-michigan-pro-palestinian-activists-indicted.html",
+    "image_url": "https://static01.nyt.com/images/2026/06/10/multimedia/10nat-umichigan-charges-1-lzkb/10nat-umichigan-charges-1-lzkb-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. News",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+    "published_at": "2026-06-10T17:11:12+00:00"
   },
-  "video": "output/20260610_130357_ING_bets_on_subscription_model_to_lift_fees_amid_growing_digital-banking_competi.mp4",
-  "caption": "ING bets on subscription model to lift fees amid growing digital-banking competition\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260610_172540_Pro-Palestinian_Activists_at_U_of_Michigan_Indicted_on_Federal_Conspiracy_Charge.mp4",
+  "caption": "Pro-Palestinian Activists at U. of Michigan Indicted on Federal Conspiracy Charges\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
