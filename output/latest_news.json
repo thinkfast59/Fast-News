@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "2349091d9b123a138d88497da258c5869a236ba50e59da45706cb3f8ed51d8f8",
-    "title": "India's TCS partners with Anthropic to drive enterprise AI scaling",
-    "summary": "",
-    "link": "https://www.channelnewsasia.com/business/indias-tcs-partners-anthropic-drive-enterprise-ai-scaling-6176006",
-    "image_url": "https://dam.mediacorp.sg/image/upload/s--0lzvPtrH--/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2026-06-11T053110Z_1_LYNXMPEM5A08H_RTROPTP_3_TCS-RESULTS.JPG?itok=TZAeHsX1",
-    "source": "Latest News",
-    "feed_url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
-    "published_at": "2026-06-11T05:31:10+00:00"
+    "id": "837395c8298b61b20e4e51a4ee0b5f531e31be6451924829eac9397087161cbb",
+    "title": "Nearly 118 million people were displaced by conflict, persecution last year, UN says",
+    "summary": "The U.N. refugee agency reports that forced displacement due to conflict or persecution fell in 2025 for the first time in a decade",
+    "link": "https://abcnews.com/US/wireStory/118-million-people-displaced-conflict-persecution-year-133774985",
+    "image_url": "https://i.abcnewsfe.com/a/8b6a63d2-46ee-4f3c-9d80-ebcf8c376249/wirestory_4dbcddd571b1ad2de8fadff609fec393_16x9.jpg?w=1600",
+    "source": "ABC News: US",
+    "feed_url": "https://abcnews.go.com/abcnews/usheadlines",
+    "published_at": "2026-06-11T12:57:57+00:00"
   },
-  "video": "output/20260611_065640_India_s_TCS_partners_with_Anthropic_to_drive_enterprise_AI_scaling.mp4",
-  "caption": "India's TCS partners with Anthropic to drive enterprise AI scaling\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260611_140447_Nearly_118_million_people_were_displaced_by_conflict_persecution_last_year_UN_sa.mp4",
+  "caption": "Nearly 118 million people were displaced by conflict, persecution last year, UN says\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
