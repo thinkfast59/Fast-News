@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "837395c8298b61b20e4e51a4ee0b5f531e31be6451924829eac9397087161cbb",
-    "title": "Nearly 118 million people were displaced by conflict, persecution last year, UN says",
-    "summary": "The U.N. refugee agency reports that forced displacement due to conflict or persecution fell in 2025 for the first time in a decade",
-    "link": "https://abcnews.com/US/wireStory/118-million-people-displaced-conflict-persecution-year-133774985",
-    "image_url": "https://i.abcnewsfe.com/a/8b6a63d2-46ee-4f3c-9d80-ebcf8c376249/wirestory_4dbcddd571b1ad2de8fadff609fec393_16x9.jpg?w=1600",
-    "source": "ABC News: US",
-    "feed_url": "https://abcnews.go.com/abcnews/usheadlines",
-    "published_at": "2026-06-11T12:57:57+00:00"
+    "id": "dfb806eba27a0b9549debe1ed2367510e3c0eecf5f69b49db0f417f1634c3703",
+    "title": "How health sleuths are watching for threats like measles during the World Cup",
+    "summary": "While millions of soccer fans cheer or groan over World Cup matches spanning North America, health officials will be on high alert for germs.",
+    "link": "https://www.pbs.org/newshour/health/how-health-sleuths-are-watching-for-threats-like-measles-during-the-world-cup",
+    "image_url": "https://d3i6fh83elv35t.cloudfront.net/static/2026/06/2026-02-26T014529Z_1017569290_RC2YSJA2ZG7P_RTRMADP_3_MEXICO-HEALTH-MEASLES-1024x683.jpg",
+    "source": "PBS NewsHour - The Latest",
+    "feed_url": "https://www.pbs.org/newshour/feeds/rss/headlines",
+    "published_at": "2026-06-11T16:45:05+00:00"
   },
-  "video": "output/20260611_140447_Nearly_118_million_people_were_displaced_by_conflict_persecution_last_year_UN_sa.mp4",
-  "caption": "Nearly 118 million people were displaced by conflict, persecution last year, UN says\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260611_174544_How_health_sleuths_are_watching_for_threats_like_measles_during_the_World_Cup.mp4",
+  "caption": "How health sleuths are watching for threats like measles during the World Cup\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
