@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "aaf5aaf1ffab81330f40b1e9c77c3a48dff12e2d0a59025ef748924d22fb3cb9",
-    "title": "French town buries murdered child as questions mount over police failings",
-    "summary": "The prime suspect in the killing of Lyhanna, 11, was reported to police nine months prior but never questioned.",
-    "link": "https://www.bbc.com/news/articles/cy9rq21dqego?at_medium=RSS&at_campaign=rss",
-    "image_url": "https://ichef.bbci.co.uk/news/1024/branded_news/9052/live/f8e9bda0-6679-11f1-b44a-dfe6fe570742.jpg",
-    "source": "BBC News",
-    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
-    "published_at": "2026-06-12T16:19:12+00:00"
+    "id": "976d10a9c0b1e441bbbaf5cbe709cb6c5c0542813004f008d8776ab588a8ac2d",
+    "title": "The World Is Draining Oil Reserves, Raising Pressure for a Peace Deal",
+    "summary": "The amount of oil and fuel stored by businesses and governments has fallen sharply since the start of the U.S.-Israeli war against Iran.",
+    "link": "https://www.nytimes.com/2026/06/12/business/energy-environment/iran-war-oil-reserves.html",
+    "image_url": "https://static01.nyt.com/images/2026/06/11/multimedia/2026-06-08-oil-stocks-index/2026-06-08-oil-stocks-index-mediumSquareAt3X-v7.png",
+    "source": "NYT > U.S. > Politics",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
+    "published_at": "2026-06-12T18:28:47+00:00"
   },
-  "video": "output/20260612_165021_French_town_buries_murdered_child_as_questions_mount_over_police_failings.mp4",
-  "caption": "French town buries murdered child as questions mount over police failings\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260612_201616_The_World_Is_Draining_Oil_Reserves_Raising_Pressure_for_a_Peace_Deal.mp4",
+  "caption": "The World Is Draining Oil Reserves, Raising Pressure for a Peace Deal\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
