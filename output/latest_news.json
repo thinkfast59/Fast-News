@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "9e262b4672a930e41dfe1a79e6b6db445d79e856ba7b5967a8c15520752e0468",
-    "title": "Newsom announces $46 million of voter-approved funding to help address pollution",
-    "summary": "Gov. Gavin Newsom announced Thursday he is deploying $46 million in voter-approved funding to help clean up the Tijuana River at the California-Mexico border, one of the nation's worst and longest-running environmental crises",
-    "link": "https://abcnews.com/US/wireStory/newsom-announces-46-million-voter-approved-funding-address-133795292",
-    "image_url": "https://s.abcnews.com/images/US/abc_news_default_2000x2000_update_16x9_992.jpg",
-    "source": "ABC News: US",
-    "feed_url": "https://abcnews.go.com/abcnews/usheadlines",
-    "published_at": "2026-06-12T06:11:17+00:00"
+    "id": "aaf5aaf1ffab81330f40b1e9c77c3a48dff12e2d0a59025ef748924d22fb3cb9",
+    "title": "French town buries murdered child as questions mount over police failings",
+    "summary": "The prime suspect in the killing of Lyhanna, 11, was reported to police nine months prior but never questioned.",
+    "link": "https://www.bbc.com/news/articles/cy9rq21dqego?at_medium=RSS&at_campaign=rss",
+    "image_url": "https://ichef.bbci.co.uk/news/1024/branded_news/9052/live/f8e9bda0-6679-11f1-b44a-dfe6fe570742.jpg",
+    "source": "BBC News",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "published_at": "2026-06-12T16:19:12+00:00"
   },
-  "video": "output/20260612_065034_Newsom_announces_46_million_of_voter-approved_funding_to_help_address_pollution.mp4",
-  "caption": "Newsom announces $46 million of voter-approved funding to help address pollution\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260612_165021_French_town_buries_murdered_child_as_questions_mount_over_police_failings.mp4",
+  "caption": "French town buries murdered child as questions mount over police failings\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
