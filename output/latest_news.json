@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "351f46e7d23d1c24e252a2e56aeaf3e61699e9c17509089ddedfa2e4aed646f9",
-    "title": "Anthropic says it has taken its latest AI models offline to comply with new export controls",
-    "summary": "AI giant Anthropic says it has taken its latest artificial intelligence models, known as Fable 5 and Mythos 5, offline to comply with a directive from the Trump administration to prevent their use by foreign nationals",
-    "link": "https://abcnews.com/US/wireStory/anthropic-latest-ai-models-offline-comply-new-export-133837303",
-    "image_url": "https://i.abcnewsfe.com/a/d9b71ade-a664-4e6e-8f8a-1785ced9ce73/wirestory_d9cc7df5c02e93837d0f0bfb24d5cfd2_16x9.jpg?w=1600",
-    "source": "ABC News: US",
-    "feed_url": "https://abcnews.go.com/abcnews/usheadlines",
-    "published_at": "2026-06-13T04:12:55+00:00"
+    "id": "c3a32ec6f9fa056533454637ac49f087bd17a29f4514bd9342c6624d8f85290b",
+    "title": "Macron to host Trump for dinner at Versailles after G7 summit",
+    "summary": "President Donald Trump and French President Emmanuel Macron will meet over dinner at the glittering Palace of Versailles near Paris after the G7 summit next week in France.",
+    "link": "https://www.pbs.org/newshour/world/macron-to-host-trump-for-dinner-at-versailles-after-g7-summit",
+    "image_url": "https://d3i6fh83elv35t.cloudfront.net/static/2026/06/2025-09-23T193239Z_537891158_RC2VXGA9Z7T7_RTRMADP_3_UN-ASSEMBLY-TRUMP-1024x683.jpg",
+    "source": "PBS NewsHour - The Latest",
+    "feed_url": "https://www.pbs.org/newshour/feeds/rss/headlines",
+    "published_at": "2026-06-13T19:05:47+00:00"
   },
-  "video": "output/20260613_062210_Anthropic_says_it_has_taken_its_latest_AI_models_offline_to_comply_with_new_expo.mp4",
-  "caption": "Anthropic says it has taken its latest AI models offline to comply with new export controls\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260613_193025_Macron_to_host_Trump_for_dinner_at_Versailles_after_G7_summit.mp4",
+  "caption": "Macron to host Trump for dinner at Versailles after G7 summit\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
