@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "f8b3b2d3e658962c946600b35e331e9f6b132d6e418adad8240e2a2cfcbb216b",
-    "title": "What to Watch in Louisiana’s Republican Senate Runoff",
-    "summary": "Saturday’s election is the latest test of President Trump’s influence in G.O.P. contests.",
-    "link": "https://www.nytimes.com/2026/06/27/us/politics/louisiana-senate-republican-runoff.html",
-    "image_url": "https://static01.nyt.com/images/2026/06/27/us/27pol-louisiana-wtw/27pol-louisiana-wtw-mediumSquareAt3X.png",
-    "source": "NYT > U.S. > Politics",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
-    "published_at": "2026-06-28T01:01:17+00:00"
+    "id": "cdffd46e9ad6f8798059f28ff5a1de766b5f9cd3bd8605280f182150e9e7e706",
+    "title": "NASA extends its commercial partnerships to Mars",
+    "summary": "If Aeolus succeeds, then look for more missions like it from a variety of companies.",
+    "link": "https://thehill.com/opinion/technology/5942682-nasa-relativity-mars-partnership/",
+    "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/06/mars_maven_12102025_AP25344723656488-1.jpg?w=900",
+    "source": "The Hill News",
+    "feed_url": "https://thehill.com/feed/",
+    "published_at": "2026-06-28T14:00:00+00:00"
   },
-  "video": "output/20260628_115156_What_to_Watch_in_Louisiana_s_Republican_Senate_Runoff.mp4",
-  "caption": "What to Watch in Louisiana’s Republican Senate Runoff\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260628_152227_NASA_extends_its_commercial_partnerships_to_Mars.mp4",
+  "caption": "NASA extends its commercial partnerships to Mars\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
