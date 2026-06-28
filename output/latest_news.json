@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "9f96f3ec913f2ad0fa8b1c20f8fca1b95a1ea8c5b9ea8c670b4b563d0ebd48da",
-    "title": "At the Great American State Fair, you can find a dinosaur's rib cage. Unity is another matter",
-    "summary": "The fair kicked off this week and is a run by Freedom 250, an organization created by President Donald Trump to run his administration's official events.",
-    "link": "https://www.pbs.org/newshour/nation/at-the-great-american-state-fair-you-can-find-a-dinosaurs-rib-cage-unity-is-another-matter",
-    "image_url": "https://d3i6fh83elv35t.cloudfront.net/static/2026/06/2026-06-26T050118Z_548195326_RC241MA60NE6_RTRMADP_3_USA-250-STATE-FAIR-1024x683.jpg",
-    "source": "PBS NewsHour - The Latest",
-    "feed_url": "https://www.pbs.org/newshour/feeds/rss/headlines",
-    "published_at": "2026-06-27T16:50:54+00:00"
+    "id": "d63028717f029816b06f709a1496d155ffaa35f9113072326530b57743d9e869",
+    "title": "At Least 4 Dead in Kentucky Flooding, Governor Says",
+    "summary": "Gov. Andy Beshear of Kentucky said emergency crews were rescuing people from flooded homes and vehicles on Saturday. Rain was expected to continue into the night.",
+    "link": "https://www.nytimes.com/2026/06/27/us/kentucky-flood-rain-emergency.html",
+    "image_url": "https://static01.nyt.com/images/2026/06/27/multimedia/27xp-kentucky-floods-gfqt/27xp-kentucky-floods-gfqt-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. News",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+    "published_at": "2026-06-28T00:20:22+00:00"
   },
-  "video": "output/20260627_192558_At_the_Great_American_State_Fair_you_can_find_a_dinosaur_s_rib_cage_Unity_is_ano.mp4",
-  "caption": "At the Great American State Fair, you can find a dinosaur's rib cage. Unity is another matter\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260628_062325_At_Least_4_Dead_in_Kentucky_Flooding_Governor_Says.mp4",
+  "caption": "At Least 4 Dead in Kentucky Flooding, Governor Says\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
