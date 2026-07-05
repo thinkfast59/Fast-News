@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "93bf47a7c19ee341673b180acaa92a25aea9318b73420ea9b24c2b0fb0c8c58e",
-    "title": "Lionel Messi scores 20th World Cup goal, extends streak to 8 games and takes Golden Boot lead",
-    "summary": "Messi's goal in the 29th minute was the 20th of his World Cup career, extending his record and moving him two ahead of France's Kylian Mbappé on the all-time list.",
-    "link": "https://www.pbs.org/newshour/world/lionel-messi-scores-20th-world-cup-goal-extends-streak-to-8-games-and-takes-golden-boot-lead",
-    "image_url": "https://d3i6fh83elv35t.cloudfront.net/static/2026/07/2026-07-04T010506Z_907819831_UP1EM7402FV3W_RTRMADP_3_SOCCER-WORLDCUP-ARG-CPV-1024x697.jpg",
-    "source": "PBS News Hour - The Latest",
-    "feed_url": "https://www.pbs.org/newshour/feeds/rss/headlines",
-    "published_at": "2026-07-04T16:50:23+00:00"
+    "id": "d5b3eaad57a19828b22a63943bcd21aa64fdf9e466eff71a6978ba9ddfaf69ab",
+    "title": "In Fourth of July Speech, Trump Celebrates America and Derides Foes",
+    "summary": "A centerpiece address for the nation’s 250th anniversary celebration devoted time to American history, but had all the hallmarks of a Trump rally.",
+    "link": "https://www.nytimes.com/2026/07/05/us/politics/trump-speech-fourth-july.html",
+    "image_url": "https://static01.nyt.com/images/2026/07/05/multimedia/05DC-TRUMP-fjwp/05DC-TRUMP-fjwp-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. News",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+    "published_at": "2026-07-05T05:02:35+00:00"
   },
-  "video": "output/20260704_191747_Lionel_Messi_scores_20th_World_Cup_goal_extends_streak_to_8_games_and_takes_Gold.mp4",
-  "caption": "Lionel Messi scores 20th World Cup goal, extends streak to 8 games and takes Golden Boot lead\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260705_061005_In_Fourth_of_July_Speech_Trump_Celebrates_America_and_Derides_Foes.mp4",
+  "caption": "In Fourth of July Speech, Trump Celebrates America and Derides Foes\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
