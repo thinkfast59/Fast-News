@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "d5b3eaad57a19828b22a63943bcd21aa64fdf9e466eff71a6978ba9ddfaf69ab",
-    "title": "In Fourth of July Speech, Trump Celebrates America and Derides Foes",
-    "summary": "A centerpiece address for the nation’s 250th anniversary celebration devoted time to American history, but had all the hallmarks of a Trump rally.",
-    "link": "https://www.nytimes.com/2026/07/05/us/politics/trump-speech-fourth-july.html",
-    "image_url": "https://static01.nyt.com/images/2026/07/05/multimedia/05DC-TRUMP-fjwp/05DC-TRUMP-fjwp-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-    "published_at": "2026-07-05T05:02:35+00:00"
+    "id": "e9151c1b6fc9b4fc3a89b2789b7a6cee5d44da7bd45bcba5c40cbfc394f7fc13",
+    "title": "Trump celebrates America’s 250th anniversary in weather-delayed, sometimes partisan speech",
+    "summary": "President Trump capped off the 250th anniversary of the nation’s founding with a late-night speech delayed by inclement weather that blended the championing of American achievements and resilience with deeply partisan rhetoric about the perceived ideological threats facing the country. “Tonight we come together for one of the most joyous and glorious milestones of all time,”…",
+    "link": "https://thehill.com/homenews/administration/5953811-trump-celebrates-americas-250th-birthday/",
+    "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/06/AP26176056949107.jpg?w=900",
+    "source": "The Hill News",
+    "feed_url": "https://thehill.com/feed/",
+    "published_at": "2026-07-05T05:03:01+00:00"
   },
-  "video": "output/20260705_061005_In_Fourth_of_July_Speech_Trump_Celebrates_America_and_Derides_Foes.mp4",
-  "caption": "In Fourth of July Speech, Trump Celebrates America and Derides Foes\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260705_114056_Trump_celebrates_America_s_250th_anniversary_in_weather-delayed_sometimes_partis.mp4",
+  "caption": "Trump celebrates America’s 250th anniversary in weather-delayed, sometimes partisan speech\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
