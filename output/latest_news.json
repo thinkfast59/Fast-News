@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "7daeddf69b65e82c3b5d471df0534f6802fbc92a3c071b29ac3389a75551c999",
-    "title": "Sexual Assault and Killing of Girl Set Off Days of Protest in West Bengal",
-    "summary": "After promising to improve safety for women in the Indian state, the party of Prime Minister Narendra Modi is facing public anger after the death of an 11-year-old girl.",
-    "link": "https://www.nytimes.com/2026/07/10/world/asia/girl-riots-west-bengal-baruipur.html",
-    "image_url": "https://static01.nyt.com/images/2026/07/11/multimedia/11int-india-murder-bkgv/11int-india-murder-bkgv-facebookJumbo.jpg",
-    "source": "NYT > World News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
-    "published_at": "2026-07-10T17:56:36+00:00"
+    "id": "26c49adaea8495194ec4c8e110acef4ca18198cce4c0c476ff819086781c9c65",
+    "title": "Rapidly growing wildfire in Los Angeles County prompts evacuations in remote high desert",
+    "summary": "A fast-spreading blaze has prompted evacuations in a sparsely populated area of Los Angeles County",
+    "link": "https://abcnews.com/US/wireStory/rapidly-growing-wildfire-los-angeles-county-prompts-evacuations-134668514",
+    "image_url": "https://s.abcnews.com/images/US/abc_news_default_2000x2000_update_16x9_992.jpg",
+    "source": "ABC News: US",
+    "feed_url": "https://abcnews.go.com/abcnews/usheadlines",
+    "published_at": "2026-07-11T02:14:52+00:00"
   },
-  "video": "output/20260710_193233_Sexual_Assault_and_Killing_of_Girl_Set_Off_Days_of_Protest_in_West_Bengal.mp4",
-  "caption": "Sexual Assault and Killing of Girl Set Off Days of Protest in West Bengal\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260711_051908_Rapidly_growing_wildfire_in_Los_Angeles_County_prompts_evacuations_in_remote_hig.mp4",
+  "caption": "Rapidly growing wildfire in Los Angeles County prompts evacuations in remote high desert\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
