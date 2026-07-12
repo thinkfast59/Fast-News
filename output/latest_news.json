@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "a5a683e95f97085ddd59dc02f5229a919ef32dff43ef85a807ed9121cb67b633",
-    "title": "Marquez snatches German MotoGP pole with new lap record, Bezzecchi crashes again",
-    "summary": "",
-    "link": "https://www.channelnewsasia.com/sport/marquez-snatches-german-motogp-pole-new-lap-record-bezzecchi-crashes-again-6248066",
-    "image_url": "https://dam.mediacorp.sg/image/upload/s--Yksa1Zxf--/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2026-07-11T101326Z_1_LYNXMPEM6A05C_RTROPTP_3_MOTOR-MOTOGP-GERMANY.JPG?itok=ouykb5rR",
-    "source": "Latest News",
-    "feed_url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
-    "published_at": "2026-07-11T10:13:26+00:00"
+    "id": "9fb6e50a31f3ac6d79e74e80ec84cd5d6d9788ef33f67584e5a453c0be430388",
+    "title": "Martha Lillard, last US polio patient using iron lung, dies at 78 in Oklahoma",
+    "summary": "Martha Lillard, the last U.S. polio patient using an iron lung, has died at 78 in Oklahoma",
+    "link": "https://abcnews.com/US/wireStory/martha-lillard-us-polio-patient-iron-lung-dies-134668491",
+    "image_url": "https://i.abcnewsfe.com/a/8835e7b2-65e3-4a45-b2f3-4acfec9712ea/wirestory_41e5b4da4f4e710344dd0872d7fcf987_16x9.jpg?w=1600",
+    "source": "ABC News: US",
+    "feed_url": "https://abcnews.go.com/abcnews/usheadlines",
+    "published_at": "2026-07-12T01:44:07+00:00"
   },
-  "video": "output/20260711_111047_Marquez_snatches_German_MotoGP_pole_with_new_lap_record_Bezzecchi_crashes_again.mp4",
-  "caption": "Marquez snatches German MotoGP pole with new lap record, Bezzecchi crashes again\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260712_082334_Martha_Lillard_last_US_polio_patient_using_iron_lung_dies_at_78_in_Oklahoma.mp4",
+  "caption": "Martha Lillard, last US polio patient using iron lung, dies at 78 in Oklahoma\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
