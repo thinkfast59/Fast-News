@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "cbedbc791536e1b079aa6c2c1fcaba72cb7687ac8bbde00dc54e93e09e37d1fc",
-    "title": "House Votes for Permanent Daylight Saving Time",
-    "summary": "House Republicans and Democrats united in favor of a bill to eliminate semiannual clock-changing, but it faces an uncertain fate in the Senate.",
-    "link": "https://www.nytimes.com/2026/07/14/us/politics/house-daylight-savings-time-sunshine-protection-act.html",
-    "image_url": "https://static01.nyt.com/images/2026/07/14/multimedia/14DC-DAYLIGHT-pwjz/14DC-DAYLIGHT-pwjz-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-    "published_at": "2026-07-15T01:33:07+00:00"
+    "id": "4333f20bbf4f9da5d9f353425de2bbfe50f78b1f99b19f72c220c4570ae606d0",
+    "title": "Takeaways From Justices Kagan and Barrett’s Congressional Testimony on Supreme Court Security",
+    "summary": "Elena Kagan and Amy Coney Barrett, the first Supreme Court justices to testify since 2019, talked about ethics and security threats during collegial hearings.",
+    "link": "https://www.nytimes.com/2026/07/14/us/politics/supreme-court-congress-takeaways.html",
+    "image_url": "https://static01.nyt.com/images/2026/07/14/multimedia/14dc-scotus-takeaways-mftq/14dc-scotus-takeaways-mftq-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. > Politics",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
+    "published_at": "2026-07-15T03:00:57+00:00"
   },
-  "video": "output/20260715_045813_House_Votes_for_Permanent_Daylight_Saving_Time.mp4",
-  "caption": "House Votes for Permanent Daylight Saving Time\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260715_081544_Takeaways_From_Justices_Kagan_and_Barrett_s_Congressional_Testimony_on_Supreme_C.mp4",
+  "caption": "Takeaways From Justices Kagan and Barrett’s Congressional Testimony on Supreme Court Security\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
