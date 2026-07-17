@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "8b86e20d39252e2c29dbcc866487df7686fcdc88daf6d75afafdd7c04fecfb51",
-    "title": "Live updates: Mullin holds press conference as Trump alleges compromised US elections",
-    "summary": "President Trump on Thursday night accused China of interfering with American elections and declassified documents that he argued point to insecurity at the ballot box. He launched a series of claims regarding the 2020 election, declassifying a handful of documents that he argued proved his points. Critics and elections experts quickly noted the documents shed…",
-    "link": "https://thehill.com/homenews/administration/5973243-live-updates-trump-speech-elections-iran/",
-    "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/07/AP26198067192071-e1784292125919.jpg?w=900",
-    "source": "The Hill News",
-    "feed_url": "https://thehill.com/feed/",
-    "published_at": "2026-07-17T15:03:45+00:00"
+    "id": "52d1ac3ecec621baad0ad3423b8141755494ed8cb0905279d4fcf55ff82a5d9d",
+    "title": "Trump Brings Full Weight of Government to Bolster False Election Claims",
+    "summary": "Intelligence agencies provided the White House with a trove of declassified documents that President Trump cited on Thursday as evidence of election vulnerabilities.",
+    "link": "https://www.nytimes.com/2026/07/17/us/politics/trump-government-election-claims.html",
+    "image_url": "https://static01.nyt.com/images/2026/08/16/multimedia/16dc-trump-election-top-ctvw/16dc-trump-election-top-ctvw-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. > Politics",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
+    "published_at": "2026-07-17T18:54:40+00:00"
   },
-  "video": "output/20260717_151935_Live_updates_Mullin_holds_press_conference_as_Trump_alleges_compromised_US_elect.mp4",
-  "caption": "Live updates: Mullin holds press conference as Trump alleges compromised US elections\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260717_191410_Trump_Brings_Full_Weight_of_Government_to_Bolster_False_Election_Claims.mp4",
+  "caption": "Trump Brings Full Weight of Government to Bolster False Election Claims\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
