@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "ab84cbbefb4bc496530e205349925149f0dcd683a1774a670f02932aa218197a",
-    "title": "A Trump Obsession That Carries a Cost for Democracy",
-    "summary": "In demanding steps to address the integrity of voting, President Trump persisted in relitigating his 2020 election defeat while finding ways to cast doubt on the 2026 outcome.",
-    "link": "https://www.nytimes.com/2026/07/17/us/politics/trump-elections-politics.html",
-    "image_url": "https://static01.nyt.com/images/2026/08/16/multimedia/16dc-Trump-democracy-kcpv/16dc-Trump-democracy-kcpv-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. > Politics",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
-    "published_at": "2026-07-17T09:06:03+00:00"
+    "id": "8b86e20d39252e2c29dbcc866487df7686fcdc88daf6d75afafdd7c04fecfb51",
+    "title": "Live updates: Mullin holds press conference as Trump alleges compromised US elections",
+    "summary": "President Trump on Thursday night accused China of interfering with American elections and declassified documents that he argued point to insecurity at the ballot box. He launched a series of claims regarding the 2020 election, declassifying a handful of documents that he argued proved his points. Critics and elections experts quickly noted the documents shed…",
+    "link": "https://thehill.com/homenews/administration/5973243-live-updates-trump-speech-elections-iran/",
+    "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/07/AP26198067192071-e1784292125919.jpg?w=900",
+    "source": "The Hill News",
+    "feed_url": "https://thehill.com/feed/",
+    "published_at": "2026-07-17T15:03:45+00:00"
   },
-  "video": "output/20260717_112816_A_Trump_Obsession_That_Carries_a_Cost_for_Democracy.mp4",
-  "caption": "A Trump Obsession That Carries a Cost for Democracy\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260717_151935_Live_updates_Mullin_holds_press_conference_as_Trump_alleges_compromised_US_elect.mp4",
+  "caption": "Live updates: Mullin holds press conference as Trump alleges compromised US elections\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
