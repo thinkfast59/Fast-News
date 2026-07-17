@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "fbd06f98b789b5be02f29e6d1cb30fcfab979f35dbe6c74204cc0b570e532f2a",
-    "title": "Andy Burnham to be made UK Labour leader on way to becoming prime minister",
-    "summary": "The special conference marks the final step before Andy Burnham becomes the UK's seventh prime minister in a decade.",
-    "link": "https://www.channelnewsasia.com/world/uk-andy-burnham-labour-prime-minister-6259746",
-    "image_url": "https://dam.mediacorp.sg/image/upload/s--g9r011iG--/c_crop,h_449,w_799,x_1,y_2/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2026-07-16T230339Z_1_LYNXMPEM6F1K8_RTROPTP_3_ISRAEL-PALESTINIANS-BRITAIN.JPG?itok=Ezv_6R3w",
-    "source": "Latest News",
-    "feed_url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
-    "published_at": "2026-07-17T07:59:00+00:00"
+    "id": "ab84cbbefb4bc496530e205349925149f0dcd683a1774a670f02932aa218197a",
+    "title": "A Trump Obsession That Carries a Cost for Democracy",
+    "summary": "In demanding steps to address the integrity of voting, President Trump persisted in relitigating his 2020 election defeat while finding ways to cast doubt on the 2026 outcome.",
+    "link": "https://www.nytimes.com/2026/07/17/us/politics/trump-elections-politics.html",
+    "image_url": "https://static01.nyt.com/images/2026/08/16/multimedia/16dc-Trump-democracy-kcpv/16dc-Trump-democracy-kcpv-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. > Politics",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
+    "published_at": "2026-07-17T09:06:03+00:00"
   },
-  "video": "output/20260717_081512_Andy_Burnham_to_be_made_UK_Labour_leader_on_way_to_becoming_prime_minister.mp4",
-  "caption": "Andy Burnham to be made UK Labour leader on way to becoming prime minister\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260717_112816_A_Trump_Obsession_That_Carries_a_Cost_for_Democracy.mp4",
+  "caption": "A Trump Obsession That Carries a Cost for Democracy\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
