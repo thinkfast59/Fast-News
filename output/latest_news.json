@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "eddc7197291c4644fdea882e7e61c743a4fa590409fe8b2f73d3b1b156c4027c",
-    "title": "Trump Threatens Canada With Tariffs for Wildfire Smoke Over U.S.",
-    "summary": "The president said on Friday in a social media post that Canada was failing to manage its wildfire response as smoke has blanketed U.S. cities including New York and Chicago.",
-    "link": "https://www.nytimes.com/2026/07/17/weather/trump-canada-tariffs-wildfire-smoke.html",
-    "image_url": "https://static01.nyt.com/images/2026/07/17/multimedia/17nat-smoke-live-canada-us-politics-jptv/17nat-smoke-live-canada-us-politics-jptv-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. > Politics",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
-    "published_at": "2026-07-18T03:06:43+00:00"
+    "id": "2ed896a0581e96db552fea83560d055af84d2e80a495c39ac0e60148d42b0970",
+    "title": "CENTCOM confirms 2 US service members killed in Jordan, another missing",
+    "summary": "Two U.S. service members were killed, and one is still missing after Iran hit two military bases in Jordan on Friday, according to U.S. Central Command (Centcom). Additionally, four American service members were “medically evacuated” to hospitals in Jordan and have since been discharged. Other troops who sustained minor injuries were evaluated and have returned…",
+    "link": "https://thehill.com/policy/defense/5976260-us-military-2-killed-jordan-iran-war/",
+    "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/07/AP21072450395588-e1784397091227.jpg?w=900",
+    "source": "The Hill News",
+    "feed_url": "https://thehill.com/feed/",
+    "published_at": "2026-07-18T18:00:44+00:00"
   },
-  "video": "output/20260718_111328_Trump_Threatens_Canada_With_Tariffs_for_Wildfire_Smoke_Over_U_S.mp4",
-  "caption": "Trump Threatens Canada With Tariffs for Wildfire Smoke Over U.S.\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260718_190845_CENTCOM_confirms_2_US_service_members_killed_in_Jordan_another_missing.mp4",
+  "caption": "CENTCOM confirms 2 US service members killed in Jordan, another missing\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
