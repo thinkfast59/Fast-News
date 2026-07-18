@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "58930d568da36d86b2c55efee9251580697c02f1492df05bd628d3300879f7f7",
-    "title": "Former intelligence official weighs Trump's election security allegations",
-    "summary": "President Trump is again trying to sow doubt in the election process in the United States. For perspective, Geoff Bennett spoke with Sue Gordon. She spent 30 years in the intelligence community, serving as principal deputy director of national intelligence during President Trump's first term, the highest-ranking career intelligence official in the country at the time.",
-    "link": "https://www.pbs.org/newshour/show/former-intelligence-official-weighs-trumps-election-security-allegations",
-    "image_url": "https://d3i6fh83elv35t.cloudfront.net/static/2026/07/2026-07-17T182404Z_65423901_RC2TFMAVMSJ6_RTRMADP_3_USA-TRUMP-1024x683.jpg",
-    "source": "PBS News Hour - The Latest",
-    "feed_url": "https://www.pbs.org/newshour/feeds/rss/headlines",
-    "published_at": "2026-07-17T22:52:53+00:00"
+    "id": "eddc7197291c4644fdea882e7e61c743a4fa590409fe8b2f73d3b1b156c4027c",
+    "title": "Trump Threatens Canada With Tariffs for Wildfire Smoke Over U.S.",
+    "summary": "The president said on Friday in a social media post that Canada was failing to manage its wildfire response as smoke has blanketed U.S. cities including New York and Chicago.",
+    "link": "https://www.nytimes.com/2026/07/17/weather/trump-canada-tariffs-wildfire-smoke.html",
+    "image_url": "https://static01.nyt.com/images/2026/07/17/multimedia/17nat-smoke-live-canada-us-politics-jptv/17nat-smoke-live-canada-us-politics-jptv-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. > Politics",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
+    "published_at": "2026-07-18T03:06:43+00:00"
   },
-  "video": "output/20260718_045513_Former_intelligence_official_weighs_Trump_s_election_security_allegations.mp4",
-  "caption": "Former intelligence official weighs Trump's election security allegations\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260718_111328_Trump_Threatens_Canada_With_Tariffs_for_Wildfire_Smoke_Over_U_S.mp4",
+  "caption": "Trump Threatens Canada With Tariffs for Wildfire Smoke Over U.S.\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
