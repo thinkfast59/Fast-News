@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "52d1ac3ecec621baad0ad3423b8141755494ed8cb0905279d4fcf55ff82a5d9d",
-    "title": "Trump Brings Full Weight of Government to Bolster False Election Claims",
-    "summary": "Intelligence agencies provided the White House with a trove of declassified documents that President Trump cited on Thursday as evidence of election vulnerabilities.",
-    "link": "https://www.nytimes.com/2026/07/17/us/politics/trump-government-election-claims.html",
-    "image_url": "https://static01.nyt.com/images/2026/08/16/multimedia/16dc-trump-election-top-ctvw/16dc-trump-election-top-ctvw-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. > Politics",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
-    "published_at": "2026-07-17T18:54:40+00:00"
+    "id": "58930d568da36d86b2c55efee9251580697c02f1492df05bd628d3300879f7f7",
+    "title": "Former intelligence official weighs Trump's election security allegations",
+    "summary": "President Trump is again trying to sow doubt in the election process in the United States. For perspective, Geoff Bennett spoke with Sue Gordon. She spent 30 years in the intelligence community, serving as principal deputy director of national intelligence during President Trump's first term, the highest-ranking career intelligence official in the country at the time.",
+    "link": "https://www.pbs.org/newshour/show/former-intelligence-official-weighs-trumps-election-security-allegations",
+    "image_url": "https://d3i6fh83elv35t.cloudfront.net/static/2026/07/2026-07-17T182404Z_65423901_RC2TFMAVMSJ6_RTRMADP_3_USA-TRUMP-1024x683.jpg",
+    "source": "PBS News Hour - The Latest",
+    "feed_url": "https://www.pbs.org/newshour/feeds/rss/headlines",
+    "published_at": "2026-07-17T22:52:53+00:00"
   },
-  "video": "output/20260717_191410_Trump_Brings_Full_Weight_of_Government_to_Bolster_False_Election_Claims.mp4",
-  "caption": "Trump Brings Full Weight of Government to Bolster False Election Claims\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260718_045513_Former_intelligence_official_weighs_Trump_s_election_security_allegations.mp4",
+  "caption": "Former intelligence official weighs Trump's election security allegations\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
