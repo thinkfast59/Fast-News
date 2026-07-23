@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "a9d6014c239d2a572952820f84bd299c022d5cc2bb2ec69285ef3cc65dd496b2",
-    "title": "Tokyo reports most heat-related hospitalisations since 2010, one dead",
-    "summary": "The Tokyo Fire Department said 453 people were taken to hospital on Wednesday as Japan swelters under a heatwave.",
-    "link": "https://www.channelnewsasia.com/east-asia/japan-heatwave-tokyo-hospitalisation-6272686",
-    "image_url": "https://dam.mediacorp.sg/image/upload/s--h_wnzShI--/c_crop,h_1125,w_1999,x_1,y_95/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2023-11:afp_watermark_14112023,w_0.1/f_auto,q_auto/v1/mediacorp/cna/image/2026/07/23/000_c2x43g7.jpg?itok=DHlJ38kB",
-    "source": "Latest News",
-    "feed_url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
-    "published_at": "2026-07-23T05:11:00+00:00"
+    "id": "bac607780a44a572c5e13b0e05174d2dee13a0da61e272e85c70ade9ef954229",
+    "title": "Man Found Guilty in 2023 Stabbings Near UC Davis, and Is Ruled Insane",
+    "summary": "A jury this week found Carlos Reales Dominguez guilty of involuntary manslaughter in two deaths, but a judge ruled that he was insane at the time of the crimes. He faces time in a mental hospital.",
+    "link": "https://www.nytimes.com/2026/07/22/us/uc-davis-california-stabbing-verdict.html",
+    "image_url": "https://static01.nyt.com/images/2026/07/22/multimedia/00xp-davis-verdict-mjgk/00xp-davis-verdict-mjgk-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. News",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+    "published_at": "2026-07-23T01:27:04+00:00"
   },
-  "video": "output/20260723_053014_Tokyo_reports_most_heat-related_hospitalisations_since_2010_one_dead.mp4",
-  "caption": "Tokyo reports most heat-related hospitalisations since 2010, one dead\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260723_083526_Man_Found_Guilty_in_2023_Stabbings_Near_UC_Davis_and_Is_Ruled_Insane.mp4",
+  "caption": "Man Found Guilty in 2023 Stabbings Near UC Davis, and Is Ruled Insane\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
