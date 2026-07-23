@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "eb87ffc3c1920ca007cde1d50f225ed57e9a6bab1010f5dada88adcb0bd0e8cf",
-    "title": "Supreme Court Turbocharges Presidential Power",
-    "summary": "A pair of decisions reshaped the structure of the federal government.",
-    "link": "https://www.nytimes.com/2026/07/23/us/politics/the-docket-presidential-power-trump.html",
-    "image_url": "https://static01.nyt.com/images/2026/07/23/multimedia/23thedocket-nl-top-zkpm/23thedocket-nl-top-zkpm-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-    "published_at": "2026-07-23T16:07:36+00:00"
+    "id": "aacf53455909262e1f973aee9a2062958535e8bff37b2756b126666816dc1a6d",
+    "title": "Watch live: Trump gives remarks on expanding Ratepayer Protection Pledge",
+    "summary": "President Trump will deliver remarks Thursday afternoon on the White House’s plan to expand a voluntary ratepayer protection pledge aimed at shielding consumers from electricity cost increases tied to AI data center growth. The announcement comes as the Ratepayer Protection Act is gaining steam in the House. The legislation, if passed, would require states to…",
+    "link": "https://thehill.com/video-clips/5986451-watch-live-donald-trump-white-house-ai-data-center-ratepayer-protection-pledge-expansion-epa/",
+    "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/07/AP26196762563517-e1784828381260.jpg?w=900",
+    "source": "The Hill News",
+    "feed_url": "https://thehill.com/feed/",
+    "published_at": "2026-07-23T17:48:09+00:00"
   },
-  "video": "output/20260723_161306_Supreme_Court_Turbocharges_Presidential_Power.mp4",
-  "caption": "Supreme Court Turbocharges Presidential Power\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260723_192136_Watch_live_Trump_gives_remarks_on_expanding_Ratepayer_Protection_Pledge.mp4",
+  "caption": "Watch live: Trump gives remarks on expanding Ratepayer Protection Pledge\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
