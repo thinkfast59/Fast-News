@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "76ecdca261ff176a1cd49ef64d605b03369962a043fd37e0611cdc42e42619e3",
-    "title": "Hitler’s Birthplace in Austria Is Now a Police Station",
-    "summary": "The government repurposed the 17th century building in hopes of preventing the site from becoming an attraction for Nazi sympathizers.",
-    "link": "https://www.nytimes.com/2026/07/22/world/europe/hitler-birthplace-austria-police-station.html",
-    "image_url": "https://static01.nyt.com/images/2026/07/22/multimedia/22xp-hitler-bjfv/22xp-hitler-bjfv-mediumSquareAt3X.jpg",
-    "source": "NYT > World News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
-    "published_at": "2026-07-22T19:07:28+00:00"
+    "id": "a9d6014c239d2a572952820f84bd299c022d5cc2bb2ec69285ef3cc65dd496b2",
+    "title": "Tokyo reports most heat-related hospitalisations since 2010, one dead",
+    "summary": "The Tokyo Fire Department said 453 people were taken to hospital on Wednesday as Japan swelters under a heatwave.",
+    "link": "https://www.channelnewsasia.com/east-asia/japan-heatwave-tokyo-hospitalisation-6272686",
+    "image_url": "https://dam.mediacorp.sg/image/upload/s--h_wnzShI--/c_crop,h_1125,w_1999,x_1,y_95/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2023-11:afp_watermark_14112023,w_0.1/f_auto,q_auto/v1/mediacorp/cna/image/2026/07/23/000_c2x43g7.jpg?itok=DHlJ38kB",
+    "source": "Latest News",
+    "feed_url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
+    "published_at": "2026-07-23T05:11:00+00:00"
   },
-  "video": "output/20260722_192341_Hitler_s_Birthplace_in_Austria_Is_Now_a_Police_Station.mp4",
-  "caption": "Hitler’s Birthplace in Austria Is Now a Police Station\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260723_053014_Tokyo_reports_most_heat-related_hospitalisations_since_2010_one_dead.mp4",
+  "caption": "Tokyo reports most heat-related hospitalisations since 2010, one dead\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
