@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "d83fec84ba00fb3bbe97c86269b1a5a577fb21bab600e763cabbe7fea5a68672",
-    "title": "Iran’s New Leader Is More Open to Pursuing a Nuclear Weapon, U.S. Intelligence Says",
-    "summary": "The previous supreme leader, who was killed early in the war, had renounced nuclear weapons. U.S. spy agencies believe his son is more interested in building a bomb.",
-    "link": "https://www.nytimes.com/2026/07/24/us/politics/iran-nuclear-weapon.html",
-    "image_url": "https://static01.nyt.com/images/2026/07/24/multimedia/24dc-intel01-photo-vfhz/24dc-intel01-photo-vfhz-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. > Politics",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
-    "published_at": "2026-07-24T18:18:50+00:00"
+    "id": "43a6ee634f7fd3c4b402fa3ace5e2217e576320f40dae3eefcdb3dd2628b4b55",
+    "title": "Nvidia, SK Group unveil $500 billion-plus AI data centers initiative, memory partnership",
+    "summary": "",
+    "link": "https://www.channelnewsasia.com/business/nvidia-sk-group-unveil-500-billion-plus-ai-data-centers-initiative-memory-partnership-6277421",
+    "image_url": "https://dam.mediacorp.sg/image/upload/s--SPcCYhfK--/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2026-07-24T235913Z_2_LYNXMPEM6N1YX_RTROPTP_3_NVIDIA-RESULTS.JPG?itok=87nyuJfW",
+    "source": "Latest News",
+    "feed_url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
+    "published_at": "2026-07-24T23:53:43+00:00"
   },
-  "video": "output/20260724_194023_Iran_s_New_Leader_Is_More_Open_to_Pursuing_a_Nuclear_Weapon_U_S_Intelligence_Say.mp4",
-  "caption": "Iran’s New Leader Is More Open to Pursuing a Nuclear Weapon, U.S. Intelligence Says\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260725_052033_Nvidia_SK_Group_unveil_500_billion-plus_AI_data_centers_initiative_memory_partne.mp4",
+  "caption": "Nvidia, SK Group unveil $500 billion-plus AI data centers initiative, memory partnership\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
