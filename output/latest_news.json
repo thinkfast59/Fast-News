@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "1ba2086c8c02cde58be800372135547adeab941561c765dc2804397e525f05f5",
-    "title": "Inside the Rushed Effort to Get Trump His New Air Force One",
-    "summary": "A New York Times investigation found that President Trump’s push to speed delivery of the aircraft led to ballooning costs and trade-offs in safety features.",
-    "link": "https://www.nytimes.com/2026/07/25/us/politics/trump-air-force-one-security.html",
-    "image_url": "https://static01.nyt.com/images/2026/07/23/multimedia/00dc-airforce1-top-4-tlvq/00dc-airforce1-top-4-tlvq-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-    "published_at": "2026-07-25T09:02:08+00:00"
+    "id": "77e8c65240b9f2de5351abb8726a431eaccd0cff56e895a206212df6e8008df0",
+    "title": "From Celebration to Escalation: How Trump’s Iran Cease-Fire Collapsed",
+    "summary": "The U.S. deal with Iran signed in June initially appeared to be a success. It didn’t take long to fall apart.",
+    "link": "https://www.nytimes.com/2026/07/25/us/politics/trump-iran-cease-fire-collapse.html",
+    "image_url": "https://static01.nyt.com/images/2026/07/23/multimedia/00dc-strait01a-photo-lpgb/00dc-strait01a-photo-lpgb-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. > Politics",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
+    "published_at": "2026-07-25T13:58:49+00:00"
   },
-  "video": "output/20260725_111616_Inside_the_Rushed_Effort_to_Get_Trump_His_New_Air_Force_One.mp4",
-  "caption": "Inside the Rushed Effort to Get Trump His New Air Force One\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260725_150740_From_Celebration_to_Escalation_How_Trump_s_Iran_Cease-Fire_Collapsed.mp4",
+  "caption": "From Celebration to Escalation: How Trump’s Iran Cease-Fire Collapsed\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
