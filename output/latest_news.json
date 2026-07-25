@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "ca6b25652548a9bf3cd1b493b2ddbf9354a271e61fd8b55233499f7fb7d7db79",
-    "title": "At Correspondents’ Dinner, a Rambling Trump Hurls Insults",
-    "summary": "President Trump gave the keynote speech as relations between his administration and the press continue to deteriorate.",
-    "link": "https://www.nytimes.com/2026/07/25/us/politics/is-this-supposed-to-be-fun-trump-hurls-insults-at-correspondents-dinner.html",
-    "image_url": "https://static01.nyt.com/images/2026/07/24/multimedia/24dc-whca-dinner1/24trump-news-header730p-jmhk-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. > Politics",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
-    "published_at": "2026-07-25T07:35:25+00:00"
+    "id": "1ba2086c8c02cde58be800372135547adeab941561c765dc2804397e525f05f5",
+    "title": "Inside the Rushed Effort to Get Trump His New Air Force One",
+    "summary": "A New York Times investigation found that President Trump’s push to speed delivery of the aircraft led to ballooning costs and trade-offs in safety features.",
+    "link": "https://www.nytimes.com/2026/07/25/us/politics/trump-air-force-one-security.html",
+    "image_url": "https://static01.nyt.com/images/2026/07/23/multimedia/00dc-airforce1-top-4-tlvq/00dc-airforce1-top-4-tlvq-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. News",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+    "published_at": "2026-07-25T09:02:08+00:00"
   },
-  "video": "output/20260725_081044_At_Correspondents_Dinner_a_Rambling_Trump_Hurls_Insults.mp4",
-  "caption": "At Correspondents’ Dinner, a Rambling Trump Hurls Insults\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260725_111616_Inside_the_Rushed_Effort_to_Get_Trump_His_New_Air_Force_One.mp4",
+  "caption": "Inside the Rushed Effort to Get Trump His New Air Force One\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
