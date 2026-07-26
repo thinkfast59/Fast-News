@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "b787f64b903ab7c0997c8f47db5ddfe3af6fbce1477a12e8d83c6fc51759981e",
-    "title": "Trump Is Pushing Nuclear Energy, Including Saudi Deal. His Family and Supporters Could Benefit.",
-    "summary": "In some cases, no direct line can be drawn from the president’s domestic nuclear agenda to his family or close allies. But they have overlapping business ties that could position them for gains.",
-    "link": "https://www.nytimes.com/2026/07/26/us/politics/trump-nuclear-energy-agenda-saudi-deal.html",
-    "image_url": "https://static01.nyt.com/images/2026/07/24/us/dc-nucleartrump-1/dc-nucleartrump-1-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-    "published_at": "2026-07-26T09:02:04+00:00"
+    "id": "de1be073318bbb86e2d9bf4dff2713d786e149711880c2b6a5eda63c18bea9e3",
+    "title": "London's Gatwick Airport suffers water outage",
+    "summary": "Flights were not reported to be affected, but passengers posted online that they were unable to flush toilets, get hot drinks, wash their hands or fill up water bottles",
+    "link": "https://www.channelnewsasia.com/world/london-gatwick-airport-water-outage-6279041",
+    "image_url": "https://dam.mediacorp.sg/image/upload/s--mUmGaKRv--/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2026-01-20T170156Z_4_LYNXMPEM0J0NE_RTROPTP_3_BRITAIN-AIRPORTS-GATWICK.JPG?itok=0S3imV2k",
+    "source": "Latest News",
+    "feed_url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
+    "published_at": "2026-07-26T13:50:00+00:00"
   },
-  "video": "output/20260726_112453_Trump_Is_Pushing_Nuclear_Energy_Including_Saudi_Deal_His_Family_and_Supporters_C.mp4",
-  "caption": "Trump Is Pushing Nuclear Energy, Including Saudi Deal. His Family and Supporters Could Benefit.\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260726_151017_London_s_Gatwick_Airport_suffers_water_outage.mp4",
+  "caption": "London's Gatwick Airport suffers water outage\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
