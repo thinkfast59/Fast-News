@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "de1be073318bbb86e2d9bf4dff2713d786e149711880c2b6a5eda63c18bea9e3",
-    "title": "London's Gatwick Airport suffers water outage",
-    "summary": "Flights were not reported to be affected, but passengers posted online that they were unable to flush toilets, get hot drinks, wash their hands or fill up water bottles",
-    "link": "https://www.channelnewsasia.com/world/london-gatwick-airport-water-outage-6279041",
-    "image_url": "https://dam.mediacorp.sg/image/upload/s--mUmGaKRv--/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2026-01-20T170156Z_4_LYNXMPEM0J0NE_RTROPTP_3_BRITAIN-AIRPORTS-GATWICK.JPG?itok=0S3imV2k",
-    "source": "Latest News",
-    "feed_url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
-    "published_at": "2026-07-26T13:50:00+00:00"
+    "id": "a352c2984bfe42ef153718771695d5044d1a77fac0cbe406f00647f71c288e3d",
+    "title": "Inside the Phone-Throwing Drama at the Troubled, Broke Democratic Party",
+    "summary": "The Democrats should be well positioned to make gains in this year’s midterms. But inside party headquarters, every week brings paranoia, worries about money and, on occasion, emotional eruptions.",
+    "link": "https://www.nytimes.com/2026/07/26/us/politics/ken-martin-dnc-democrats.html",
+    "image_url": "https://static01.nyt.com/images/2026/07/26/multimedia/26pol-dnc-chaos-lqjm/26pol-dnc-chaos-lqjm-mediumSquareAt3X-v2.jpg",
+    "source": "NYT > U.S. News",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+    "published_at": "2026-07-26T17:31:21+00:00"
   },
-  "video": "output/20260726_151017_London_s_Gatwick_Airport_suffers_water_outage.mp4",
-  "caption": "London's Gatwick Airport suffers water outage\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260726_191513_Inside_the_Phone-Throwing_Drama_at_the_Troubled_Broke_Democratic_Party.mp4",
+  "caption": "Inside the Phone-Throwing Drama at the Troubled, Broke Democratic Party\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
