@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "a352c2984bfe42ef153718771695d5044d1a77fac0cbe406f00647f71c288e3d",
-    "title": "Inside the Phone-Throwing Drama at the Troubled, Broke Democratic Party",
-    "summary": "The Democrats should be well positioned to make gains in this year’s midterms. But inside party headquarters, every week brings paranoia, worries about money and, on occasion, emotional eruptions.",
-    "link": "https://www.nytimes.com/2026/07/26/us/politics/ken-martin-dnc-democrats.html",
-    "image_url": "https://static01.nyt.com/images/2026/07/26/multimedia/26pol-dnc-chaos-lqjm/26pol-dnc-chaos-lqjm-mediumSquareAt3X-v2.jpg",
-    "source": "NYT > U.S. News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-    "published_at": "2026-07-26T17:31:21+00:00"
+    "id": "37c53005b4f98b757b35207c6bccf3f3203baf3f5fc6a7443680efa80481effa",
+    "title": "Sweltering heat wave grips central and southern US for a second straight day",
+    "summary": "A scorching heat wave continues across the central and southern United States, leaving at least 40 million people under extreme heat warnings",
+    "link": "https://abcnews.com/US/wireStory/sweltering-heat-wave-grips-central-southern-us-straight-135101692",
+    "image_url": "https://s.abcnews.com/images/US/abc_news_default_2000x2000_update_16x9_992.jpg",
+    "source": "ABC News: US",
+    "feed_url": "https://abcnews.go.com/abcnews/usheadlines",
+    "published_at": "2026-07-26T23:38:40+00:00"
   },
-  "video": "output/20260726_191513_Inside_the_Phone-Throwing_Drama_at_the_Troubled_Broke_Democratic_Party.mp4",
-  "caption": "Inside the Phone-Throwing Drama at the Troubled, Broke Democratic Party\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260727_055643_Sweltering_heat_wave_grips_central_and_southern_US_for_a_second_straight_day.mp4",
+  "caption": "Sweltering heat wave grips central and southern US for a second straight day\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
