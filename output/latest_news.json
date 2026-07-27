@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "49db23b9082ad99ff745b6ab4e26c838f14901b0ddbfb4857092d83c70ac6ee4",
-    "title": "Trump heads to Michigan to spotlight auto jobs ahead of primary",
-    "summary": "Trump is heading to Michigan to make his case on jobs, manufacturing and the economy just days before primary voting.",
-    "link": "https://thehill.com/homenews/administration/5991491-donald-trump-michigan-auto-jobs/",
-    "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/07/GettyImages-2286239412.jpg?w=900",
-    "source": "The Hill News",
-    "feed_url": "https://thehill.com/feed/",
-    "published_at": "2026-07-27T11:14:13+00:00"
+    "id": "e7efb61b1e8fe22ba67d56539d87a8cb0be9f67175b35d1d55390b11b598b234",
+    "title": "Wildfires Live Updates: New Heat Wave Could Worsen France and Spain’s ‘Unprecedented’ Fire Season",
+    "summary": "Firefighters and volunteers raced to contain wildfires on Monday. The crisis has forced hundreds of thousands to evacuate in central Spain and southwest France.",
+    "link": "https://www.nytimes.com/live/2026/07/27/world/france-spain-wildfires-evacutions",
+    "image_url": "https://static01.nyt.com/images/2026/07/27/multimedia/27euro-fire-130-tmpw/27euro-fire-130-tmpw-mediumSquareAt3X.jpg",
+    "source": "NYT > World News",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+    "published_at": "2026-07-27T19:28:16+00:00"
   },
-  "video": "output/20260727_130622_Trump_heads_to_Michigan_to_spotlight_auto_jobs_ahead_of_primary.mp4",
-  "caption": "Trump heads to Michigan to spotlight auto jobs ahead of primary\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260727_193234_Wildfires_Live_Updates_New_Heat_Wave_Could_Worsen_France_and_Spain_s_Unprecedent.mp4",
+  "caption": "Wildfires Live Updates: New Heat Wave Could Worsen France and Spain’s ‘Unprecedented’ Fire Season\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
