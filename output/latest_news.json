@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "f0817c6d89b23dd8d4eabb82cbe1c726b074223d72a3e053abfff79e80c75b4b",
-    "title": "Spain attacks 'selfish' response of some EU countries to Ceuta migrant crossings",
-    "summary": "Italy has temporarily suspended the Schengen arrangement with Spain as Prime Minister Giorgia Meloni called scenes in Ceuta \"shocking\".",
-    "link": "https://www.bbc.co.uk/news/articles/cx2v91xn1z9o?at_medium=RSS&at_campaign=rss",
-    "image_url": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/b3e1/live/98c7dee0-8d7d-11f1-b2ab-0dd01740f9f6.jpg",
-    "source": "BBC News",
-    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
-    "published_at": "2026-08-01T11:00:05+00:00"
+    "id": "2a430718132a576a7c082a48248545866fff337433e3b947e9caec6e987adbb1",
+    "title": "She Voted for a Justice Who Overturned Roe. Now it Haunts Her on the Trail.",
+    "summary": "Senator Susan Collins, who supports abortion rights, endorsed Brett Kavanaugh’s nomination for the Supreme Court. It has emerged as a major issue in her campaign for re-election.",
+    "link": "https://www.nytimes.com/2026/08/01/us/politics/collins-kavanaugh-vote-roe-v-wade.html",
+    "image_url": "https://static01.nyt.com/images/2026/08/01/multimedia/01pol-collins-court-top-hwcv/01pol-collins-court-top-hwcv-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. > Politics",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
+    "published_at": "2026-08-01T13:36:30+00:00"
   },
-  "video": "output/20260801_112233_Spain_attacks_selfish_response_of_some_EU_countries_to_Ceuta_migrant_crossings.mp4",
-  "caption": "Spain attacks 'selfish' response of some EU countries to Ceuta migrant crossings\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260801_150656_She_Voted_for_a_Justice_Who_Overturned_Roe_Now_it_Haunts_Her_on_the_Trail.mp4",
+  "caption": "She Voted for a Justice Who Overturned Roe. Now it Haunts Her on the Trail.\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
