@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "1d785f5842172e160913f05fe3a1df08bf83952a30c6be864a7ba2470257c8de",
-    "title": "Trump and Netanyahu May Be at Odds Again Over Gaza Plan",
-    "summary": "President Trump’s announcement came at a difficult point in his relationship with the Israeli leader over their war against Iran.",
-    "link": "https://www.nytimes.com/2026/07/31/us/politics/trump-hamas-gaza-israel-netanyahu.html",
-    "image_url": "https://static01.nyt.com/images/2026/07/31/multimedia/31dc-gaza-topart-vhgb/31dc-gaza-topart-vhgb-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. > Politics",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
-    "published_at": "2026-07-31T23:05:17+00:00"
+    "id": "0e7bead24a67eebacdb00512a1b7522305a23d8fd36e5e7dd34fad94d88d5b64",
+    "title": "Gilberto Cárdenas, revered for his advocacy for Chicanos and Latino art, dies at 79",
+    "summary": "Gilberto Cárdenas, a highly respected sociologist who many considered a great advocate for advancing Latino and Chicano identity through academia and art, has died",
+    "link": "https://abcnews.com/US/wireStory/gilberto-crdenas-revered-advocacy-chicanos-latino-art-dies-135277781",
+    "image_url": "https://s.abcnews.com/images/US/abc_news_default_2000x2000_update_16x9_992.jpg",
+    "source": "ABC News: US",
+    "feed_url": "https://abcnews.go.com/abcnews/usheadlines",
+    "published_at": "2026-08-01T00:40:13+00:00"
   },
-  "video": "output/20260801_053328_Trump_and_Netanyahu_May_Be_at_Odds_Again_Over_Gaza_Plan.mp4",
-  "caption": "Trump and Netanyahu May Be at Odds Again Over Gaza Plan\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260801_082653_Gilberto_C_rdenas_revered_for_his_advocacy_for_Chicanos_and_Latino_art_dies_at_7.mp4",
+  "caption": "Gilberto Cárdenas, revered for his advocacy for Chicanos and Latino art, dies at 79\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
