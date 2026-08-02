@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "e78132e8a0ad004572608117cafa7de4d43ad6ae73f02b473c6f955a84b08722",
-    "title": "Wind-driven wildfire prompts evacuations in eastern Washington",
-    "summary": "A fast-moving wildfire driven by strong winds has swept across northwest Spokane, Washington",
-    "link": "https://abcnews.com/US/wireStory/wind-driven-wildfire-prompts-evacuations-eastern-washington-135300734",
-    "image_url": "https://i.abcnewsfe.com/a/70875e6e-79d6-4421-bfa0-761c73461a22/wirestory_dc8e1ecf2e24c06958f8b723859fc1e1_16x9.jpg?w=1600",
-    "source": "ABC News: US",
-    "feed_url": "https://abcnews.go.com/abcnews/usheadlines",
-    "published_at": "2026-08-02T05:04:47+00:00"
+    "id": "e42ee64d0a6c2a231472ed020d4aa2f32b921e8d85c3f773433449f67df1e4b0",
+    "title": "Chicago’s Mayoral Race Is Taking Shape. But What About the Incumbent?",
+    "summary": "Several prominent Democrats already are running for mayor of Chicago. Mayor Brandon Johnson has not said whether he will seek a second term next year.",
+    "link": "https://www.nytimes.com/2026/08/02/us/chicago-mayors-race.html",
+    "image_url": "https://static01.nyt.com/images/2026/07/30/multimedia/HFOnat-johnson-not-running-1-ctfv/HFOnat-johnson-not-running-1-ctfv-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. News",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+    "published_at": "2026-08-02T14:03:03+00:00"
   },
-  "video": "output/20260802_053330_Wind-driven_wildfire_prompts_evacuations_in_eastern_Washington.mp4",
-  "caption": "Wind-driven wildfire prompts evacuations in eastern Washington\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260802_150828_Chicago_s_Mayoral_Race_Is_Taking_Shape_But_What_About_the_Incumbent.mp4",
+  "caption": "Chicago’s Mayoral Race Is Taking Shape. But What About the Incumbent?\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
