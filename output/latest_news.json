@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "0e7d93f25d09923875f36403f93acac0518f86e932c85d4e478defc7d208ed70",
-    "title": "Justice Dept. Subpoenas Times Freelancer in Effort to Identify Sources",
-    "summary": "A previously undisclosed subpoena, involving reporting on a failed SEAL Team 6 mission in North Korea, reflects the government’s expanding campaign to investigate leaks of secrets.",
-    "link": "https://www.nytimes.com/2026/08/01/us/politics/times-subpoena-reporter-trump-north-korea.html",
-    "image_url": "https://static01.nyt.com/images/2025/08/29/multimedia/01dc-leak-TOP/00nat-seal-raid-nc-kgzb-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-    "published_at": "2026-08-01T16:32:22+00:00"
+    "id": "e78132e8a0ad004572608117cafa7de4d43ad6ae73f02b473c6f955a84b08722",
+    "title": "Wind-driven wildfire prompts evacuations in eastern Washington",
+    "summary": "A fast-moving wildfire driven by strong winds has swept across northwest Spokane, Washington",
+    "link": "https://abcnews.com/US/wireStory/wind-driven-wildfire-prompts-evacuations-eastern-washington-135300734",
+    "image_url": "https://i.abcnewsfe.com/a/70875e6e-79d6-4421-bfa0-761c73461a22/wirestory_dc8e1ecf2e24c06958f8b723859fc1e1_16x9.jpg?w=1600",
+    "source": "ABC News: US",
+    "feed_url": "https://abcnews.go.com/abcnews/usheadlines",
+    "published_at": "2026-08-02T05:04:47+00:00"
   },
-  "video": "output/20260801_191319_Justice_Dept_Subpoenas_Times_Freelancer_in_Effort_to_Identify_Sources.mp4",
-  "caption": "Justice Dept. Subpoenas Times Freelancer in Effort to Identify Sources\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260802_053330_Wind-driven_wildfire_prompts_evacuations_in_eastern_Washington.mp4",
+  "caption": "Wind-driven wildfire prompts evacuations in eastern Washington\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
