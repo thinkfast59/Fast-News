@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "ef9fb7b926f2d3136ca3fd6f1a5c8a741c7131498a3b6c4e99b3f74730fe5e77",
-    "title": "Senate appropriators reach funding deal to avoid shutdown",
-    "summary": "Senators on the Appropriations Committee on Sunday agreed to a funding bill that would prevent a government shutdown at the end of September and fund the government through part of December. An initial procedural vote is scheduled for Monday night, with Senate leaders eyeing to pass the bill before going on recess. The bill will…",
-    "link": "https://thehill.com/homenews/senate/6004900-senate-agrees-funding-bill/",
-    "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/07/collinssusan_072226gn02_w.jpg?w=900",
-    "source": "The Hill News",
-    "feed_url": "https://thehill.com/feed/",
-    "published_at": "2026-08-03T02:28:02+00:00"
+    "id": "170cf0bad926baf0e627378408ec1f8fc9efc41509fd63e8a164f4f1336f718f",
+    "title": "Park Service Finds Trump’s Arch Could Detract From Dozens of Historic Places",
+    "summary": "The 250-foot-tall edifice would alter views across Washington and Arlington Cemetery.",
+    "link": "https://www.nytimes.com/2026/08/03/upshot/arch-trump-historic-review.html",
+    "image_url": "https://static01.nyt.com/images/2026/08/02/multimedia/00up-arch3-vjpl/00up-arch3-vjpl-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. > Politics",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
+    "published_at": "2026-08-03T09:01:56+00:00"
   },
-  "video": "output/20260803_055225_Senate_appropriators_reach_funding_deal_to_avoid_shutdown.mp4",
-  "caption": "Senate appropriators reach funding deal to avoid shutdown\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260803_095012_Park_Service_Finds_Trump_s_Arch_Could_Detract_From_Dozens_of_Historic_Places.mp4",
+  "caption": "Park Service Finds Trump’s Arch Could Detract From Dozens of Historic Places\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
