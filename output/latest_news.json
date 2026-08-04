@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "2b18b4d963762b35b9aa5c1ef05976304c143b65bb84952833d43de27b3bafea",
-    "title": "Man Arrested on Suspicion of Arson in Spokane Wildfire",
-    "summary": "Aaron Farinacci, 37, was arrested after a witness reported seeing him kneeling near the ignition site of a major fire in Washington State, officials said.",
-    "link": "https://www.nytimes.com/2026/08/04/us/spokane-wildfires-arson-arrest.html",
-    "image_url": "https://static01.nyt.com/images/2026/08/04/multimedia/04nat-spokane-arrest-lfqk/04nat-spokane-arrest-lfqk-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-    "published_at": "2026-08-04T06:57:11+00:00"
+    "id": "60f6e66ab9a9e56c7fa75c8ab6a34696978c5fb6a62cb3ceddcb42936a9aefd4",
+    "title": "Blanche nomination has momentum, despite a few GOP obstacles",
+    "summary": "Acting Attorney General Todd Blanche’s confirmation to the permanent post faces hurdles in the Senate even after the dramatic deal involving Republican Sens. John Cornyn (Texas) and Thom Tillis (N.C.), as several other key GOP senators remain undecided over his nomination. Centrist Sen. Susan Collins (R-Maine), who faces a tough reelection contest in a Democratic-leaning…",
+    "link": "https://thehill.com/homenews/senate/6006947-gop-swing-votes-attorney-general/",
+    "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/08/blanchetodd_071526nk27_w.jpg?w=900",
+    "source": "The Hill News",
+    "feed_url": "https://thehill.com/feed/",
+    "published_at": "2026-08-04T10:00:00+00:00"
   },
-  "video": "output/20260804_084142_Man_Arrested_on_Suspicion_of_Arson_in_Spokane_Wildfire.mp4",
-  "caption": "Man Arrested on Suspicion of Arson in Spokane Wildfire\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260804_120750_Blanche_nomination_has_momentum_despite_a_few_GOP_obstacles.mp4",
+  "caption": "Blanche nomination has momentum, despite a few GOP obstacles\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
