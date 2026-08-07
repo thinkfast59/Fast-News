@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "cc9c9380960a139754cac8849f9f4d353fa621408441590d556a983d26a07c99",
-    "title": "Democrats try to present a united front in Michigan after bitter primary",
-    "summary": "Michigan Democrats are set to gather Friday to show unity behind their statewide candidates",
-    "link": "https://abcnews.com/US/wireStory/democrats-present-united-front-michigan-after-bitter-primary-135458530",
-    "image_url": "https://i.abcnewsfe.com/a/d5a33ec0-f231-4f00-a2ab-1ef7a7f9902d/wirestory_0244cbcafd39288608d2ea73636a59cd_16x9.jpg?w=1600",
-    "source": "ABC News: US",
-    "feed_url": "https://abcnews.go.com/abcnews/usheadlines",
-    "published_at": "2026-08-07T14:42:09+00:00"
+    "id": "fdf78df05fc1ccb8fddf07747e9543c028914150b82f53196b40ee616c3b6173",
+    "title": "OpenAI flags possible critical cybersecurity risk in upcoming model, tightens controls",
+    "summary": "",
+    "link": "https://www.channelnewsasia.com/business/openai-flags-possible-critical-cybersecurity-risk-in-upcoming-model-tightens-controls-6306796",
+    "image_url": "https://dam.mediacorp.sg/image/upload/s--DgbTgy0E--/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2026-08-07T174645Z_1_LYNXMPEM761EH_RTROPTP_3_OPENAI-HUGGING-FACE-INVESTIGATION.JPG?itok=d3kWn_Fa",
+    "source": "Latest News",
+    "feed_url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
+    "published_at": "2026-08-07T17:46:45+00:00"
   },
-  "video": "output/20260807_145810_Democrats_try_to_present_a_united_front_in_Michigan_after_bitter_primary.mp4",
-  "caption": "Democrats try to present a united front in Michigan after bitter primary\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260807_190141_OpenAI_flags_possible_critical_cybersecurity_risk_in_upcoming_model_tightens_con.mp4",
+  "caption": "OpenAI flags possible critical cybersecurity risk in upcoming model, tightens controls\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
