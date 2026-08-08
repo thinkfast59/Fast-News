@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "fdf78df05fc1ccb8fddf07747e9543c028914150b82f53196b40ee616c3b6173",
-    "title": "OpenAI flags possible critical cybersecurity risk in upcoming model, tightens controls",
-    "summary": "",
-    "link": "https://www.channelnewsasia.com/business/openai-flags-possible-critical-cybersecurity-risk-in-upcoming-model-tightens-controls-6306796",
-    "image_url": "https://dam.mediacorp.sg/image/upload/s--DgbTgy0E--/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2026-08-07T174645Z_1_LYNXMPEM761EH_RTROPTP_3_OPENAI-HUGGING-FACE-INVESTIGATION.JPG?itok=d3kWn_Fa",
-    "source": "Latest News",
-    "feed_url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
-    "published_at": "2026-08-07T17:46:45+00:00"
+    "id": "d2b0668eea32115da778401013d2e72be259aef743ac8258e2fce5c3dbc1e997",
+    "title": "What the July jobs report reveals about the strength of the economy",
+    "summary": "New labor data shows the U.S. economy lost 23,000 jobs in July, when economists had predicted modest growth. Revised numbers for May and June also show 103,000 fewer jobs created than originally reported. The unemployment rate ticked down, from 4.2% to 4.1%, a function of fewer people seeking jobs. Amna Nawaz discussed the numbers with Heather Long, chief economist with Navy Federal Credit Union.",
+    "link": "https://www.pbs.org/newshour/show/what-the-july-jobs-report-reveals-about-the-strength-of-the-economy",
+    "image_url": "https://d3i6fh83elv35t.cloudfront.net/static/2026/08/slowdown-1024x576.png",
+    "source": "PBS News Hour - The Latest",
+    "feed_url": "https://www.pbs.org/newshour/feeds/rss/headlines",
+    "published_at": "2026-08-07T22:55:24+00:00"
   },
-  "video": "output/20260807_190141_OpenAI_flags_possible_critical_cybersecurity_risk_in_upcoming_model_tightens_con.mp4",
-  "caption": "OpenAI flags possible critical cybersecurity risk in upcoming model, tightens controls\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260808_033153_What_the_July_jobs_report_reveals_about_the_strength_of_the_economy.mp4",
+  "caption": "What the July jobs report reveals about the strength of the economy\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
