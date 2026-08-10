@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "05da9602ed8912a3bb08f6bff9c2e53a674a5ff97952bf0114cf3f98443c309a",
-    "title": "Trump Names Will Scharf as White House Counsel",
-    "summary": "The president said Mr. Scharf, a deeply conservative lawyer and the current staff secretary, would replace David Warrington in early September.",
-    "link": "https://www.nytimes.com/2026/08/09/us/politics/trump-will-scharf-white-house-counsel.html",
-    "image_url": "https://static01.nyt.com/images/2026/08/09/multimedia/09dc-scharf-plgz/09dc-scharf-plgz-mediumSquareAt3X-v2.jpg",
-    "source": "NYT > U.S. News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-    "published_at": "2026-08-10T01:44:31+00:00"
+    "id": "07ba4e241617ca320cc40a0abddaf4a84732a4b21fbd94d7a6e62185e64b50f1",
+    "title": "Man accused of orchestrating Tupac Shakur's 1996 killing set to go on trial",
+    "summary": "The trial of a man accused of orchestrating the 1996 killing of rapper Tupac Shakur starts this week",
+    "link": "https://abcnews.com/US/wireStory/man-accused-orchestrating-tupac-shakurs-1996-killing-trial-135508410",
+    "image_url": "https://i.abcnewsfe.com/a/1779f335-38be-4d44-a843-86936cbdfd69/wirestory_7b5ff4fe0e0abb6d067d329a79c57040_16x9.jpg?w=1600",
+    "source": "ABC News: US",
+    "feed_url": "https://abcnews.go.com/abcnews/usheadlines",
+    "published_at": "2026-08-10T06:34:08+00:00"
   },
-  "video": "output/20260810_074654_Trump_Names_Will_Scharf_as_White_House_Counsel.mp4",
-  "caption": "Trump Names Will Scharf as White House Counsel\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260810_111357_Man_accused_of_orchestrating_Tupac_Shakur_s_1996_killing_set_to_go_on_trial.mp4",
+  "caption": "Man accused of orchestrating Tupac Shakur's 1996 killing set to go on trial\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
