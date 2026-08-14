@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "5a289569a8a6876c1fadeea21180c44dfa91f8c7d932108e539522b3c7f7102b",
-    "title": "The 71st Eurovision contest will take place in Bulgaria's Black Sea city of Burgas",
-    "summary": "Next year's Eurovision Song Contest will take place in Burgas, a port city on Bulgaria's Black Sea coast, organizers said Thursday.",
-    "link": "https://www.pbs.org/newshour/arts/the-71st-eurovision-contest-will-take-place-in-bulgarias-black-sea-city-of-burgas",
-    "image_url": "https://d3i6fh83elv35t.cloudfront.net/static/2026/08/2026-05-19T172534Z_566860384_RC2GCLAVPF6J_RTRMADP_3_MUSIC-EUROVISION-BULGARIA-DARA-1024x683.jpg",
-    "source": "PBS News Hour - The Latest",
-    "feed_url": "https://www.pbs.org/newshour/feeds/rss/headlines",
-    "published_at": "2026-08-13T22:37:55+00:00"
+    "id": "c0ad5ea98511b5d8257e490b5bbec2d97c94476df1b48741f07a8823ecad9de8",
+    "title": "Trump’s Justice Dept. Targets Smaller Fraud Cases",
+    "summary": "As the Trump administration drops charges against corporations and the wealthy, it is also taking aim at small-scale fraud cases, including against the operator of a weathered food truck in California.",
+    "link": "https://www.nytimes.com/2026/08/14/us/politics/trump-doj-fraud-california-food-truck.html",
+    "image_url": "https://static01.nyt.com/images/2026/08/12/us/dc-fraud/dc-fraud-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. > Politics",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
+    "published_at": "2026-08-14T09:02:49+00:00"
   },
-  "video": "output/20260814_041409_The_71st_Eurovision_contest_will_take_place_in_Bulgaria_s_Black_Sea_city_of_Burg.mp4",
-  "caption": "The 71st Eurovision contest will take place in Bulgaria's Black Sea city of Burgas\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260814_110309_Trump_s_Justice_Dept_Targets_Smaller_Fraud_Cases.mp4",
+  "caption": "Trump’s Justice Dept. Targets Smaller Fraud Cases\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
