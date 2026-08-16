@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "e3e2daae7bd7a9966700d118f384b535b091c9dc1c2e5b044b4b11f5f29ff625",
-    "title": "In ‘The Brink of War,’ a Return to an Era of Razor-Edge Diplomacy",
-    "summary": "A new film depicts the 1986 nuclear arms summit in Reykjavik, Iceland, between Ronald Reagan and Mikhail Gorbachev, which both offered and dashed hopes of a dramatic breakthrough.",
-    "link": "https://www.nytimes.com/2026/08/16/us/politics/brink-of-war-reagan-nuclear-weapons.html",
-    "image_url": "https://static01.nyt.com/images/2026/08/16/us/16dc-reykjavik-3/16dc-reykjavik-3-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. > Politics",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
-    "published_at": "2026-08-16T09:02:28+00:00"
+    "id": "d162ddbaf3864773c7058afa225b8ca611cbb33215e500055eab8569fb57c29d",
+    "title": "Iran’s other nuclear weapons option — plutonium bombs",
+    "summary": "The authors argue that any future agreement regarding Iran's nuclear program must mandate real-time IAEA surveillance and the removal of spent fuel from the Bushehr reactor to address the significant threat posed by its two-ton plutonium stockpile.",
+    "link": "https://thehill.com/opinion/national-security/6030922-iaea-real-time-monitoring/",
+    "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/08/AP26019678717747.jpg?w=900",
+    "source": "The Hill News",
+    "feed_url": "https://thehill.com/feed/",
+    "published_at": "2026-08-16T13:00:00+00:00"
   },
-  "video": "output/20260816_103810_In_The_Brink_of_War_a_Return_to_an_Era_of_Razor-Edge_Diplomacy.mp4",
-  "caption": "In ‘The Brink of War,’ a Return to an Era of Razor-Edge Diplomacy\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260816_142710_Iran_s_other_nuclear_weapons_option_plutonium_bombs.mp4",
+  "caption": "Iran’s other nuclear weapons option — plutonium bombs\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
