@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "cdbd5a72cd4e302da389e4062d01a876d2d778a6d1d5a65422892781b9d160fc",
-    "title": "MOH, major retailers say N95 mask stocks sufficient to meet demand if haze worsens",
-    "summary": "The inter-agency Haze Task Force has advised retailers to monitor their stock levels and replenish supplies where necessary, as the country prepares for a rising risk of haze.",
-    "link": "https://www.channelnewsasia.com/singapore/major-retailers-n95-masks-haze-air-quality-6319566",
-    "image_url": "https://dam.mediacorp.sg/image/upload/s--YOsIwiGe--/c_fill,g_auto,h_676,w_1200/f_auto,q_auto/v1/tdy-migration/haze_generic_2_-_najeer_yusof.jpg?itok=ygu5Lelx",
-    "source": "Latest News",
-    "feed_url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
-    "published_at": "2026-08-17T01:38:58+00:00"
+    "id": "268c2c9beea3f1128b6ccad92ae1f26ef8b2a8461858c3fdd6a6490bc7522284",
+    "title": "Lake Powell hits record low, threatening key water and electricity supply for millions",
+    "summary": "The alarming milestone at Lake Powell comes about a week after the river's other major reservoir, Lake Mead, also hit a historic low.",
+    "link": "https://www.pbs.org/newshour/nation/lake-powell-hits-record-low-threatening-key-water-and-electricity-supply-for-millions",
+    "image_url": "https://d3i6fh83elv35t.cloudfront.net/static/2026/08/AP26202644179267-1024x683.jpg",
+    "source": "PBS News Hour - The Latest",
+    "feed_url": "https://www.pbs.org/newshour/feeds/rss/headlines",
+    "published_at": "2026-08-16T21:46:50+00:00"
   },
-  "video": "output/20260817_030422_MOH_major_retailers_say_N95_mask_stocks_sufficient_to_meet_demand_if_haze_worsen.mp4",
-  "caption": "MOH, major retailers say N95 mask stocks sufficient to meet demand if haze worsens\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260817_070035_Lake_Powell_hits_record_low_threatening_key_water_and_electricity_supply_for_mil.mp4",
+  "caption": "Lake Powell hits record low, threatening key water and electricity supply for millions\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
