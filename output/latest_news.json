@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "268c2c9beea3f1128b6ccad92ae1f26ef8b2a8461858c3fdd6a6490bc7522284",
-    "title": "Lake Powell hits record low, threatening key water and electricity supply for millions",
-    "summary": "The alarming milestone at Lake Powell comes about a week after the river's other major reservoir, Lake Mead, also hit a historic low.",
-    "link": "https://www.pbs.org/newshour/nation/lake-powell-hits-record-low-threatening-key-water-and-electricity-supply-for-millions",
-    "image_url": "https://d3i6fh83elv35t.cloudfront.net/static/2026/08/AP26202644179267-1024x683.jpg",
-    "source": "PBS News Hour - The Latest",
-    "feed_url": "https://www.pbs.org/newshour/feeds/rss/headlines",
-    "published_at": "2026-08-16T21:46:50+00:00"
+    "id": "0444da7e1ac3e219e4e82600aad314ccad9e9fd29122e0bf5d917ed904fb2b06",
+    "title": "Trump Orders Pentagon to Curtail Military Exercises With Ally South Korea",
+    "summary": "In a social media post, the president scolded South Korea for not helping denuclearize Iran, and also praised North Korea and its leader.",
+    "link": "https://www.nytimes.com/2026/08/16/us/politics/trump-south-korea-military-exercises.html",
+    "image_url": "https://static01.nyt.com/images/2026/08/16/multimedia/16DC-trump-korea-vhgm/16DC-trump-korea-vhgm-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. > Politics",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
+    "published_at": "2026-08-17T06:16:21+00:00"
   },
-  "video": "output/20260817_070035_Lake_Powell_hits_record_low_threatening_key_water_and_electricity_supply_for_mil.mp4",
-  "caption": "Lake Powell hits record low, threatening key water and electricity supply for millions\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260817_103751_Trump_Orders_Pentagon_to_Curtail_Military_Exercises_With_Ally_South_Korea.mp4",
+  "caption": "Trump Orders Pentagon to Curtail Military Exercises With Ally South Korea\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
