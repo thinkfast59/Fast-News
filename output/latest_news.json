@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "baf44cf7f506b91bcd7933aed9fea89d1aa27c459a189305861385f6ef30cc35",
-    "title": "Florida set to carry out 13th execution this year in nation's busiest death chamber",
-    "summary": "A Florida man convicted of fatally shooting his estranged wife and wounding his mother-in-law is set to be executed",
-    "link": "https://abcnews.com/US/wireStory/florida-set-carry-13th-execution-year-nations-busiest-135728080",
-    "image_url": "https://i.abcnewsfe.com/a/b0dbd694-8846-4566-861b-0c7a16f5c116/wirestory_9ece9e5bba0484cdd83e53fd0918145a_16x9.jpg?w=1600",
-    "source": "ABC News: US",
-    "feed_url": "https://abcnews.go.com/abcnews/usheadlines",
-    "published_at": "2026-08-18T04:47:10+00:00"
+    "id": "6d7d6549ac1b4d235ea2a15f5af2b05ba32dd52d168de890b86f8ebd48565df9",
+    "title": "Google Just Made It Easier for Campaigns to Send You Fund-Raising Emails",
+    "summary": "Republicans previously sued Google claiming its spam filter was biased, but the case was dismissed. The company will now allow verified campaigns to more easily bypass the spam filter.",
+    "link": "https://www.nytimes.com/2026/08/18/us/politics/google-political-campaigns-email-spam.html",
+    "image_url": "https://static01.nyt.com/images/2026/08/18/multimedia/18pol-google-campaign-ads-zwmh/18pol-google-campaign-ads-zwmh-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. News",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+    "published_at": "2026-08-18T14:14:35+00:00"
   },
-  "video": "output/20260818_103251_Florida_set_to_carry_out_13th_execution_this_year_in_nation_s_busiest_death_cham.mp4",
-  "caption": "Florida set to carry out 13th execution this year in nation's busiest death chamber\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260818_143821_Google_Just_Made_It_Easier_for_Campaigns_to_Send_You_Fund-Raising_Emails.mp4",
+  "caption": "Google Just Made It Easier for Campaigns to Send You Fund-Raising Emails\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
