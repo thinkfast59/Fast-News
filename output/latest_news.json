@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "6d7d6549ac1b4d235ea2a15f5af2b05ba32dd52d168de890b86f8ebd48565df9",
-    "title": "Google Just Made It Easier for Campaigns to Send You Fund-Raising Emails",
-    "summary": "Republicans previously sued Google claiming its spam filter was biased, but the case was dismissed. The company will now allow verified campaigns to more easily bypass the spam filter.",
-    "link": "https://www.nytimes.com/2026/08/18/us/politics/google-political-campaigns-email-spam.html",
-    "image_url": "https://static01.nyt.com/images/2026/08/18/multimedia/18pol-google-campaign-ads-zwmh/18pol-google-campaign-ads-zwmh-mediumSquareAt3X.jpg",
+    "id": "8e41d97f2ac778e202b990a0760e78c6b80b42cfc3e325b0dcc6beda5e85472a",
+    "title": "A Missile Alert Half a World Away Interrupts Court Hearing at Guantánamo",
+    "summary": "A possible expert witness was hurried off a video feed after an emergency alert in Dubai, just south of the Strait of Hormuz, a flashpoint in the U.S.-Iran war.",
+    "link": "https://www.nytimes.com/2026/08/18/us/guantanamo-hearing-iran-war.html",
+    "image_url": "https://static01.nyt.com/images/2026/08/18/multimedia/18dc-gitmo01-photo-kmlj/18dc-gitmo01-photo-kmlj-mediumSquareAt3X.jpg",
     "source": "NYT > U.S. News",
     "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-    "published_at": "2026-08-18T14:14:35+00:00"
+    "published_at": "2026-08-18T18:25:07+00:00"
   },
-  "video": "output/20260818_143821_Google_Just_Made_It_Easier_for_Campaigns_to_Send_You_Fund-Raising_Emails.mp4",
-  "caption": "Google Just Made It Easier for Campaigns to Send You Fund-Raising Emails\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260818_184423_A_Missile_Alert_Half_a_World_Away_Interrupts_Court_Hearing_at_Guant_namo.mp4",
+  "caption": "A Missile Alert Half a World Away Interrupts Court Hearing at Guantánamo\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
