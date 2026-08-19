@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "52803e6450c7fc4ff840e3fdbd5dbbe797bd220a06338c420a0d35d5a4a317c7",
-    "title": "Jason Arday died for our sins",
-    "summary": "Author Jonathan Zimmerman argues that the recent controversies surrounding Jason Arday and academic hiring practices demonstrate how universities have abandoned meritocracy and evidence in favor of ideological identity politics.",
-    "link": "https://thehill.com/opinion/education/6036760-higher-education-race-merit/",
-    "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/08/AP26229668611952.jpg?w=900",
-    "source": "The Hill News",
-    "feed_url": "https://thehill.com/feed/",
-    "published_at": "2026-08-19T14:30:00+00:00"
+    "id": "bd2ece32b43386ad50ce83056f8c8ea8d36a479d0c5380a646d38ae5988d6779",
+    "title": "North Korean Official Dismisses Reduced Drills Between US and South Korea",
+    "summary": "Kim Yo-jong, a powerful adviser and sister of Kim Jong-un, also said she was “unaware” of any communication with Washington, contradicting President Trump’s claim her brother had responded to his outreach.",
+    "link": "https://www.nytimes.com/2026/08/19/world/asia/north-korea-trump-military-drills.html",
+    "image_url": "https://static01.nyt.com/images/2026/08/19/multimedia/19int-nkorea-drill-1-cjwm/19int-nkorea-drill-1-cjwm-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. > Politics",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
+    "published_at": "2026-08-19T18:17:09+00:00"
   },
-  "video": "output/20260819_144009_Jason_Arday_died_for_our_sins.mp4",
-  "caption": "Jason Arday died for our sins\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260819_184200_North_Korean_Official_Dismisses_Reduced_Drills_Between_US_and_South_Korea.mp4",
+  "caption": "North Korean Official Dismisses Reduced Drills Between US and South Korea\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
