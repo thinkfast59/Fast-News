@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "226df040060ac05b9abc78df4fd51dae69db5a9232e8a911e148128295841948",
-    "title": "Trump can reduce hostility for immigration enforcement — without weakening it",
-    "summary": "There are changes Trump can make in enforcing his immigration to reduce hostilities and the number of legal challenges.",
-    "link": "https://thehill.com/opinion/immigration/6039522-reducing-immigration-litigation-hostility/",
-    "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/08/AP26229666678320.jpg?w=900",
-    "source": "The Hill News",
-    "feed_url": "https://thehill.com/feed/",
-    "published_at": "2026-08-20T14:00:00+00:00"
+    "id": "23c8a970d2e3c2d2194a9d5ee5796c7d92a91c324a9a639e69ad043bfac7c78f",
+    "title": "Nancy Kissinger, Wife of Former Secretary of State, Dies at 92",
+    "summary": "A foreign policy specialist, she was politically savvy and well versed in global issues, and traveled widely with her husband, Henry A. Kissinger, on his diplomatic missions.",
+    "link": "https://www.nytimes.com/2026/08/20/us/nancy-kissinger-dead.html",
+    "image_url": "https://static01.nyt.com/images/2026/08/20/multimedia/20Kissinger-Nancy-plfg/20Kissinger-Nancy-plfg-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. News",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+    "published_at": "2026-08-21T02:14:29+00:00"
   },
-  "video": "output/20260820_144137_Trump_can_reduce_hostility_for_immigration_enforcement_without_weakening_it.mp4",
-  "caption": "Trump can reduce hostility for immigration enforcement — without weakening it\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260821_065027_Nancy_Kissinger_Wife_of_Former_Secretary_of_State_Dies_at_92.mp4",
+  "caption": "Nancy Kissinger, Wife of Former Secretary of State, Dies at 92\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
