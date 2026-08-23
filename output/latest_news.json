@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "848f0979698d45b05e0e70bdc69594de8be003ebd01f0ba182986aee40d14c77",
-    "title": "Two Phoenix Police Officers Fired and Arrested After Violent Traffic Stop",
-    "summary": "The officers are accused of beating a couple and shocking them with a stun gun during an unreported traffic stop this month.",
-    "link": "https://www.nytimes.com/2026/08/23/us/phoenix-police-arrests-traffic-stop.html",
-    "image_url": "https://static01.nyt.com/images/2026/08/23/multimedia/23xp-phoenix-police-zhjf/23xp-phoenix-police-zhjf-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-    "published_at": "2026-08-23T05:54:30+00:00"
+    "id": "a33b0aa176124ddafb4f9d0ff250a73ebcfb220e84e3502e598ead119039d352",
+    "title": "Angry Ohio Voters Could Turn Their State Purple Again",
+    "summary": "A governor’s race, a Senate contest and enough congressional contests to swing control of the House are all in play in Ohio, where voters of all stripes express a deep sense of powerlessness.",
+    "link": "https://www.nytimes.com/2026/08/23/us/politics/ohio-politics-voter-anger.html",
+    "image_url": "https://static01.nyt.com/images/2026/08/23/multimedia/23nat-ohio-politics-top-bkgv/23nat-ohio-politics-top-bkgv-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. > Politics",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
+    "published_at": "2026-08-23T13:19:38+00:00"
   },
-  "video": "output/20260823_103155_Two_Phoenix_Police_Officers_Fired_and_Arrested_After_Violent_Traffic_Stop.mp4",
-  "caption": "Two Phoenix Police Officers Fired and Arrested After Violent Traffic Stop\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260823_142809_Angry_Ohio_Voters_Could_Turn_Their_State_Purple_Again.mp4",
+  "caption": "Angry Ohio Voters Could Turn Their State Purple Again\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
