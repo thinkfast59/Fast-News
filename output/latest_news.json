@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "562a8ca81f446cd744d30f7ec773fc936c059d1e25329d77e221a1aa3f7acb32",
-    "title": "‘It’s Been Terrible’: Thousands in Indiana Remain Without Power",
-    "summary": "Gov. Mike Braun called on the local utility to “match the urgency” of Gary area residents who have had to endure an outage approaching its second week.",
-    "link": "https://www.nytimes.com/2026/08/22/us/gary-indiana-11-day-power-outage.html",
-    "image_url": "https://static01.nyt.com/images/2026/08/22/multimedia/22nat-gary-power-cthw/22nat-gary-power-cthw-mediumSquareAt3X.jpg",
+    "id": "848f0979698d45b05e0e70bdc69594de8be003ebd01f0ba182986aee40d14c77",
+    "title": "Two Phoenix Police Officers Fired and Arrested After Violent Traffic Stop",
+    "summary": "The officers are accused of beating a couple and shocking them with a stun gun during an unreported traffic stop this month.",
+    "link": "https://www.nytimes.com/2026/08/23/us/phoenix-police-arrests-traffic-stop.html",
+    "image_url": "https://static01.nyt.com/images/2026/08/23/multimedia/23xp-phoenix-police-zhjf/23xp-phoenix-police-zhjf-mediumSquareAt3X.jpg",
     "source": "NYT > U.S. News",
     "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-    "published_at": "2026-08-23T04:06:10+00:00"
+    "published_at": "2026-08-23T05:54:30+00:00"
   },
-  "video": "output/20260823_064539_It_s_Been_Terrible_Thousands_in_Indiana_Remain_Without_Power.mp4",
-  "caption": "‘It’s Been Terrible’: Thousands in Indiana Remain Without Power\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260823_103155_Two_Phoenix_Police_Officers_Fired_and_Arrested_After_Violent_Traffic_Stop.mp4",
+  "caption": "Two Phoenix Police Officers Fired and Arrested After Violent Traffic Stop\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
