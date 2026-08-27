@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "eb8b97b8ecc7833fa33f80a982a8042156aa099cafe51ccf01dc9509effad615",
-    "title": "Qatari Prime Minister Travels to Tehran as Iran War Nears Six-Month Mark",
-    "summary": "Sheikh Mohammed bin Abdulrahman Al Thani has been a key mediator in the conflict, even as his country has blamed Tehran for hundreds of missile and drone attacks.",
-    "link": "https://www.nytimes.com/2026/08/27/world/middleeast/qatar-visit-iran.html",
-    "image_url": "https://static01.nyt.com/images/2026/08/27/multimedia/27iran-qatar-fwtz/27iran-qatar-fwtz-mediumSquareAt3X.jpg",
-    "source": "NYT > World News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
-    "published_at": "2026-08-27T11:38:41+00:00"
+    "id": "6d74c91a78cacdd91e05968ed8dd7b29522ac37bf284b599f6892b67dcbdf6a5",
+    "title": "From painkillers to acupuncture: Singapore's public hospitals expand TCM use in acute care",
+    "summary": "Some hospitals are now offering acupuncture alongside conventional treatment for back pain, stroke recovery and cancer-related symptoms.",
+    "link": "https://www.channelnewsasia.com/singapore/tcm-acupuncture-hospitals-stroke-cancer-6343971",
+    "image_url": "https://dam.mediacorp.sg/image/upload/s--NHhlYeKd--/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2021-08:cna,w_0.1/f_auto,q_auto/v1/mediacorp/cna/image/2026/08/21/llt_6082.jpg?itok=ierZqyh7",
+    "source": "Latest News",
+    "feed_url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
+    "published_at": "2026-08-27T22:00:00+00:00"
   },
-  "video": "output/20260827_122923_Qatari_Prime_Minister_Travels_to_Tehran_as_Iran_War_Nears_Six-Month_Mark.mp4",
-  "caption": "Qatari Prime Minister Travels to Tehran as Iran War Nears Six-Month Mark\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260827_234446_From_painkillers_to_acupuncture_Singapore_s_public_hospitals_expand_TCM_use_in_a.mp4",
+  "caption": "From painkillers to acupuncture: Singapore's public hospitals expand TCM use in acute care\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
