@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "11162fcf186490f9c93562611558b20318db40c62442eb9a30f42f93836e62c0",
-    "title": "Dolly Parton and the ‘Pretty Darn Good’ Southern Church",
-    "summary": "For many Americans, Ms. Parton represented an idealized style of faith: one centered in small rural congregations that prize community over ideology.",
-    "link": "https://www.nytimes.com/2026/08/30/us/dolly-parton-southern-christianity.html",
-    "image_url": "https://static01.nyt.com/images/2026/08/30/multimedia/30nat-oldtime-christianity-01-mtvq/30nat-oldtime-christianity-01-mtvq-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-    "published_at": "2026-08-30T18:28:10+00:00"
+    "id": "f0e5add4505aee1756b3e125dc7a7c20a6b8745d6f9b636ed557760c53d98fc3",
+    "title": "WATCH: Trump says Fed Chair Warsh will 'do what he has to do' on possible rate hikes",
+    "summary": "Trump suggested he's not necessarily opposed to Federal Reserve Chair Kevin Warsh raising interest rates because of inflationary pressures, but he said that he thinks interest rates are \"too high.\"",
+    "link": "https://www.pbs.org/newshour/politics/watch-trump-says-fed-chair-warsh-will-do-what-he-has-to-do-on-possible-rate-hikes",
+    "image_url": "https://d3i6fh83elv35t.cloudfront.net/static/2026/08/2026-08-31T202303Z_1283455498_RC2V9NADF5C5_RTRMADP_3_USA-TRUMP-1024x683.jpg",
+    "source": "PBS News Hour - The Latest",
+    "feed_url": "https://www.pbs.org/newshour/feeds/rss/headlines",
+    "published_at": "2026-08-31T21:20:06+00:00"
   },
-  "video": "output/20260830_204608_Dolly_Parton_and_the_Pretty_Darn_Good_Southern_Church.mp4",
-  "caption": "Dolly Parton and the ‘Pretty Darn Good’ Southern Church\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260831_223802_WATCH_Trump_says_Fed_Chair_Warsh_will_do_what_he_has_to_do_on_possible_rate_hike.mp4",
+  "caption": "WATCH: Trump says Fed Chair Warsh will 'do what he has to do' on possible rate hikes\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
