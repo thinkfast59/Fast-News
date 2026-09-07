@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "0a0ece8e6c5c019b8e19d7f9f4b6b16589295b156ffb5c9bf554ab3042af5ee7",
-    "title": "Bears in Los Angeles Are Getting Their Close-Ups, Ready or Not",
-    "summary": "California has 60,000 black bears, and they are venturing far from their usual habitat in search of food and shelter. It’s the humans who have to adapt.",
-    "link": "https://www.nytimes.com/2026/09/07/us/california-black-bears.html",
-    "image_url": "https://static01.nyt.com/images/2026/09/07/multimedia/07nat-ca-bears-lgcv/07nat-ca-bears-lgcv-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-    "published_at": "2026-09-07T12:31:15+00:00"
+    "id": "48d6e59be1e715564a8b98b053d38e0e8b01bdea958f92547e749d2b9aa767bc",
+    "title": "This week on the Hill: Political spotlight turns to GOP midterm convention in Dallas",
+    "summary": "The political world’s eyes are focused this week on Dallas, where Republicans are turning up the volume at a two-day convention meant to bolster the GOP’s chances in this year’s midterms. The event is being billed as a unifying and electrifying celebration of President Trump’s second term in office that is being put on by…",
+    "link": "https://thehill.com/newsletters/this-week-on-the-hill/6072342-trump-pentagon-911-anniversary/",
+    "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/09/trumpdonald_071824gn54_w.jpg?w=900",
+    "source": "The Hill News",
+    "feed_url": "https://thehill.com/feed/",
+    "published_at": "2026-09-07T21:00:00+00:00"
   },
-  "video": "output/20260907_153930_Bears_in_Los_Angeles_Are_Getting_Their_Close-Ups_Ready_or_Not.mp4",
-  "caption": "Bears in Los Angeles Are Getting Their Close-Ups, Ready or Not\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260907_211641_This_week_on_the_Hill_Political_spotlight_turns_to_GOP_midterm_convention_in_Dal.mp4",
+  "caption": "This week on the Hill: Political spotlight turns to GOP midterm convention in Dallas\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
