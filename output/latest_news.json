@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "bbf5d673c6a6ac67fb2bde71c2af36d1179eeade64b1191203e63e601d48f253",
-    "title": "Pubs, hotels and gyms in Wales to get 30% business rates cut",
-    "summary": "The cuts comes into effect in April, but the largest businesses will pay higher rates to fund the changes.",
-    "link": "https://www.bbc.co.uk/news/articles/c6n9w87ejqn2o?at_medium=RSS&at_campaign=rss",
-    "image_url": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/b9a7/live/0daddbe0-b0d0-11f1-a540-61c3f7fc4e6c.jpg",
-    "source": "BBC News",
-    "feed_url": "https://feeds.bbci.co.uk/news/business/rss.xml",
-    "published_at": "2026-09-15T05:13:08+00:00"
+    "id": "679d6ca274981e6626bcd62bf89e00a626acff4db622c01a9ef302d003be5987",
+    "title": "Universities Sound Warnings About A.I. Even as They Embrace It",
+    "summary": "As A.I. upends education, university leaders have been all over the map about how to respond. It can be very confusing for students.",
+    "link": "https://www.nytimes.com/2026/09/15/us/universities-ai-warnings-enthusiasm.html",
+    "image_url": "https://static01.nyt.com/images/2026/09/14/multimedia/00nat-ai-colleges-mhgl/00nat-ai-colleges-mhgl-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. News",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+    "published_at": "2026-09-15T13:33:01+00:00"
   },
-  "video": "output/20260915_072135_Pubs_hotels_and_gyms_in_Wales_to_get_30_business_rates_cut.mp4",
-  "caption": "Pubs, hotels and gyms in Wales to get 30% business rates cut\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260915_144638_Universities_Sound_Warnings_About_A_I_Even_as_They_Embrace_It.mp4",
+  "caption": "Universities Sound Warnings About A.I. Even as They Embrace It\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
