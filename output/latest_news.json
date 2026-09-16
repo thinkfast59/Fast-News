@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "e664be673fa57cb5f2b40efa87e7dade1ee00d41d7407d2cc8f56a49cf323c02",
-    "title": "Pentagon Inspector General Details U.S. Losses and Challenges in Iran War",
-    "summary": "Helicopters for evacuating casualties were pulled from four countries, and hundreds of military facilities were destroyed, according to a new report.",
-    "link": "https://www.nytimes.com/2026/09/15/us/politics/pentagon-inspector-general-iran-war.html",
-    "image_url": "https://static01.nyt.com/images/2026/09/15/multimedia/15dc-pentagon-fqhm/15dc-pentagon-fqhm-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-    "published_at": "2026-09-16T02:27:56+00:00"
+    "id": "ec9d9bd927af7548a6a2d72773c42067ab3f5fe7a6d702719461b62dcd59da78",
+    "title": "Abbott orders penalties for Texas data centers that fail to report water use",
+    "summary": "The governor’s office said that some major water users, including data centers, appear to have violated state law by failing to provide required information about their water use.",
+    "link": "https://thehill.com/homenews/state-watch/6091529-abbott-texas-data-centers-water-use/",
+    "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/08/Elsewhere-Abbott_032726_AP_Gabriela-Passos.jpg?w=900",
+    "source": "The Hill News",
+    "feed_url": "https://thehill.com/feed/",
+    "published_at": "2026-09-16T13:30:24+00:00"
   },
-  "video": "output/20260916_072445_Pentagon_Inspector_General_Details_U_S_Losses_and_Challenges_in_Iran_War.mp4",
-  "caption": "Pentagon Inspector General Details U.S. Losses and Challenges in Iran War\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260916_144511_Abbott_orders_penalties_for_Texas_data_centers_that_fail_to_report_water_use.mp4",
+  "caption": "Abbott orders penalties for Texas data centers that fail to report water use\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
