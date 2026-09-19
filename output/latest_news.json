@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "7bfdea7a93b01353f44c74ed5f66236c2bad1155bc025b9959b9024fd01c18fa",
-    "title": "F.A.A. to Roll Out New A.I. Tool for Washington Airports",
-    "summary": "The tool, called SMART, will crunch scheduling and weather data to predict and avoid delays. It will be deployed in the Washington region’s three major airports next week.",
-    "link": "https://www.nytimes.com/2026/09/18/us/politics/faa-ai-dc-airports.html",
-    "image_url": "https://static01.nyt.com/images/2026/09/18/multimedia/18dc-air-air-traffic-pwfk/18dc-air-air-traffic-pwfk-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. > Politics",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
-    "published_at": "2026-09-18T20:20:59+00:00"
+    "id": "4113bc1a291c81a73420e46c09e63a75440fb8f8993c56a45e28ec975fa517b7",
+    "title": "CNN, MS NOW, Politico say their journalists have been denied access to the White House",
+    "summary": "The White House denied CNN, MS NOW and Politico journalists access to its grounds Saturday, the networks announced, a day after President Trump said he was banning them from the premises after accusing them of producing “purposefully negative stories.” “Earlier this morning MS NOW journalists were denied access to the White House grounds. The White…",
+    "link": "https://thehill.com/homenews/media/6099619-trump-bans-ms-now-cnn-politico/",
+    "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/09/AP25305753797358-e1789825578913.jpg?w=900",
+    "source": "The Hill News",
+    "feed_url": "https://thehill.com/feed/",
+    "published_at": "2026-09-19T13:34:23+00:00"
   },
-  "video": "output/20260918_203845_F_A_A_to_Roll_Out_New_A_I_Tool_for_Washington_Airports.mp4",
-  "caption": "F.A.A. to Roll Out New A.I. Tool for Washington Airports\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260919_170804_CNN_MS_NOW_Politico_say_their_journalists_have_been_denied_access_to_the_White_H.mp4",
+  "caption": "CNN, MS NOW, Politico say their journalists have been denied access to the White House\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
