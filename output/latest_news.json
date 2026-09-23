@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "08b5d980d4ffb15aa63c5853557fb996cd0beefe27946d9d0ce88e488d7b9965",
-    "title": "What are Flock cameras, other ALPRs looking for?",
-    "summary": "You may have noticed more ALPRs around you. Here's what they're looking for.",
-    "link": "https://thehill.com/policy/technology/6095974-what-are-flock-cameras-other-alprs-looking-for/",
-    "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/09/AP26064713365173_67fdae-e1789664036793.jpg?w=900",
-    "source": "The Hill News",
-    "feed_url": "https://thehill.com/feed/",
-    "published_at": "2026-09-22T14:00:00+00:00"
+    "id": "c5fa0e97b6ffacf5561298db1aa8ee33de477cc157d57f126df68901f36b8339",
+    "title": "Dispute Over Missouri’s Congressional Map Again Returns to Supreme Court",
+    "summary": "A federal appeals court sided with Republicans seeking to use district boundaries redrawn last year to give the G.O.P. an advantage in the upcoming midterms.",
+    "link": "https://www.nytimes.com/2026/09/22/us/politics/supreme-court-missouri-congressional-map.html",
+    "image_url": "https://static01.nyt.com/images/2026/09/22/multimedia/00dc-scotus-missouri-mpcq/00dc-scotus-missouri-mpcq-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. > Politics",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
+    "published_at": "2026-09-23T03:59:20+00:00"
   },
-  "video": "output/20260922_143409_What_are_Flock_cameras_other_ALPRs_looking_for.mp4",
-  "caption": "What are Flock cameras, other ALPRs looking for?\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260923_073209_Dispute_Over_Missouri_s_Congressional_Map_Again_Returns_to_Supreme_Court.mp4",
+  "caption": "Dispute Over Missouri’s Congressional Map Again Returns to Supreme Court\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
