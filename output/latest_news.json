@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "6dced3aade9f9c64ad39f7cfaf4ac36b2f415817d53bd238ed8aafc2043ef4cf",
-    "title": "Powerful nor’easter floods Northeast again, causing problems from New Jersey to New England",
-    "summary": "A powerful nor’easter is pummeling the shoreline in the eastern U.S. for a second day",
-    "link": "https://abcnews.com/US/wireStory/powerful-noreaster-floods-northeast-leaves-130000-power-high-136796014",
-    "image_url": "https://i.abcnewsfe.com/a/cc50ba8a-fd98-4a97-8c93-85a9818ade23/wirestory_f4b86959733c021315e87ea1ed58459b_16x9.jpg?w=1600",
-    "source": "ABC News: US",
-    "feed_url": "https://abcnews.go.com/abcnews/usheadlines",
-    "published_at": "2026-09-28T00:26:14+00:00"
+    "id": "66d7639f0d931be9bcb35ba57a1f7c380c4f207c04f04721e7ebef70313681c3",
+    "title": "Their Sons Are Dying on Battlefields in Ukraine. They Still Back Russia’s War.",
+    "summary": "The Russian region of North Ossetia has suffered a heavy toll, yet many accept the Kremlin’s line that the fighting must continue until victory is secured.",
+    "link": "https://www.nytimes.com/2026/09/28/world/europe/ukraine-russia-war-soldiers-deaths-north-ossetia.html",
+    "image_url": "https://static01.nyt.com/images/2026/09/28/multimedia/28russia-war-toll-01-bfwh/28russia-war-toll-01-bfwh-mediumSquareAt3X.jpg",
+    "source": "NYT > World News",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+    "published_at": "2026-09-28T17:11:27+00:00"
   },
-  "video": "output/20260928_082416_Powerful_nor_easter_floods_Northeast_again_causing_problems_from_New_Jersey_to_N.mp4",
-  "caption": "Powerful nor’easter floods Northeast again, causing problems from New Jersey to New England\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20260928_180528_Their_Sons_Are_Dying_on_Battlefields_in_Ukraine_They_Still_Back_Russia_s_War.mp4",
+  "caption": "Their Sons Are Dying on Battlefields in Ukraine. They Still Back Russia’s War.\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
