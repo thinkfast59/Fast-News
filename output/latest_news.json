@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "70e39e9c4205bbe561ead3fe9bc899347a920550be0918af8b21397e19b738e3",
-    "title": "White House blocks CNN from pool duty despite judge’s order",
-    "summary": "The White House plans to keep CNN journalists from carrying out the network’s previously scheduled duty providing television pool coverage of President Trump on Thursday, a source familiar with the situation confirmed to The Hill. The administration will prevent CNN from providing its scheduled pool coverage, the source said Wednesday, despite a ruling from a…",
-    "link": "https://thehill.com/homenews/6122096-white-house-blocks-cnn-pool-trump/",
-    "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/09/AP23088731214388-e1790821147750.jpg?w=900",
-    "source": "The Hill News",
-    "feed_url": "https://thehill.com/feed/",
-    "published_at": "2026-10-01T02:19:23+00:00"
+    "id": "e91b2625ab09f8c6e99577a6ded6a3297fc6c486a1ee33e2f804addc50c49d31",
+    "title": "Christa Pike’s failed execution echoes another in Tennessee this year.",
+    "summary": "In May, the state tried to execute Tony Carruthers using lethal injection drugs but could not find a “suitable vein,” its correction department said.",
+    "link": "https://www.nytimes.com/live/2026/10/01/us/christa-pike-tennessee-execution/tony-carruthers-failed-execution",
+    "image_url": "https://static01.nyt.com/images/2026/10/01/us/01nat-tn-pike-carruthers-topart/01nat-tn-pike-carruthers-topart-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. News",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+    "published_at": "2026-10-01T16:39:27+00:00"
   },
-  "video": "output/20261001_083105_White_House_blocks_CNN_from_pool_duty_despite_judge_s_order.mp4",
-  "caption": "White House blocks CNN from pool duty despite judge’s order\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20261001_170234_Christa_Pike_s_failed_execution_echoes_another_in_Tennessee_this_year.mp4",
+  "caption": "Christa Pike’s failed execution echoes another in Tennessee this year.\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
