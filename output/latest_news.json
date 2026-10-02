@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "9480f643b65932bc02bc290eaa675656c948d05ac75f0edd7552bc55fd0f823e",
-    "title": "Carmel-by-the-Sea Reluctantly Adopts Street Addresses After 110 Years",
-    "summary": "Driven by emergency response needs, Carmel-by-the-Sea reluctantly adopted street address numbers this summer, igniting concerns over its vanishing identity as a beachside village.",
-    "link": "https://www.nytimes.com/2026/10/02/us/california-carmel-homes-new-addresses.html",
-    "image_url": "https://static01.nyt.com/images/2026/10/01/multimedia/01xp-carmel-LEAD-bgjh/01xp-carmel-LEAD-bgjh-mediumSquareAt3X.jpg",
+    "id": "ed98bb5451ac81105aa780e85c111c6d84721524a141238c3d2b31ef4f6da6d7",
+    "title": "Trump Directed Use of Taxpayer Money for Ads Praising His Presidency",
+    "summary": "The government-funded ads show just how much President Trump has been able to use federal money for his own aims.",
+    "link": "https://www.nytimes.com/2026/10/02/us/politics/trump-ads.html",
+    "image_url": "https://static01.nyt.com/images/2026/10/02/us/02dc-trump-ads/02dc-trump-ads-mediumSquareAt3X.png",
     "source": "NYT > U.S. News",
     "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-    "published_at": "2026-10-02T15:23:05+00:00"
+    "published_at": "2026-10-02T21:28:50+00:00"
   },
-  "video": "output/20261002_161803_Carmel-by-the-Sea_Reluctantly_Adopts_Street_Addresses_After_110_Years.mp4",
-  "caption": "Carmel-by-the-Sea Reluctantly Adopts Street Addresses After 110 Years\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20261002_220143_Trump_Directed_Use_of_Taxpayer_Money_for_Ads_Praising_His_Presidency.mp4",
+  "caption": "Trump Directed Use of Taxpayer Money for Ads Praising His Presidency\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
