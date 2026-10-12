@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "1264503a9434ea24d6e8b9912c78af35a0e68dfd1b0ea0acc6f0502856a0d2c2",
-    "title": "Simon strengthens into a Category 4 hurricane as it approaches Mexico's coast",
-    "summary": "Hurricane Simon has strengthened into a powerful Category 4 storm as it heads toward Mexico’s coast",
-    "link": "https://abcnews.com/US/wireStory/simon-strengthens-category-4-hurricane-approaches-mexicos-coast-137153541",
-    "image_url": "https://i.abcnewsfe.com/a/0260e487-0214-4c57-9b0c-46568938f442/wirestory_1e6f590459e5ee4ead370192f52f9239_16x9.jpg?w=1600",
-    "source": "ABC News: US",
-    "feed_url": "https://abcnews.go.com/abcnews/usheadlines",
-    "published_at": "2026-10-10T10:01:59+00:00"
+    "id": "e6cc5670afcfc3899ef658a66faf6b915733d2e504ff7a68e6bf853be1182dda",
+    "title": "Federal Judge Bars Trump Administration From Airing Publicly Funded Ads",
+    "summary": "A group of liberal organizations sued last week over the ads that praised the administration.",
+    "link": "https://www.nytimes.com/2026/10/11/us/politics/judge-bars-trump-taxpayer-ads.html",
+    "image_url": "https://static01.nyt.com/images/2026/10/11/multimedia/11met-trump-ads-kctg/11met-trump-ads-kctg-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. News",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+    "published_at": "2026-10-12T03:14:37+00:00"
   },
-  "video": "output/20261010_155008_Simon_strengthens_into_a_Category_4_hurricane_as_it_approaches_Mexico_s_coast.mp4",
-  "caption": "Simon strengthens into a Category 4 hurricane as it approaches Mexico's coast\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20261012_084718_Federal_Judge_Bars_Trump_Administration_From_Airing_Publicly_Funded_Ads.mp4",
+  "caption": "Federal Judge Bars Trump Administration From Airing Publicly Funded Ads\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
