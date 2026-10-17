@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "e69a3890e1bd8ac38aad5167a904c87d2f35aa207d8b99b6e752387d962e0c26",
-    "title": "Rahm Emanuel says Democrats can do a better job linking 2 key issues",
-    "summary": "Rahm Emanuel thinks Democrats can do a better job linking corruption and affordability concerns ahead of the midterms.",
-    "link": "https://thehill.com/homenews/campaign/6152889-rahm-emanuel-democrats-midterm-messaging-affordability-corruption-ethics/",
-    "image_url": "https://thehill.com/wp-content/uploads/sites/2/2025/07/AP24222186061348-e1751672407970.jpg?w=900",
-    "source": "The Hill News",
-    "feed_url": "https://thehill.com/feed/",
-    "published_at": "2026-10-16T13:38:37+00:00"
+    "id": "26edc808082bc4de6fe97b1b393612ba0d7ab4c35c1fbb01e565078c94ed7851",
+    "title": "Justice Department Seeks to Disqualify Judge Overseeing Golf Course Lawsuit",
+    "summary": "Escalating a standoff with Judge Ana C. Reyes, the Justice Department demanded that she recuse herself from a case in which she had ordered several Trump officials to testify.",
+    "link": "https://www.nytimes.com/2026/10/16/us/politics/justice-department-disqualify-judge-golf-lawsuit.html",
+    "image_url": "https://static01.nyt.com/images/2026/10/10/multimedia/16dc-judge/16dc-judge-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. News",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+    "published_at": "2026-10-17T02:32:14+00:00"
   },
-  "video": "output/20261016_144242_Rahm_Emanuel_says_Democrats_can_do_a_better_job_linking_2_key_issues.mp4",
-  "caption": "Rahm Emanuel says Democrats can do a better job linking 2 key issues\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20261017_064207_Justice_Department_Seeks_to_Disqualify_Judge_Overseeing_Golf_Course_Lawsuit.mp4",
+  "caption": "Justice Department Seeks to Disqualify Judge Overseeing Golf Course Lawsuit\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
