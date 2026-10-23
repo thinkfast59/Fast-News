@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "0616e6cd6dbb25db31a47de7ea9e07bf49cea57223aafda29b5c9a49bb7e3ede",
-    "title": "Mourinho seeks Real Madrid turning point in Clasico full of new faces",
-    "summary": "",
-    "link": "https://www.channelnewsasia.com/sport/mourinho-seeks-real-madrid-turning-point-in-clasico-full-new-faces-6486846",
-    "image_url": "https://dam.mediacorp.sg/image/upload/s---n7vDBdr--/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2026-10-23T134856Z_1_LYNXMPEM9M180_RTROPTP_3_SOCCER-SPAIN-RMA-SEV.JPG?itok=5eY6dR-a",
-    "source": "Latest News",
-    "feed_url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
-    "published_at": "2026-10-23T13:48:56+00:00"
+    "id": "8e35facf8d8646e7f387a6a2de628564073333da2fd5f0617dbfeff35caa5e0b",
+    "title": "Paxton sues OpenAI, Altman for failing to warn Texans about ChatGPT’s ‘dangers’",
+    "summary": "Texas Attorney General Ken Paxton (R) sued OpenAI and its CEO Sam Altman on Friday, accusing the company of failing to warn consumers about the potential dangers from its AI models. The lawsuit alleges the ChatGPT maker is running afoul of a Texas consumer protection law and kids’ online safety law, underscoring warnings about the…",
+    "link": "https://thehill.com/policy/technology/6169375-paxton-sues-openai-chatgpt/",
+    "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/10/AP25304765357774.jpg?w=900",
+    "source": "The Hill News",
+    "feed_url": "https://thehill.com/feed/",
+    "published_at": "2026-10-23T21:00:59+00:00"
   },
-  "video": "output/20261023_144948_Mourinho_seeks_Real_Madrid_turning_point_in_Clasico_full_of_new_faces.mp4",
-  "caption": "Mourinho seeks Real Madrid turning point in Clasico full of new faces\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20261023_211007_Paxton_sues_OpenAI_Altman_for_failing_to_warn_Texans_about_ChatGPT_s_dangers.mp4",
+  "caption": "Paxton sues OpenAI, Altman for failing to warn Texans about ChatGPT’s ‘dangers’\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
