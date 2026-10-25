@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "8068d241b47ae6d47f562bf11f4a7a1bd37d4661700fb67b4a94d514978d392d",
-    "title": "Introducing a New Way to Understand the Election: Times Voter Trends",
-    "summary": "A timely demographic story we’ve never been able to tell before.",
-    "link": "https://www.nytimes.com/2026/10/25/upshot/election-midterms-times-voter-trends.html",
-    "image_url": "https://static01.nyt.com/images/2026/10/24/multimedia/us-estimates-2024-promo/us-estimates-2024-promo-mediumSquareAt3X.png",
-    "source": "NYT > U.S. > Politics",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
-    "published_at": "2026-10-25T05:40:13+00:00"
+    "id": "d3c15287e491c72038d194202f6cbece009d243f9b7bc34e753c7c71ef565f24",
+    "title": "Who's on Air Force One? Trump's midterms entourage includes strategists, aides and aging athletes",
+    "summary": "President Donald Trump has clocked about 70 hours aboard Air Force One so far this month racing from rally to rally before Election Day",
+    "link": "https://abcnews.com/US/wireStory/air-force-trumps-midterms-entourage-includes-strategists-aides-137550601",
+    "image_url": "https://i.abcnewsfe.com/a/3d7eb346-756c-45b3-8b47-29d255365921/wirestory_402fc505a625d3811a08babaf87abfa7_16x9.jpg?w=1600",
+    "source": "ABC News: US",
+    "feed_url": "https://abcnews.go.com/abcnews/usheadlines",
+    "published_at": "2026-10-25T13:15:26+00:00"
   },
-  "video": "output/20261025_072450_Introducing_a_New_Way_to_Understand_the_Election_Times_Voter_Trends.mp4",
-  "caption": "Introducing a New Way to Understand the Election: Times Voter Trends\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20261025_141430_Who_s_on_Air_Force_One_Trump_s_midterms_entourage_includes_strategists_aides_and.mp4",
+  "caption": "Who's on Air Force One? Trump's midterms entourage includes strategists, aides and aging athletes\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
