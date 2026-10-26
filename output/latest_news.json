@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "dfb2b22e91914af7d09cf378228400275a97b0342db05de69934a31c4d366b76",
-    "title": "An Iowa Republican’s Unusual Connection to the Kochs (and Kansas)",
-    "summary": "In his campaign for governor, Zach Lahn has pitched himself as a self-made businessman. His backstory is more complicated.",
-    "link": "https://www.nytimes.com/2026/10/25/us/politics/zach-lahn-iowa-governor-kansas-kochs.html",
-    "image_url": "https://static01.nyt.com/images/2026/10/25/us/25pol-lahn-kochs3/25pol-lahn-kochs3-mediumSquareAt3X.jpg",
-    "source": "NYT > U.S. News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-    "published_at": "2026-10-25T21:57:58+00:00"
+    "id": "d20448acc823f8ac22ca123d00d0b71bb1aaae4907b0e3f57bcc72ed37ca82b5",
+    "title": "Delegations meet in Iran with the Middle East on edge over potential for renewed fighting",
+    "summary": "Iran says diplomacy remains possible but rejects U.S. demands for surrender.",
+    "link": "https://www.pbs.org/newshour/world/delegations-meet-in-iran-with-the-middle-east-on-edge-over-potential-for-renewed-fighting",
+    "image_url": "https://d3i6fh83elv35t.cloudfront.net/static/2026/10/2026-10-26T152113Z_620058808_RC22BOALWLCL_RTRMADP_3_IRAN-CRISIS-SAUDI-TURKEY-PAKISTAN-1024x683.jpg",
+    "source": "PBS News Hour - The Latest",
+    "feed_url": "https://www.pbs.org/newshour/feeds/rss/headlines",
+    "published_at": "2026-10-26T15:51:52+00:00"
   },
-  "video": "output/20261026_073407_An_Iowa_Republican_s_Unusual_Connection_to_the_Kochs_and_Kansas.mp4",
-  "caption": "An Iowa Republican’s Unusual Connection to the Kochs (and Kansas)\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20261026_163844_Delegations_meet_in_Iran_with_the_Middle_East_on_edge_over_potential_for_renewed.mp4",
+  "caption": "Delegations meet in Iran with the Middle East on edge over potential for renewed fighting\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
