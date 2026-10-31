@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "3def70424be170bdab3fc3ea841e8328ab58725457433820ac81f5113de4a869",
-    "title": "China's factory activity marks third contraction in four months",
-    "summary": "",
-    "link": "https://www.channelnewsasia.com/business/chinas-factory-activity-marks-third-contraction-in-four-months-6508946",
-    "image_url": "https://dam.mediacorp.sg/image/upload/s--61S7n5IJ--/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2026-10-31T014826Z_1_LYNXNPEM9U01R_RTROPTP_3_CHINA-ECONOMY-PMI.JPG?itok=XFoteyYg",
-    "source": "Latest News",
-    "feed_url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
-    "published_at": "2026-10-31T03:58:47+00:00"
+    "id": "52d2e486361e2fe419b9a6bdec1a4d57b199c7390eeab6d8f1a882c45a49e7a8",
+    "title": "Advocacy Groups Sue to Stop Trump Effort to Set Aside Ballots in Washington State",
+    "summary": "The lawsuit was the latest move to stave off pressure from the Trump administration to pursue its unsubstantiated claim that noncitizens are voting en masse.",
+    "link": "https://www.nytimes.com/2026/10/31/us/elections/washington-ballots-lawsuit.html",
+    "image_url": "https://static01.nyt.com/images/2026/10/31/multimedia/31dc-washington-topart-01-tlfm/31dc-washington-topart-01-tlfm-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. News",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+    "published_at": "2026-10-31T13:42:45+00:00"
   },
-  "video": "output/20261031_080947_China_s_factory_activity_marks_third_contraction_in_four_months.mp4",
-  "caption": "China's factory activity marks third contraction in four months\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20261031_155712_Advocacy_Groups_Sue_to_Stop_Trump_Effort_to_Set_Aside_Ballots_in_Washington_Stat.mp4",
+  "caption": "Advocacy Groups Sue to Stop Trump Effort to Set Aside Ballots in Washington State\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
