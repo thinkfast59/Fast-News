@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "6d26b6c918791bb54cb3f9838ef048741a68ad1a261ea29ecbb68b16db6dd589",
-    "title": "Sen. Chris Murphy's stroke at 53 highlights a trend: Strokes among younger adults have risen",
-    "summary": "Researchers found that the stroke incidence rate among adults from 1993-94 nearly doubled in 2020, jumping from 33.90 cases per 100,000 people to 62.18 cases.",
-    "link": "https://www.pbs.org/newshour/health/sen-chris-murphys-stroke-at-53-highlights-a-trend-strokes-among-younger-adults-have-risen",
-    "image_url": "https://d3i6fh83elv35t.cloudfront.net/static/2026/11/2026-07-21T214657Z_1393787467_RC2LIMAO9RYJ_RTRMADP_3_USA-BUDGET-CONGRESS-1024x683.jpg",
-    "source": "PBS News Hour - The Latest",
-    "feed_url": "https://www.pbs.org/newshour/feeds/rss/headlines",
-    "published_at": "2026-11-07T21:14:44+00:00"
+    "id": "124fb014693579996e7957c01aec0c49c0b20d52bbc5332ccd1d59b01a588398",
+    "title": "For Trump and America, a Clear Election Verdict but a Murky Future",
+    "summary": "As Americans absorb a stunning new political reality, they face a gap between the time they effectively decided to be done with the president and the time he is actually done.",
+    "link": "https://www.nytimes.com/2026/11/08/us/politics/trump-midterm-election-america-future.html",
+    "image_url": "https://static01.nyt.com/images/2026/11/08/multimedia/08dc-assess-lphq/08dc-assess-lphq-mediumSquareAt3X.jpg",
+    "source": "NYT > U.S. > Politics",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
+    "published_at": "2026-11-08T16:25:45+00:00"
   },
-  "video": "output/20261108_091705_Sen_Chris_Murphy_s_stroke_at_53_highlights_a_trend_Strokes_among_younger_adults_.mp4",
-  "caption": "Sen. Chris Murphy's stroke at 53 highlights a trend: Strokes among younger adults have risen\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20261108_164911_For_Trump_and_America_a_Clear_Election_Verdict_but_a_Murky_Future.mp4",
+  "caption": "For Trump and America, a Clear Election Verdict but a Murky Future\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
