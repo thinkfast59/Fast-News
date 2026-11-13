@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "29d79cc37a902935e43b62b12571426861f391b1252e7469c542e215215066a3",
-    "title": "In Moscow, Witkoff and Kushner Ask Putin to Include Europe in Peace Talks",
-    "summary": "In Dublin, President Volodymyr Zelensky of Ukraine said Europeans would join the next round of talks. Russia has not confirmed that.",
-    "link": "https://www.nytimes.com/2026/11/12/world/europe/russia-ukraine-witkoff-kushner.html",
-    "image_url": "https://static01.nyt.com/images/2026/11/12/multimedia/12int-russia-talks-qwhb/12int-russia-talks-qwhb-mediumSquareAt3X.jpg",
-    "source": "NYT > World News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
-    "published_at": "2026-11-12T23:15:17+00:00"
+    "id": "570cc8ca75edd3da8ed827db9dc1f88aca58065baaa2e607249a0ba4c8919ba3",
+    "title": "Democratic political group launches new push to shape AI agenda ahead of 2028",
+    "summary": "A Democratic political group is launching a new push to find ways to meet voters' concerns about artificial intelligence ahead of the 2028 presidential election",
+    "link": "https://abcnews.com/Politics/wireStory/democratic-political-group-launches-new-push-shape-ai-138101260",
+    "image_url": "https://s.abcnews.com/images/US/abc_news_default_2000x2000_update_16x9_992.jpg",
+    "source": "ABC News: Politics",
+    "feed_url": "https://abcnews.go.com/abcnews/politicsheadlines",
+    "published_at": "2026-11-13T05:37:21+00:00"
   },
-  "video": "output/20261112_233526_In_Moscow_Witkoff_and_Kushner_Ask_Putin_to_Include_Europe_in_Peace_Talks.mp4",
-  "caption": "In Moscow, Witkoff and Kushner Ask Putin to Include Europe in Peace Talks\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20261113_101340_Democratic_political_group_launches_new_push_to_shape_AI_agenda_ahead_of_2028.mp4",
+  "caption": "Democratic political group launches new push to shape AI agenda ahead of 2028\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
