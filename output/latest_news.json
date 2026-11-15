@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "2833364b88a9715c2145d5302402aff402c25d28d6c80fbe3a83c91c01ee7f1f",
-    "title": "Stranded by planes, travelers turned to trains and automobiles.",
-    "summary": "People trying to find new ways to get to their destinations still encountered obstacles at the rental car counter and on Amtrak’s booking system.",
-    "link": "https://www.nytimes.com/live/2026/11/14/us/faa-nationwide-ground-stop-flights/travelers-alternatives-trains-automobiles",
-    "image_url": "https://static01.nyt.com/images/2026/11/14/multimedia/14faa-groundstop-alternatives-topart-zcqm/14faa-groundstop-alternatives-topart-zcqm-facebookJumbo.jpg",
-    "source": "NYT > U.S. News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-    "published_at": "2026-11-15T00:17:18+00:00"
+    "id": "465e56b96e53e57eb67927dde5c38687f32b04bf6a25813e344da522d5f5e732",
+    "title": "Trump calls on Congress to fund new air traffic control system",
+    "summary": "President Trump on Sunday asked Congress to fund a new air traffic control system following Friday’s rare nationwide ground stop for all U.S. flights. “If Congress approves the desperately needed money for Air Traffic Control, we can get it built quickly and efficiently. It will be the BEST SYSTEM anywhere in the World,” the president…",
+    "link": "https://thehill.com/policy/transportation/6221316-trump-requests-air-traffic-funding/",
+    "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/11/AP26318605825317-e1794755655673.jpg?w=900",
+    "source": "The Hill News",
+    "feed_url": "https://thehill.com/feed/",
+    "published_at": "2026-11-15T15:25:50+00:00"
   },
-  "video": "output/20261115_090947_Stranded_by_planes_travelers_turned_to_trains_and_automobiles.mp4",
-  "caption": "Stranded by planes, travelers turned to trains and automobiles.\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20261115_171130_Trump_calls_on_Congress_to_fund_new_air_traffic_control_system.mp4",
+  "caption": "Trump calls on Congress to fund new air traffic control system\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
