@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "98f87686ff224c7b8c71443d4c770f9b3c8454b556ed286172e7f06a4076ea14",
-    "title": "Teen volunteers in Singapore bridge generation gap through music",
-    "summary": "At The Resonance Project, young volunteers teach seniors and children to play musical instruments, while building friendships and learning skills of their own.",
-    "link": "https://www.channelnewsasia.com/singapore/volunteers-teens-youth-resonance-project-music-6554531",
-    "image_url": "https://dam.mediacorp.sg/image/upload/s--as3AouuX--/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2021-08:cna,w_0.1/f_auto,q_auto/v1/mediacorp/cna/image/2026/11/16/screenshot_2026-11-16_150742.png?itok=exfRvL-Q",
-    "source": "Latest News",
-    "feed_url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
-    "published_at": "2026-11-16T07:20:00+00:00"
+    "id": "c62d61ef3f2756cd45b00d3b789e0b2df5a716b99be78c72b578c31f68eb279a",
+    "title": "Pope Endures Grueling Travel in South America Weeks After Surgery",
+    "summary": "When doctors operated on Pope Leo XIV’s lung in October, some wondered if he’d postpone a long-planned trip to South America. It’s gone well so far.",
+    "link": "https://www.nytimes.com/2026/11/16/world/europe/pope-leo-peru-health.html",
+    "image_url": "https://static01.nyt.com/images/2026/11/16/multimedia/16int-pope-1-cjbk/16int-pope-1-cjbk-mediumSquareAt3X-v2.jpg",
+    "source": "NYT > World News",
+    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+    "published_at": "2026-11-16T17:37:25+00:00"
   },
-  "video": "output/20261116_091951_Teen_volunteers_in_Singapore_bridge_generation_gap_through_music.mp4",
-  "caption": "Teen volunteers in Singapore bridge generation gap through music\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20261116_201702_Pope_Endures_Grueling_Travel_in_South_America_Weeks_After_Surgery.mp4",
+  "caption": "Pope Endures Grueling Travel in South America Weeks After Surgery\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
