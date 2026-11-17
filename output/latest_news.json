@@ -1,15 +1,15 @@
 {
   "news": {
-    "id": "c62d61ef3f2756cd45b00d3b789e0b2df5a716b99be78c72b578c31f68eb279a",
-    "title": "Pope Endures Grueling Travel in South America Weeks After Surgery",
-    "summary": "When doctors operated on Pope Leo XIV’s lung in October, some wondered if he’d postpone a long-planned trip to South America. It’s gone well so far.",
-    "link": "https://www.nytimes.com/2026/11/16/world/europe/pope-leo-peru-health.html",
-    "image_url": "https://static01.nyt.com/images/2026/11/16/multimedia/16int-pope-1-cjbk/16int-pope-1-cjbk-mediumSquareAt3X-v2.jpg",
-    "source": "NYT > World News",
-    "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
-    "published_at": "2026-11-16T17:37:25+00:00"
+    "id": "838140bcac3ddb3d18fde2d8e349d8a321620c3fd258b06c2d7b427029a1e5ec",
+    "title": "Comer announces bid for Kentucky governor",
+    "summary": "Rep. James Comer (R-Ky.) announced a bid for Kentucky’s governor’s mansion following an election cycle where Democrats took control of Congress and a historic number of state legislatures. “Serving this state is a calling for me,” Comer said while unveiling his campaign Monday. “Kentucky needs a leader whose policies will lead to growth and good-paying…",
+    "link": "https://thehill.com/homenews/campaign/6224056-james-comer-kentucky-governor-run/",
+    "image_url": "https://thehill.com/wp-content/uploads/sites/2/2026/03/AP26057841014114-e1772642411127.jpg?w=900",
+    "source": "The Hill News",
+    "feed_url": "https://thehill.com/feed/",
+    "published_at": "2026-11-17T03:07:31+00:00"
   },
-  "video": "output/20261116_201702_Pope_Endures_Grueling_Travel_in_South_America_Weeks_After_Surgery.mp4",
-  "caption": "Pope Endures Grueling Travel in South America Weeks After Surgery\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
+  "video": "output/20261117_103427_Comer_announces_bid_for_Kentucky_governor.mp4",
+  "caption": "Comer announces bid for Kentucky governor\n\nWatch the latest update from World Pulse Daily.\n\n#WorldPulseDaily #USNews #WorldNews #BreakingNews #NewsUpdate #LatestNews",
   "telegram": null
 }
